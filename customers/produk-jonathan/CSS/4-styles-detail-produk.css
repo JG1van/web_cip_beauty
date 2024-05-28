@@ -1,0 +1,168 @@
+/* Definisi warna yang digunakan */
+:root {
+  /* Variabel warna */
+  --warna1: #ffffff; /* Putih */
+  --warna2: #fed7dd; /* Pink */
+  --warna3: #e17f93; /* Pink tua */
+  --warna4: #daa520; /* Emas */
+}
+
+/* Styling default */
+* {
+  margin: 0; /* Menghilangkan margin */
+  padding: 0; /* Menghilangkan padding */
+  box-sizing: border-box; /* Mengatur box model: border-box */
+  outline: none; /* Menghilangkan outline */
+  border: none; /* Menghilangkan border */
+  text-decoration: none; /* Menghilangkan dekorasi teks */
+  font-family: "Times New Roman"; /* Mengatur font halaman */
+}
+
+/* Styling untuk seluruh halaman */
+body {
+  color: black; /* Mengatur warna teks */
+  background-color: var(--warna2); /* Warna latar belakang pink */
+}
+
+.container {
+  background-color: var(--warna2); /* Menggunakan warna yang didefinisikan */
+  display: flex; /* Menjadikan kontainer sebagai flex container */
+  flex-direction: column; /* Mengatur arah tata letak menjadi kolom */
+  align-items: center; /* Menengahkan item secara horizontal */
+}
+
+/* Styling untuk bagian utama konten */
+main {
+  padding: 0.5%; /* Padding */
+  background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  display: flex; /* Menjadikan main sebagai flex container */
+  flex-wrap: wrap; /* Membungkus item jika terlalu lebar */
+  justify-content: center; /* Menengahkan item secara horizontal */
+  max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */
+  margin: 0.5%; /* Tengahkan konten */
+  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
+}
+
+/* Styling untuk judul utama */
+.judul-utama {
+  margin-top: 5rem; /* Margin atas */
+  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
+  margin-bottom: 1rem; /* Margin bawah */
+  padding: 1rem; /* Padding */
+  background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
+  border-radius: 1rem; /* Membuat sudut melengkung */
+  text-align: center; /* Teks yang berada di dalam judul ditengahkan */
+  max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */
+  width: 100%; /* Lebar judul utama */
+}
+
+.judul-utama h1 {
+  font-size: 50px; /* Ukuran font */
+}
+
+/* Styling untuk kolom GAMBAR */
+.GAMABAR-column {
+  padding: 0.5rem; /* Padding */
+  border-radius: 1.5rem; /* Membuat sudut melengkung */
+  width: 35%; /* Ubah lebar untuk menampung 3 kolom */
+  margin: 1%; /* Margin antar kolom */
+}
+
+/* Styling untuk gambar */
+.GAMABAR-gambar img {
+  max-width: 100%; /* Lebar maksimum gambar */
+  height: auto; /* Biarkan tinggi gambar menyesuaikan */
+  display: block; /* Menjadikan gambar sebagai block element */
+  margin: 0 auto; /* Mengatur margin kiri dan kanan menjadi auto */
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  aspect-ratio: 1/1; /* Rasio aspek gambar (lebar/tinggi) */
+}
+
+/* Styling untuk kolom DESKRIPSI */
+.DESKRIPSI-column {
+  padding: 0.5rem; /* Padding */
+  border-radius: 1.5rem; /* Membuat sudut melengkung */
+  width: 60%; /* Ubah lebar untuk menampung 3 kolom */
+  margin: 1%; /* Margin antar kolom */
+}
+
+/* Styling untuk isi DESKRIPSI */
+.DESKRIPSI-isi {
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  background-color: var(--warna2); /* Menggunakan warna yang didefinisikan */
+  padding: 10px; /* Padding */
+  margin-bottom: 1rem; /* Margin bawah */
+  text-align: start; /* Teks diletakkan di awal */
+}
+
+.DESKRIPSI-isi p {
+  margin-bottom: 1rem; /* Margin bawah */
+}
+
+.tombol {
+  text-align: center; /* Menengahkan teks */
+  margin: 2rem 0 0.5rem 0; /* Margin atas dan bawah */
+  z-index: 1; /* Mengatur z-index */
+}
+
+/* Styling untuk tombol dengan kelas klik */
+.klik {
+  padding: 10px 20px; /* Memberikan jarak di dalam tombol (atas-bawah: 10px, kiri-kanan: 20px) */
+  color: black; /* Warna teks hitam */
+  background-color: var(
+    --warna4
+  ); /* Menggunakan variabel CSS untuk warna latar belakang */
+  border-radius: 0.5rem; /* Membulatkan sudut tombol dengan radius 0.5rem */
+  cursor: pointer; /* Mengubah kursor menjadi pointer saat diarahkan ke tombol */
+  font-weight: bold; /* Membuat teks tebal */
+  transition: 0.3s; /* Menambahkan transisi selama 0.3 detik untuk perubahan properti */
+  text-shadow: none; /* Tidak ada bayangan pada teks */
+}
+
+.klik:hover {
+  background-color: var(
+    --warna3
+  ); /* Menggunakan variabel CSS untuk warna latar belakang saat tombol dihover atau difokuskan */
+  letter-spacing: 20px; /* Menambahkan spasi antar huruf sebesar 20px saat dihover atau difokuskan */
+  color: #ffffff; /* Mengubah warna teks menjadi putih saat dihover atau difokuskan */
+  background: var(
+    --warna3
+  ); /* Menggunakan variabel CSS untuk warna latar belakang saat dihover atau difokuskan (duplikat, bisa dihapus salah satunya) */
+  border: 1px solid #ddd; /* Menambahkan border tipis dengan warna #ddd */
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff; /* Menambahkan bayangan pada teks dengan warna putih */
+  box-shadow: 0 0 5px var(--warna3), 0 0 20px var(--warna3),
+    0 0 50px var(--warna3), 0 0 100px var(--warna3); /* Menambahkan bayangan pada tombol dengan warna yang diambil dari variabel CSS */
+}
+/* Responsivitas untuk layar laptop */
+@media (max-width: 1366px) {
+  body {
+    font-size: 75%; /* Mengurangi ukuran font menjadi 75% */
+  }
+  .GAMABAR-column,
+  .DESKRIPSI-column {
+    width: 48%; /* Mengurangi lebar kolom untuk layar lebih kecil */
+  }
+}
+
+/* Responsivitas untuk layar tablet */
+@media (max-width: 768px) {
+  body {
+    font-size: 75%; /* Mengurangi ukuran font menjadi 75% */
+  }
+  .GAMABAR-column,
+  .DESKRIPSI-column {
+    width: 75%; /* Mengurangi lebar kolom untuk layar tablet */
+  }
+}
+
+/* Responsivitas untuk layar ponsel */
+@media (max-width: 450px) {
+  body {
+    font-size: 50%; /* Mengurangi ukuran font menjadi 50% */
+  }
+  .GAMABAR-column,
+  .DESKRIPSI-column {
+    width: 90%; /* Mengurangi lebar kolom untuk layar ponsel */
+  }
+}

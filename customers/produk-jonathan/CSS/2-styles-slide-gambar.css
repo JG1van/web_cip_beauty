@@ -1,0 +1,256 @@
+/* slider section */
+.slider {
+  height: 100vh; /* Tinggi slider 100% dari tinggi viewport */
+  margin-top: -50px; /* Margin atas negatif untuk mengurangi ruang */
+  width: 100vw; /* Lebar slider 100% dari lebar viewport */
+  overflow: hidden; /* Menyembunyikan konten yang melampaui batas */
+  position: relative; /* Menetapkan posisi relatif untuk item absolut di dalamnya */
+}
+.slider .list .item {
+  width: 100%; /* Lebar item 100% dari slider */
+  height: 100%; /* Tinggi item 100% dari slider */
+  position: absolute; /* Posisi absolut untuk setiap item */
+  inset: 0; /* Menetapkan semua sisi (atas, kanan, bawah, kiri) ke 0 */
+}
+.slider .list .item img {
+  width: 100%; /* Lebar gambar 100% dari item */
+  height: 100%; /* Tinggi gambar 100% dari item */
+  object-fit: cover; /* Menutupi seluruh area item tanpa mengubah rasio */
+}
+.slider .list .item .content {
+  position: absolute; /* Posisi absolut untuk konten di dalam item */
+  top: 20%; /* 20% dari atas item */
+  width: 1140px; /* Lebar konten */
+  max-width: 80%; /* Lebar maksimum 80% dari item */
+  left: 50%; /* 50% dari kiri item */
+  transform: translateX(-50%); /* Mengeser konten ke tengah horizontal */
+  padding-right: 30%; /* Padding kanan */
+  box-sizing: border-box; /* Menyertakan padding dan border dalam lebar */
+  color: #fff; /* Warna teks putih */
+  text-shadow: 0 5px 10px #0004; /* Bayangan teks */
+}
+
+.slider .list .item .content .title,
+.slider .list .item .content .type {
+  font-size: 5em; /* Ukuran font */
+  font-weight: bold; /* Ketebalan font */
+  line-height: 1.3em; /* Tinggi garis */
+}
+.slider .list .item .type {
+  color: #daa520; /* Warna teks emas */
+}
+.slider .list .item .button {
+  display: grid; /* Menggunakan grid untuk tata letak tombol */
+  grid-template-columns: repeat(2, 130px); /* Dua kolom dengan lebar 130px */
+  grid-template-rows: 40px; /* Satu baris dengan tinggi 40px */
+  gap: 5px; /* Jarak antar tombol */
+  margin-top: 20px; /* Margin atas */
+}
+.slider .list .item .button button {
+  border: none; /* Menghilangkan border tombol */
+  background-color: #eee; /* Warna latar belakang tombol */
+  font-family: Poppins; /* Font tombol */
+  font-weight: 500; /* Ketebalan font tombol */
+  cursor: pointer; /* Kursor berubah menjadi pointer saat dihover */
+  transition: 0.4s; /* Transisi untuk efek hover */
+  letter-spacing: 2px; /* Jarak antar huruf */
+}
+
+.slider .list .item .button button:hover {
+  letter-spacing: 3px; /* Jarak antar huruf bertambah saat dihover */
+}
+.slider .list .item .button button:nth-child(2) {
+  background-color: transparent; /* Warna latar belakang transparan */
+  border: 1px solid #fff; /* Border putih */
+  color: #eee; /* Warna teks */
+}
+
+/* Thumbnail Section */
+.thumbnail {
+  position: absolute; /* Posisi absolut untuk thumbnail */
+  bottom: 50px; /* 50px dari bawah slider */
+  left: 50%; /* 50% dari kiri slider */
+  width: max-content; /* Lebar sesuai konten */
+  z-index: 100; /* Z-index untuk mengatur lapisan */
+  display: flex; /* Flexbox untuk tata letak thumbnail */
+  gap: 20px; /* Jarak antar thumbnail */
+}
+
+.thumbnail .item {
+  width: 150px; /* Lebar item thumbnail */
+  height: 220px; /* Tinggi item thumbnail */
+  flex-shrink: 0; /* Tidak menyusut saat ada ruang terbatas */
+  position: relative; /* Posisi relatif untuk elemen di dalamnya */
+}
+
+.thumbnail .item img {
+  width: 100%; /* Lebar gambar 100% dari item thumbnail */
+  height: 100%; /* Tinggi gambar 100% dari item thumbnail */
+  object-fit: cover; /* Menutupi seluruh area tanpa mengubah rasio */
+  border-radius: 20px; /* Sudut melengkung */
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.3); /* Bayangan gambar */
+}
+
+/* nextPrevArrows Section */
+.nextPrevArrows {
+  position: absolute; /* Posisi absolut untuk tombol navigasi */
+  top: 80%; /* 80% dari atas slider */
+  right: 52%; /* 52% dari kanan slider */
+  z-index: 100; /* Z-index untuk mengatur lapisan */
+  width: 300px; /* Lebar container tombol */
+  max-width: 30%; /* Lebar maksimum 30% dari slider */
+  display: flex; /* Flexbox untuk tata letak tombol */
+  gap: 10px; /* Jarak antar tombol */
+  align-items: center; /* Menyelaraskan tombol secara vertikal */
+}
+.nextPrevArrows button {
+  width: 40px; /* Lebar tombol */
+  height: 40px; /* Tinggi tombol */
+  border-radius: 50%; /* Tombol bulat */
+  background-color: #14ff72cb; /* Warna latar belakang tombol */
+  border: none; /* Menghilangkan border */
+  color: #fff; /* Warna teks putih */
+  font-family: monospace; /* Font monospace */
+  font-weight: bold; /* Ketebalan font */
+  transition: 0.5s; /* Transisi untuk efek hover */
+  cursor: pointer; /* Kursor berubah menjadi pointer saat dihover */
+}
+.nextPrevArrows button:hover {
+  background-color: #fff; /* Warna latar belakang putih saat dihover */
+  color: #000; /* Warna teks hitam saat dihover */
+}
+
+/* Animation Part */
+.slider .list .item:nth-child(1) {
+  z-index: 1; /* Z-index untuk item pertama */
+}
+
+/* animation text in first item */
+.slider .list .item:nth-child(1) .content .title,
+.slider .list .item:nth-child(1) .content .type,
+.slider .list .item:nth-child(1) .content .description,
+.slider .list .item:nth-child(1) .content .buttons {
+  transform: translateY(50px); /* Menggeser konten 50px ke bawah */
+  filter: blur(20px); /* Blur konten */
+  opacity: 0; /* Opasitas awal 0 */
+  animation: showContent 0.5s 1s linear 1 forwards; /* Animasi tampil konten */
+}
+@keyframes showContent {
+  to {
+    transform: translateY(0px); /* Geser konten ke posisi awal */
+    filter: blur(0px); /* Hapus blur */
+    opacity: 1; /* Opasitas penuh */
+  }
+}
+.slider .list .item:nth-child(1) .content .title {
+  animation-delay: 0.4s !important; /* Penundaan animasi untuk judul */
+}
+.slider .list .item:nth-child(1) .content .type {
+  animation-delay: 0.6s !important; /* Penundaan animasi untuk tipe */
+}
+.slider .list .item:nth-child(1) .content .description {
+  animation-delay: 0.8s !important; /* Penundaan animasi untuk deskripsi */
+}
+.slider .list .item:nth-child(1) .content .buttons {
+  animation-delay: 1s !important; /* Penundaan animasi untuk tombol */
+}
+
+/* Animation for next button click */
+.slider.next .list .item:nth-child(1) img {
+  width: 150px; /* Lebar gambar setelah klik tombol next */
+  height: 220px; /* Tinggi gambar setelah klik tombol next */
+  position: absolute; /* Posisi absolut */
+  bottom: 50px; /* 50px dari bawah */
+  left: 50%; /* 50% dari kiri */
+  border-radius: 30px; /* Sudut melengkung */
+  animation: showImage 0.5s linear 1 forwards; /* Animasi tampil gambar */
+}
+
+@keyframes showImage {
+  to {
+    bottom: 0; /* Posisikan gambar di bawah */
+    left: 0; /* Posisikan gambar di kiri */
+    width: 100%; /* Lebar gambar penuh */
+    height: 100%; /* Tinggi gambar penuh */
+    border-radius: 0; /* Sudut tidak melengkung */
+  }
+}
+
+.slider.next .thumbnail .item:nth-last-child(1) {
+  overflow: hidden; /* Sembunyikan konten melampaui batas */
+  animation: showThumbnail 0.5s linear 1 forwards; /* Animasi tampil thumbnail */
+}
+.slider.prev .list .item img {
+  z-index: 100; /* Z-index untuk gambar item sebelumnya */
+}
+
+@keyframes showThumbnail {
+  from {
+    width: 0; /* Lebar awal 0 */
+    opacity: 0; /* Opasitas awal 0 */
+  }
+}
+
+.slider.next .thumbnail {
+  animation: effectNext 0.5s linear 1 forwards; /* Animasi efek next */
+}
+
+@keyframes effectNext {
+  from {
+    transform: translateX(150px); /* Geser thumbnail 150px ke kanan */
+  }
+}
+
+/* Animation for prev button click */
+.slider.prev .list .item:nth-child(2) {
+  z-index: 2; /* Z-index untuk item kedua */
+}
+
+.slider.prev .list .item:nth-child(2) img {
+  animation: outFrame 0.5s linear 1 forwards; /* Animasi keluar frame */
+  position: absolute; /* Posisi absolut */
+  bottom: 0; /* Posisikan gambar di bawah */
+  left: 0; /* Posisikan gambar di kiri */
+}
+@keyframes outFrame {
+  to {
+    width: 150px; /* Lebar gambar setelah keluar frame */
+    height: 220px; /* Tinggi gambar setelah keluar frame */
+    bottom: 50px; /* 50px dari bawah */
+    left: 50%; /* 50% dari kiri */
+    border-radius: 20px; /* Sudut melengkung */
+  }
+}
+
+.slider.prev .thumbnail .item:nth-child(1) {
+  overflow: hidden; /* Sembunyikan konten melampaui batas */
+  opacity: 0; /* Opasitas awal 0 */
+  animation: showThumbnail 0.5s linear 1 forwards; /* Animasi tampil thumbnail */
+}
+.slider.next .nextPrevArrows button,
+.slider.prev .nextPrevArrows button {
+  pointer-events: none; /* Menonaktifkan pointer pada tombol navigasi */
+}
+
+.slider.prev .list .item:nth-child(2) .content .title,
+.slider.prev .list .item:nth-child(2) .content .type,
+.slider.prev .list .item:nth-child(2) .content .description,
+.slider.prev .list .item:nth-child(2) .content .buttons {
+  animation: contentOut 1.5s linear 1 forwards !important; /* Animasi keluar konten */
+}
+
+@keyframes contentOut {
+  to {
+    transform: translateY(-150px); /* Geser konten 150px ke atas */
+    filter: blur(20px); /* Blur konten */
+    opacity: 0; /* Opasitas 0 */
+  }
+}
+@media screen and (max-width: 678px) {
+  .slider .list .item .content {
+    padding-right: 0; /* Hilangkan padding kanan pada konten */
+  }
+  .slider .list .item .content .title {
+    font-size: 50px; /* Ukuran font lebih kecil untuk judul */
+  }
+}

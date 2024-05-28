@@ -1,0 +1,218 @@
+/* Definisi warna yang digunakan */
+:root {
+  --warna1: #ffffff; /* Putih */
+  --warna2: #fed7dd; /* Pink */
+  --warna3: #e17f93; /* Pink tua */
+  --warna4: #daa520; /* Emas */
+}
+
+/* Styling default untuk mengatur margin, padding, box-sizing, outline, border, dan text-decoration pada seluruh elemen */
+* {
+  margin: 0; /* Menghilangkan margin */
+  padding: 0; /* Menghilangkan padding */
+  box-sizing: border-box; /* Mengatur box model: border-box */
+  outline: none; /* Menghilangkan outline */
+  border: none; /* Menghilangkan border */
+  text-decoration: none; /* Menghilangkan dekorasi teks */
+  font-family: "Times New Roman"; /* Mengatur font halaman */
+}
+
+/* Styling untuk seluruh halaman */
+body {
+  color: black; /* Mengatur warna teks */
+  background-color: var(--warna2); /* Warna latar belakang pink */
+}
+
+/* Styling untuk kontainer utama */
+.container {
+  display: flex; /* Menggunakan Flexbox */
+  flex-direction: column; /* Mengatur arah Flexbox menjadi kolom */
+  align-items: center; /* Menengahkan item secara horizontal */
+}
+
+/* Styling untuk bagian utama konten */
+main {
+  padding: 0.5%; /* Padding di sekitar konten */
+  background-color: var(--warna1); /* Warna latar belakang putih */
+  border-radius: 0.5rem; /* Membulatkan sudut */
+  display: flex; /* Menggunakan Flexbox */
+  flex-wrap: wrap; /* Membungkus item ke baris baru jika tidak muat */
+  justify-content: center; /* Menengahkan item secara horizontal */
+  max-width: 1500px; /* Lebar maksimum konten */
+  margin: 0.5%; /* Margin di sekitar konten */
+  border: 10px double var(--warna4); /* Border tebal warna emas */
+}
+
+/* Styling untuk judul utama */
+.judul-utama {
+  margin-top: 50px; /* Margin atas */
+  border: 10px double var(--warna4); /* Border tebal warna emas */
+  margin-bottom: 10px; /* Margin bawah */
+  padding: 10px; /* Padding di dalam judul */
+  background-color: var(--warna1); /* Warna latar belakang putih */
+  border-radius: 0.5rem; /* Membulatkan sudut */
+  text-align: center; /* Menengahkan teks */
+  max-width: 1500px; /* Lebar maksimum */
+  width: 100%; /* Lebar penuh */
+}
+
+.judul-utama h1 {
+  font-size: 50px; /* Ukuran font untuk h1 */
+}
+
+/* Styling untuk kolom PRODUK */
+.PRODUK-column {
+  padding: 1.5%; /* Padding di dalam kolom */
+  border-radius: 0.5rem; /* Membulatkan sudut */
+  width: calc(30%); /* Lebar kolom */
+  margin: 1.5%; /* Margin di sekitar kolom */
+  border: 1px solid var(--warna4); /* Border tipis warna emas */
+  position: relative; /* Posisi relatif untuk pseudo-elemen */
+  display: flex; /* Menggunakan Flexbox */
+  flex-direction: column; /* Mengatur arah Flexbox menjadi kolom */
+  align-items: center; /* Menengahkan item secara horizontal */
+  overflow: hidden; /* Menyembunyikan konten yang meluap */
+  place-content: center; /* Menengahkan konten */
+  place-items: center; /* Menengahkan item */
+}
+
+/* Pseudo-elemen sebelum kolom PRODUK */
+.PRODUK-column::before {
+  content: ""; /* Konten kosong */
+  position: absolute; /* Posisi absolut */
+  width: 100px; /* Lebar */
+  height: 160%; /* Tinggi */
+  background-image: linear-gradient(
+    360deg,
+    #daa520,
+    #daa520
+  ); /* Gradien warna emas */
+  animation: rotBGimg 5s linear infinite; /* Animasi rotasi */
+  transition: all 0.2s linear; /* Transisi */
+}
+
+/* Pseudo-elemen setelah kolom PRODUK */
+.PRODUK-column::after {
+  content: ""; /* Konten kosong */
+  position: absolute; /* Posisi absolut */
+  background: var(--warna1); /* Warna latar belakang putih */
+  inset: 5px; /* Jarak dari tepi */
+  border-radius: 0.5rem; /* Membulatkan sudut */
+}
+
+/* Animasi rotasi background */
+@keyframes rotBGimg {
+  from {
+    transform: rotate(0deg); /* Mulai dari 0 derajat */
+  }
+  to {
+    transform: rotate(360deg); /* Putar hingga 360 derajat */
+  }
+}
+
+/* Styling untuk elemen dengan kelas GAMABAR-gambar */
+.GAMABAR-gambar {
+  z-index: 1; /* Mengatur z-index */
+}
+
+/* Styling untuk gambar */
+.GAMABAR-gambar img {
+  max-width: 100%; /* Lebar maksimum 100% */
+  height: auto; /* Tinggi otomatis */
+  display: block; /* Menampilkan sebagai block element */
+  margin: 0 auto; /* Margin otomatis */
+  border-radius: 0.5rem; /* Membulatkan sudut */
+  margin-bottom: 5%; /* Margin bawah */
+  aspect-ratio: 1/1; /* Rasio aspek 1:1 */
+}
+
+/* Styling untuk judul PRODUK */
+.judul {
+  border: 1px solid #ddd; /* Border tipis */
+  margin-bottom: 1rem; /* Margin bawah */
+  background-color: var(--warna2); /* Warna latar belakang pink */
+  border-radius: 0.5rem; /* Membulatkan sudut */
+  text-align: center; /* Menengahkan teks */
+  height: 5rem; /* Tinggi judul */
+  width: 100%; /* Lebar penuh */
+  display: flex; /* Menggunakan Flexbox */
+  align-items: center; /* Menengahkan item secara vertikal */
+  justify-content: center; /* Menengahkan item secara horizontal */
+  z-index: 1; /* Mengatur z-index */
+}
+
+/* Styling untuk isi PRODUK */
+.isi {
+  border-radius: 0.5rem; /* Membulatkan sudut */
+  background-color: var(--warna2); /* Warna latar belakang pink */
+  padding: 10px; /* Padding di dalam isi */
+  margin-bottom: 1rem; /* Margin bawah */
+  text-align: center; /* Menengahkan teks */
+  z-index: 1; /* Mengatur z-index */
+  width: 100%; /* Lebar penuh */
+}
+
+/* Styling untuk tombol */
+.tombol {
+  text-align: center; /* Menengahkan teks */
+  margin: 2rem 0 0.5rem 0; /* Margin atas dan bawah */
+  z-index: 1; /* Mengatur z-index */
+}
+
+/* Styling untuk tombol dengan kelas klik */
+.klik {
+  padding: 10px 20px; /* Memberikan jarak di dalam tombol (atas-bawah: 10px, kiri-kanan: 20px) */
+  color: black; /* Warna teks hitam */
+  background-color: var(
+    --warna4
+  ); /* Menggunakan variabel CSS untuk warna latar belakang */
+  border-radius: 0.5rem; /* Membulatkan sudut tombol dengan radius 0.5rem */
+  cursor: pointer; /* Mengubah kursor menjadi pointer saat diarahkan ke tombol */
+  font-weight: bold; /* Membuat teks tebal */
+  transition: 0.3s; /* Menambahkan transisi selama 0.3 detik untuk perubahan properti */
+  text-shadow: none; /* Tidak ada bayangan pada teks */
+}
+
+.klik:hover {
+  background-color: var(
+    --warna3
+  ); /* Menggunakan variabel CSS untuk warna latar belakang saat tombol dihover atau difokuskan */
+  letter-spacing: 20px; /* Menambahkan spasi antar huruf sebesar 20px saat dihover atau difokuskan */
+  color: #ffffff; /* Mengubah warna teks menjadi putih saat dihover atau difokuskan */
+  background: var(
+    --warna3
+  ); /* Menggunakan variabel CSS untuk warna latar belakang saat dihover atau difokuskan (duplikat, bisa dihapus salah satunya) */
+  border: 1px solid #ddd; /* Menambahkan border tipis dengan warna #ddd */
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff; /* Menambahkan bayangan pada teks dengan warna putih */
+  box-shadow: 0 0 5px var(--warna3), 0 0 20px var(--warna3),
+    0 0 50px var(--warna3), 0 0 100px var(--warna3); /* Menambahkan bayangan pada tombol dengan warna yang diambil dari variabel CSS */
+}
+
+/* Responsivitas */
+
+/* Styling untuk layar laptop */
+@media (max-width: 1366px) {
+  body {
+    font-size: 75%; /* Ukuran font 75% */
+  }
+}
+
+/* Styling untuk layar tablet */
+@media (max-width: 768px) {
+  body {
+    font-size: 75%; /* Ukuran font 75% */
+  }
+  .PRODUK-column {
+    width: 45%; /* Lebar kolom 45% */
+  }
+}
+
+/* Styling untuk layar ponsel */
+@media (max-width: 450px) {
+  body {
+    font-size: 50%; /* Ukuran font 50% */
+  }
+  .PRODUK-column {
+    width: 50%; /* Lebar kolom 50% */
+  }
+}

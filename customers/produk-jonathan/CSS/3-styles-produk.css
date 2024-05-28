@@ -1,0 +1,155 @@
+/* Definisi warna yang digunakan */
+:root {
+  /* Variabel warna */
+  --warna1: #ffffff; /* Putih */
+  --warna2: #fed7dd; /* Pink */
+  --warna3: #e17f93; /* Pink tua */
+  --warna4: #daa520; /* Emas */
+}
+
+/* Styling default untuk semua elemen */
+* {
+  margin: 0; /* Menghilangkan margin */
+  padding: 0; /* Menghilangkan padding */
+  box-sizing: border-box; /* Mengatur box model: border-box */
+  outline: none; /* Menghilangkan outline */
+  border: none; /* Menghilangkan border */
+  text-decoration: none; /* Menghilangkan dekorasi teks */
+  font-family: "Times New Roman"; /* Mengatur font halaman */
+}
+
+/* Styling untuk seluruh halaman */
+body {
+  color: black; /* Mengatur warna teks */
+  background-color: var(--warna2); /* Warna latar belakang pink */
+}
+
+/* Styling untuk kontainer */
+.container {
+  background-color: var(--warna2); /* Menggunakan warna pink */
+  display: flex; /* Menjadikan kontainer sebagai flex container */
+  flex-direction: column; /* Mengatur arah tata letak menjadi kolom */
+  align-items: center; /* Menengahkan item secara horizontal */
+}
+
+/* Styling untuk bagian utama konten */
+main {
+  padding: 0.5%; /* Padding di sekitar konten */
+  background-color: var(--warna1); /* Warna latar belakang putih */
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  display: flex; /* Menjadikan main sebagai flex container */
+  flex-wrap: wrap; /* Membungkus item jika terlalu lebar */
+  justify-content: center; /* Menengahkan item secara horizontal */
+  max-width: 1500px; /* Lebar maksimum 1500px */
+  margin: 0.5%; /* Margin di sekitar main */
+  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
+}
+
+/* Styling untuk judul utama */
+.judul-utama {
+  margin-top: 50px; /* Margin atas 50px */
+  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
+  margin-bottom: 10px; /* Margin bawah 10px */
+  padding: 10px; /* Padding di dalam judul */
+  background-color: var(--warna1); /* Warna latar belakang putih */
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  text-align: center; /* Teks ditengahkan */
+  max-width: 1500px; /* Lebar maksimum 1500px */
+  width: 100%; /* Lebar penuh */
+}
+.judul-utama h1 {
+  font-size: 50px; /* Ukuran font untuk h1 */
+}
+
+/* Styling untuk kolom PRODUK */
+.PRODUK-column {
+  padding: 1.5%; /* Padding di dalam kolom */
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  width: 30%; /* Lebar kolom 30% */
+  margin: 1.5%; /* Margin antar kolom */
+  border: 1px solid var(--warna4); /* Border tipis dengan warna emas */
+}
+.PRODUK-column:hover {
+  border: 10px solid var(--warna4); /* Border tebal dengan warna emas saat dihover */
+}
+
+/* Styling untuk gambar */
+.GAMABAR-gambar img {
+  max-width: 100%; /* Lebar maksimum gambar 100% */
+  height: auto; /* Tinggi gambar otomatis */
+  display: block; /* Menjadikan gambar sebagai block element */
+  margin: 0 auto; /* Mengatur margin kiri dan kanan menjadi auto */
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  margin-bottom: 5%; /* Margin bawah 5% */
+  aspect-ratio: 1/1; /* Rasio aspek gambar (lebar/tinggi) 1:1 */
+}
+
+/* Styling untuk judul PRODUK */
+.judul {
+  border: 1px solid #ddd; /* Garis tepi */
+  margin-bottom: 1rem; /* Margin bawah 1rem */
+  background-color: var(--warna2); /* Warna latar belakang pink */
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  text-align: center; /* Teks ditengahkan */
+  height: 5rem; /* Tinggi judul 5rem */
+  align-content: center; /* Konten ditengahkan */
+}
+
+/* Styling untuk isi PRODUK */
+.isi {
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  background-color: var(--warna2); /* Warna latar belakang pink */
+  padding: 10px; /* Padding di dalam isi */
+  margin-bottom: 1rem; /* Margin bawah 1rem */
+  text-align: center; /* Teks ditengahkan */
+}
+
+/* Styling untuk tombol */
+.tombol {
+  text-align: center; /* Teks ditengahkan */
+  margin: 2rem 0 0.5rem 0; /* Margin atas 2rem, bawah 0.5rem */
+}
+.klik {
+  padding: 10px 20px; /* Padding di dalam tombol */
+  color: black; /* Warna teks hitam */
+  background-color: var(--warna4); /* Warna latar belakang emas */
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  cursor: pointer; /* Mengubah ikon kursor menjadi tangan */
+  font-weight: bold; /* Font tebal */
+  transition: 0.3s; /* Efek transisi */
+}
+.klik:hover {
+  background-color: var(
+    --warna3
+  ); /* Warna latar belakang pink tua saat dihover */
+  letter-spacing: 30px; /* Spasi huruf bertambah saat dihover */
+}
+
+/* Responsivitas */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  body {
+    font-size: 75%; /* Mengurangi ukuran font menjadi 75% */
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  body {
+    font-size: 75%; /* Mengurangi ukuran font menjadi 75% */
+  }
+  .PRODUK-column {
+    width: 75%; /* Lebar kolom 75% untuk layar tablet */
+  }
+}
+
+/* Mobile phone */
+@media (max-width: 450px) {
+  body {
+    font-size: 50%; /* Mengurangi ukuran font menjadi 50% */
+  }
+  .PRODUK-column {
+    width: 75%; /* Lebar kolom 75% untuk layar ponsel */
+  }
+}

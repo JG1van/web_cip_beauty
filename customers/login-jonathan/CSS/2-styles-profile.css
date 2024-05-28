@@ -1,0 +1,115 @@
+/* Mengatur variabel warna */
+:root {
+  --warna1: #ffffff; /* Putih */
+  --warna2: #fed7dd; /* Pink */
+  --warna3: #e17f93; /* Pink tua */
+  --warna4: #daa520; /* Emas */
+}
+
+/* Reset CSS */
+* {
+  font-family: "Times New Roman"; /* Font  */
+  color: black; /* Warna teks hitam */
+  font-size: 16px; /* Ukuran font 16px */
+}
+
+/* Styling untuk seluruh halaman */
+body {
+  background-color: var(--warna2); /* Latar belakang berwarna pink */
+}
+
+/* Styling untuk kontainer */
+.container {
+  background-color: var(--warna2); /* Menggunakan warna yang didefinisikan */
+  display: flex; /* Mengatur tampilan menjadi flexbox */
+  flex-direction: column; /* Mengatur arah konten menjadi vertikal */
+  align-items: center; /* Mengatur konten agar ditengahkan secara horizontal */
+}
+
+/* Styling untuk area utama */
+main {
+  padding: 1%; /* Padding */
+  background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  display: flex; /* Menggunakan display flex untuk mengatur layout konten */
+  flex-wrap: wrap; /* Mengatur agar konten dapat melingkari saat ukuran layar berkurang */
+  justify-content: center; /* Mengatur agar konten ditengahkan secara horizontal */
+  max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */
+  margin: 1%; /* Memberikan margin sebesar 1% di sekitar konten */
+  border: 10px double var(--warna4); /* Border ganda dengan warna emas */
+  width: 100%; /* Menetapkan lebar konten menjadi 100% dari lebar parentnya */
+}
+
+/* Styling untuk judul */
+.judul {
+  margin-top: 5rem; /* Margin atas */
+  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
+  margin-bottom: 1rem; /* Margin bawah */
+  padding: 1rem; /* Padding */
+  background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
+  border-radius: 1rem; /* Membuat sudut melengkung */
+  text-align: center; /* Teks yang berada di dalam judul ditengahkan */
+  max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */
+  width: 100%; /* Lebar judul utama */
+}
+
+/* Styling untuk kolom konten */
+.isi-column {
+  padding: 1.5rem; /* Padding */
+  border-radius: 1.5rem; /* Membuat sudut melengkung */
+  box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5); /* Efek bayangan */
+  width: 100%; /* Menetapkan lebar menjadi 100% */
+  margin: 1.5%; /* Margin antar kolom */
+  background-color: var(--warna2); /* Menggunakan warna yang didefinisikan */
+}
+
+/* Styling untuk konten di dalam kolom */
+.isi-1,
+.isi-2 {
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
+  padding: 10px; /* Padding */
+  margin-bottom: 1rem; /* Margin bawah */
+}
+
+/* Styling untuk tabel */
+.isi-2 td,
+.isi-2 th {
+  text-align: center;
+  padding: 20px; /* Padding */
+}
+
+/* Styling untuk tombol */
+.tombol {
+  text-align: center; /* Menengahkan teks */
+  margin: 2rem 0 0.5rem 0; /* Margin atas dan bawah */
+  z-index: 1; /* Mengatur z-index */
+}
+
+/* Styling untuk tombol dengan kelas klik */
+.klik {
+  padding: 10px 20px; /* Memberikan jarak di dalam tombol (atas-bawah: 10px, kiri-kanan: 20px) */
+  color: black; /* Warna teks hitam */
+  background-color: var(
+    --warna4
+  ); /* Menggunakan variabel CSS untuk warna latar belakang */
+  border-radius: 0.5rem; /* Membulatkan sudut tombol dengan radius 0.5rem */
+  cursor: pointer; /* Mengubah kursor menjadi pointer saat diarahkan ke tombol */
+  font-weight: bold; /* Membuat teks tebal */
+  transition: 0.3s; /* Menambahkan transisi selama 0.3 detik untuk perubahan properti */
+  text-shadow: none; /* Tidak ada bayangan pada teks */
+}
+
+.klik:hover {
+  background-color: var(
+    --warna3
+  ); /* Menggunakan variabel CSS untuk warna latar belakang saat tombol dihover atau difokuskan */
+  color: #ffffff; /* Mengubah warna teks menjadi putih saat dihover atau difokuskan */
+  background: var(
+    --warna3
+  ); /* Menggunakan variabel CSS untuk warna latar belakang saat dihover atau difokuskan (duplikat, bisa dihapus salah satunya) */
+  border: 1px solid #ddd; /* Menambahkan border tipis dengan warna #ddd */
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff; /* Menambahkan bayangan pada teks dengan warna putih */
+  box-shadow: 0 0 5px var(--warna3), 0 0 20px var(--warna3),
+    0 0 50px var(--warna3), 0 0 100px var(--warna3); /* Menambahkan bayangan pada tombol dengan warna yang diambil dari variabel CSS */
+}

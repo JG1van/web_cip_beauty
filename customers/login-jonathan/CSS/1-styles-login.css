@@ -1,0 +1,242 @@
+:root {
+  /* Variabel warna */
+  --warna1: #ffffff; /* Putih */
+  --warna2: #fed7dd; /* Pink */
+  --warna3: #e17f93; /* Pink tua */
+  --warna4: #daa520; /* Emas */
+}
+
+/* Gaya CSS untuk tampilan halaman login */
+* {
+  font-family: "Times New Roman", sans-serif; /* Font  */
+  color: black; /* Warna teks hitam */
+  font-size: 16px; /* Ukuran font 16px */
+}
+
+body {
+  background-color: var(--warna2); /* Latar belakang berwarna pink */
+}
+
+.slide {
+  margin: 50px 0 20px 0; /* Margin atas 50px, margin bawah 20px */
+  text-align: center; /* Teks rata tengah */
+}
+
+h1 {
+  font-weight: 600; /* Ketebalan font 600 */
+  text-align: center; /* Teks rata tengah */
+}
+
+h3 span {
+  padding: 0 20px; /* Padding kiri dan kanan 20px */
+  font-weight: 700; /* Ketebalan font 700 */
+}
+
+.section {
+  position: relative; /* Posisi relatif */
+  display: block; /* Tampil sebagai blok */
+}
+
+.full-height {
+  display: flex; /* Menggunakan flexbox */
+  align-items: center; /* Mengatur item agar rata tengah secara vertikal */
+  justify-content: center; /* Mengatur item agar rata tengah secara horizontal */
+}
+
+.checkbox {
+  display: none; /* Checkbox tidak ditampilkan */
+}
+
+.checkbox + label {
+  position: relative; /* Posisi relatif */
+  display: block; /* Tampil sebagai blok */
+  text-align: center; /* Teks rata tengah */
+  width: 100px; /* Lebar 100px */
+  height: 16px; /* Tinggi 16px */
+  border-radius: 8px; /* Sudut border melingkar 8px */
+  margin: 10px auto; /* Margin atas dan bawah 10px, kiri dan kanan auto */
+  cursor: pointer; /* Kursor berubah menjadi pointer */
+  background-color: var(--warna4); /* Latar belakang berwarna emas */
+}
+
+.checkbox + label:before {
+  position: absolute; /* Posisi absolut */
+  display: block; /* Tampil sebagai blok */
+  width: 36px; /* Lebar 36px */
+  height: 36px; /* Tinggi 36px */
+  border-radius: 50%; /* Bentuk melingkar */
+  color: var(--warna4); /* Warna teks emas */
+  background-color: #020305; /* Latar belakang hitam */
+  content: ">>"; /* Isi konten dengan simbol '>>' */
+  z-index: 20; /* Z-index 20 */
+  top: -10px; /* Posisi atas -10px */
+  left: -10px; /* Posisi kiri -10px */
+  line-height: 36px; /* Tinggi garis 36px */
+  text-align: center; /* Teks rata tengah */
+  font-size: 24px; /* Ukuran font 24px */
+  transition: all 0.5s ease; /* Transisi selama 0.5s dengan efek easing */
+}
+
+.checkbox:checked + label:before {
+  transform: translateX(90px) rotate(-540deg); /* Transformasi saat checkbox dicek */
+}
+
+.card-3d-wrap {
+  width: 1000px; /* Lebar 1000px */
+  max-width: 100%; /* Lebar maksimal 100% */
+  height: 500px; /* Tinggi 500px */
+  transform-style: preserve-3d; /* Mempertahankan gaya 3D */
+  margin-top: 60px; /* Margin atas 60px */
+}
+
+.card-3d-wrapper {
+  width: 100%; /* Lebar 100% */
+  height: 100%; /* Tinggi 100% */
+  transform-style: preserve-3d; /* Mempertahankan gaya 3D */
+  transition: all 600ms ease-out; /* Transisi selama 600ms dengan efek easing */
+}
+
+.card-front,
+.card-back {
+  width: 100%; /* Lebar 100% */
+  height: 100%; /* Tinggi 100% */
+  position: absolute; /* Posisi absolut */
+  border-radius: 6px; /* Sudut border melingkar 6px */
+  transform-style: preserve-3d; /* Mempertahankan gaya 3D */
+}
+
+.card-back {
+  transform: rotateY(180deg); /* Rotasi 180 derajat di sumbu Y */
+}
+
+.checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
+  transform: rotateY(
+    180deg
+  ); /* Rotasi 180 derajat di sumbu Y saat checkbox dicek */
+}
+
+.center-wrap {
+  position: absolute; /* Posisi absolut */
+  width: 100%; /* Lebar 100% */
+  top: 40%; /* Posisi atas 40% */
+  left: 0; /* Posisi kiri 0 */
+  transform: translate3d(0, -50%, 35px) perspective(100px); /* Transformasi 3D */
+  justify-content: center; /* Rata tengah secara horizontal */
+  display: block; /* Tampil sebagai blok */
+}
+
+.login {
+  width: 600px; /* Lebar 600px */
+  height: 450px; /* Tinggi 450px */
+  background-color: #ffffff; /* Latar belakang putih */
+  box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3); /* Bayangan kotak */
+  margin: 100px auto; /* Margin atas dan bawah 100px, kiri dan kanan auto */
+  border-radius: 0.5rem; /* Sudut border melingkar 0.5rem */
+}
+
+.login h1 {
+  font-size: 24px; /* Ukuran font 24px */
+  padding: 20px 0 20px 0; /* Padding atas dan bawah 20px */
+  border-bottom: 1px solid #dee0e4; /* Border bawah 1px warna abu-abu */
+}
+
+.login form {
+  display: flex; /* Menggunakan flexbox */
+  flex-wrap: wrap; /* Item dapat dibungkus ke baris berikutnya */
+  justify-content: center; /* Rata tengah secara horizontal */
+  padding-top: 20px; /* Padding atas 20px */
+}
+
+.login form label {
+  display: flex; /* Menggunakan flexbox */
+  justify-content: center; /* Rata tengah secara horizontal */
+  align-items: center; /* Rata tengah secara vertikal */
+  width: 50px; /* Lebar 50px */
+  height: 50px; /* Tinggi 50px */
+  background-color: var(--warna4); /* Latar belakang emas */
+  color: #ffffff; /* Warna teks putih */
+}
+
+.login form input[type="password"],
+.login form input[type="text"] {
+  width: 80%; /* Lebar 80% */
+  height: 50px; /* Tinggi 50px */
+  border: 1px solid #dee0e4; /* Border 1px warna abu-abu */
+  margin-bottom: 20px; /* Margin bawah 20px */
+  padding: 0 15px; /* Padding kiri dan kanan 15px */
+}
+
+.login form input[type="submit"] {
+  padding: 15px; /* Padding 15px */
+  margin: 20px 0 20px 0; /* Margin atas dan bawah 20px */
+  background-color: var(--warna4); /* Latar belakang emas */
+  border-radius: 0.5rem; /* Sudut border melingkar 0.5rem */
+  cursor: pointer; /* Kursor berubah menjadi pointer */
+  font-weight: bold; /* Teks tebal */
+  color: #ffffff; /* Warna teks putih */
+  transition: background-color 0.2s; /* Transisi warna latar belakang selama 0.2s */
+  min-width: 50%; /* Lebar minimal 50% */
+  transition: 0.3s; /* Menambahkan transisi selama 0.3 detik untuk perubahan properti */
+  text-shadow: none; /* Tidak ada bayangan pada teks */
+}
+
+.login form input[type="submit"]:hover {
+  background-color: var(
+    --warna3
+  ); /* Menggunakan variabel CSS untuk warna latar belakang saat tombol dihover atau difokuskan */
+  color: #ffffff; /* Mengubah warna teks menjadi putih saat dihover atau difokuskan */
+  background: var(
+    --warna3
+  ); /* Menggunakan variabel CSS untuk warna latar belakang saat dihover atau difokuskan (duplikat, bisa dihapus salah satunya) */
+  border: 1px solid #ddd; /* Menambahkan border tipis dengan warna #ddd */
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff; /* Menambahkan bayangan pada teks dengan warna putih */
+  box-shadow: 0 0 5px var(--warna3), 0 0 20px var(--warna3),
+    0 0 50px var(--warna3), 0 0 100px var(--warna3); /* Menambahkan bayangan pada tombol dengan warna yang diambil dari variabel CSS */
+}
+
+.sign-up {
+  text-align: center; /* Teks rata tengah */
+}
+
+/* Media queries */
+/* Desktop */
+@media (min-width: 1367px) {
+  /* Tambahkan aturan CSS sesuai kebutuhan untuk layar desktop */
+  /* Contoh: */
+  body {
+    font-size: 100%; /* Ukuran font kembali normal */
+  }
+}
+
+/* Laptop */
+@media (max-width: 1366px) {
+  /* Tambahkan aturan CSS sesuai kebutuhan untuk layar laptop */
+  /* Contoh: */
+  body {
+    font-size: 75%; /* Mengurangi ukuran font menjadi 75% */
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  /* Tambahkan aturan CSS sesuai kebutuhan untuk layar tablet */
+  /* Contoh: */
+  body {
+    font-size: 75%; /* Mengurangi ukuran font menjadi 50% */
+  }
+  .login {
+    width: 30%; /* Lebar login di tablet 30% */
+  }
+}
+
+/* Mobile phone */
+@media (max-width: 450px) {
+  /* Tambahkan aturan CSS sesuai kebutuhan untuk layar ponsel */
+  /* Contoh: */
+  body {
+    font-size: 50%; /* Mengurangi ukuran font menjadi 25% */
+  }
+  .login {
+    width: 20%; /* Lebar login di ponsel 20% */
+  }
+}
