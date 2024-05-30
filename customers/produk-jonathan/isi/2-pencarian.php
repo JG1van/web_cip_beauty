@@ -4,7 +4,7 @@
         <!-- Input untuk pencarian, dengan placeholder dan nama "keyword" -->
         <input type="text" class="input-pencarian" placeholder="Cari Nama Barang" name="keyword" />
         <!-- Tombol untuk melakukan pencarian -->
-        <button type="submit" class="tombol-pencarian"> Cari
+        <button type="submit" class="tombol-pencarian">
             <!-- Ikon kaca pembesar menggunakan Font Awesome -->
             <i class="fa-solid fa-magnifying-glass"></i>
         </button>

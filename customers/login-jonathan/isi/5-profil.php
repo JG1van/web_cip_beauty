@@ -84,7 +84,7 @@ mysqli_stmt_close($queryprofil);
                         // Periksa apakah ada transaksi
                         if (mysqli_num_rows($result) > 0) {
                             ?>
-                            <h2>Keranjang Anda:</h2>
+                            <h1><i class="fa-solid fa-cart-shopping"></i> Keranjang Anda:</h1>
                             <div class='isi-2'>
                                 <table>
                                     <thead>
@@ -107,7 +107,7 @@ mysqli_stmt_close($queryprofil);
                                                 <td><?= htmlspecialchars($row['HARGA_PRODUK']) ?></td>
                                                 <td>
                                                     <a href="../../produk-jonathan/isi/8-pembayaran.php?id_transaksi=<?php echo $row['ID_TRANSAKSI']; ?>"
-                                                        class="klik"><i class="fa-solid fa-hand-holding-dollar"></i></a>
+                                                        class="klik"><i class="fa-solid fa-circle-dollar-to-slot"></i></a>
 
                                                 </td>
                                             </tr>
@@ -138,22 +138,23 @@ mysqli_stmt_close($queryprofil);
                 <?php
                 // Persiapkan query untuk mendapatkan data pembayaran
                 $query_pembayaran = "
-SELECT 
-    pb.ID_PEMBAYARAN,
-    pb.TANGGGAL,
-    pb.ALAMAT,
-    pb.JUMLAH,
-    pb.TELEPON,
-    pb.BUKTI_PEMBAYARAN,
-    p.NAMA_PRODUK,
-    p.HARGA_PRODUK
-FROM 
-    pembayaran pb
-JOIN 
-    produk p ON pb.ID_PRODUK = p.ID
-WHERE 
-    pb.ID_USERS = ?
-";
+                SELECT 
+                pb.ID_PEMBAYARAN,
+                pb.TANGGGAL,
+                pb.ALAMAT,
+                pb.JUMLAH,
+                pb.TELEPON,
+                pb.BUKTI_PEMBAYARAN,
+                p.NAMA_PRODUK,
+                p.HARGA_PRODUK
+            FROM 
+                pembayaran pb
+            JOIN 
+                produk p ON pb.ID_PRODUK = p.ID
+            WHERE 
+                pb.ID_USERS = ?
+            ";
+
                 $stmt_pembayaran = mysqli_prepare($koneksi, $query_pembayaran);
 
                 // Eksekusi prepared statement untuk mendapatkan data pembayaran
@@ -169,7 +170,7 @@ WHERE
                         // Periksa apakah ada pembayaran
                         if (mysqli_num_rows($result_pembayaran) > 0) {
                             ?>
-                            <h2>Data Pembayaran:</h2>
+                            <h1><i class="fa-solid fa-money-bill-wave"></i> Data Pembayaran:</h1>
                             <div class='isi-2'>
                                 <table>
                                     <thead>

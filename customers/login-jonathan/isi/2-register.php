@@ -54,10 +54,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Memeriksa apakah metode permintaa
             'X-Mailer: PHP/' . phpversion() . "\r\n" .
             'MIME-Version: 1.0' . "\r\n" .
             'Content-Type: text/html; charset=UTF-8' . "\r\n";
-        header("Location:../isi/"); // Redirect ke halaman lain setelah proses registrasi selesai.
+        echo "<script>alert('Pendaftaran Berhasil')</script>";
+        echo "<script>location='../isi/';</script>";
+        // header("Location:../isi/"); // Redirect ke halaman lain setelah proses registrasi selesai.
 
         // Kirim email.
         if (mail($email, $subject, $message, $headers)) {
+
             echo 'Pendaftaran berhasil! Silakan periksa email Anda untuk mengaktifkan akun Anda!'; // Tampilkan pesan sukses jika email berhasil dikirim.
         } else {
             echo 'Gagal mengirim email aktivasi. Harap hubungi dukungan!'; // Tampilkan pesan kesalahan jika pengiriman email gagal.

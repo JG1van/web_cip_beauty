@@ -1,93 +1,83 @@
 /* Style untuk form pencarian */
 .form-pencarian {
-  margin-top: 50px; /* Margin atas */
+  margin-top: 30px; /* Margin atas */
   margin-bottom: 10px; /* Margin bawah */
   text-align: center; /* Teks yang berada di dalam form ditengahkan */
-  max-width: 1600px; /* Atur lebar maksimum agar form tidak terlalu lebar */
+  max-width: 1500px; /* Atur lebar maksimum agar form tidak terlalu lebar */
   width: 100%; /* Lebar form pencarian */
+  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
+  border-radius: 5rem; /* Membuat sudut melengkung */
 }
 
 .input-pencarian {
-  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
-  border-radius: 0.5rem; /* Membuat sudut melengkung */
-  width: 100%; /* Lebar input 100% dari container */
-  max-width: 1300px; /* Lebar maksimum input 1500px */
-  height: 80px; /* Tinggi input */
-  font-size: 40px; /* Ukuran font */
+  width: 89.5%; /* Lebar input 89.5% dari container */
   text-align: start; /* Teks dalam input mulai dari kiri */
   padding: 15px; /* Padding dalam input untuk kenyamanan teks */
   box-sizing: border-box; /* Pastikan padding dan border dihitung dalam lebar dan tinggi elemen */
+  font-size: 30px; /* Ukuran font */
+  border-radius: 5rem 0 0 5rem; /* Membuat sudut melengkung hanya di sisi kiri */
 }
 
 .tombol-pencarian {
-  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
   background-color: var(--warna4); /* Warna latar belakang */
   color: #fff; /* Warna teks putih */
-  border-radius: 0.5rem; /* Membuat sudut melengkung */
   padding: 15px; /* Padding dalam tombol */
   cursor: pointer; /* Mengubah kursor menjadi pointer saat dihover */
   transition: background-color 0.3s ease; /* Transisi warna latar belakang saat dihover */
-  font-size: 35px; /* Ukuran font */
-  width: 100%; /* Lebar tombol 100% dari container */
-  max-width: 200px; /* Lebar maksimum tombol 250px */
-  height: 80px; /* Tinggi tombol */
+  width: 10%; /* Lebar tombol 10% dari container */
+  font-size: 30px; /* Ukuran font */
+  border-radius: 0 5rem 5rem 0; /* Membuat sudut melengkung hanya di sisi kanan */
 }
 
 .tombol-pencarian:hover {
   background-color: var(
     --warna3
-  ); /* Warna latar belakang tombol saat dihover */
+  ); /* Warna latar belakang saat tombol dihover */
+  color: #ffffff; /* Warna teks menjadi putih saat dihover */
+  border: 1px solid #ddd; /* Menambahkan border tipis dengan warna #ddd */
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff; /* Menambahkan bayangan pada teks dengan warna putih */
+  box-shadow: 0 0 5px var(--warna3), 0 0 20px var(--warna3),
+    0 0 50px var(--warna3), 0 0 100px var(--warna3); /* Menambahkan bayangan pada tombol dengan warna yang diambil dari variabel CSS */
 }
 
 /* Responsivitas */
 /* Laptop */
+
 @media (max-width: 1366px) {
   .input-pencarian {
-    font-size: 40px; /* Mengurangi ukuran font pada layar tablet */
-    height: 80px; /* Mengurangi tinggi input pada layar tablet */
-    width: 70%;
+    width: 89.5%;
+    font-size: 30px;
   }
+
   .tombol-pencarian {
-    font-size: 25px; /* Mengurangi ukuran font pada layar tablet */
-    height: 80px; /* Mengurangi tinggi tombol pada layar tablet */
-    width: 25%;
-  }
-  .form-pencarian {
-    width: 80%; /* Lebar form pencarian */
+    width: 10%;
+    font-size: 30px;
   }
 }
 
 /* Tablet */
 @media (max-width: 768px) {
-  .input-pencarian {
-    font-size: 30px; /* Mengurangi ukuran font pada layar tablet */
-    height: 60px; /* Mengurangi tinggi input pada layar tablet */
-    width: 70%;
+  input-pencarian {
+    width: 69.5%;
+    font-size: 30px;
   }
+
   .tombol-pencarian {
-    font-size: 15px; /* Mengurangi ukuran font pada layar tablet */
-    height: 60px; /* Mengurangi tinggi tombol pada layar tablet */
-    width: 25%;
-  }
-  .form-pencarian {
-    width: 60%; /* Lebar form pencarian */
+    width: 10%;
+    font-size: 30px;
   }
 }
 
 /* Mobile phone */
 
 @media (max-width: 450px) {
-  .input-pencarian {
-    font-size: 20px; /* Mengurangi ukuran font pada layar ponsel */
-    height: 50px; /* Mengurangi tinggi input pada layar ponsel */
-    width: 70%;
+  input-pencarian {
+    width: 49.5%;
+    font-size: 30px;
   }
+
   .tombol-pencarian {
-    font-size: 10px; /* Mengurangi ukuran font pada layar ponsel */
-    height: 50px; /* Mengurangi tinggi tombol pada layar ponsel */
-    width: 25%;
-  }
-  .form-pencarian {
-    width: 40%; /* Lebar form pencarian */
+    width: 10%;
+    font-size: 30px;
   }
 }

@@ -53,15 +53,19 @@ if ($query_max_id_transaksi) {
         // Mengeksekusi statement
         if (mysqli_stmt_execute($stmt)) {
             // Mengalihkan pengguna kembali ke halaman utama setelah checkout berhasil
-            header('Location: index.php');
+            echo "<script> alert('Pesanan Berhasil Masuk Keranjang Anda:');</script>";
+            echo "<script> location ='../isi/';</script>";
             exit;
         } else {
             // Jika terjadi kesalahan saat mengeksekusi pernyataan prepared, tampilkan pesan kesalahan
-            echo "Maaf, terjadi kesalahan saat melakukan checkout. Silakan coba lagi nanti.";
+
+            echo "<script> alert('Maaf, terjadi kesalahan saat melakukan checkout. Silakan coba lagi nanti.');</script>";
+
         }
     } else {
         // Jika gagal menyiapkan pernyataan, tampilkan pesan kesalahan
-        echo "Maaf, terjadi kesalahan saat memproses checkout. Silakan coba lagi nanti.";
+        echo "<script> alert('Maaf, terjadi kesalahan saat memproses checkout. Silakan coba lagi nanti.');</script>";
+
     }
 
     // Menutup statement

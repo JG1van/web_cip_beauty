@@ -10,7 +10,7 @@
 * {
   margin: 0; /* Menghilangkan margin */
   padding: 0; /* Menghilangkan padding */
-  box-sizing: border-box; /* Mengatur box model: border-box */
+  box-sizing: border-box; /* Mengatur box model menjadi border-box */
   outline: none; /* Menghilangkan outline */
   border: none; /* Menghilangkan border */
   text-decoration: none; /* Menghilangkan dekorasi teks */
@@ -19,7 +19,7 @@
 
 /* Styling untuk seluruh halaman */
 body {
-  color: black; /* Mengatur warna teks */
+  color: black; /* Warna teks */
   background-color: var(--warna2); /* Warna latar belakang pink */
 }
 
@@ -28,6 +28,7 @@ body {
   display: flex; /* Menggunakan Flexbox */
   flex-direction: column; /* Mengatur arah Flexbox menjadi kolom */
   align-items: center; /* Menengahkan item secara horizontal */
+  padding: 1rem; /* Padding kontainer */
 }
 
 /* Styling untuk bagian utama konten */
@@ -39,6 +40,7 @@ main {
   flex-wrap: wrap; /* Membungkus item ke baris baru jika tidak muat */
   justify-content: center; /* Menengahkan item secara horizontal */
   max-width: 1500px; /* Lebar maksimum konten */
+  width: 100%; /* Lebar penuh */
   margin: 0.5%; /* Margin di sekitar konten */
   border: 10px double var(--warna4); /* Border tebal warna emas */
 }
@@ -74,6 +76,7 @@ main {
   overflow: hidden; /* Menyembunyikan konten yang meluap */
   place-content: center; /* Menengahkan konten */
   place-items: center; /* Menengahkan item */
+  cursor: pointer; /* Mengubah kursor menjadi pointer saat diarahkan ke tombol */
 }
 
 /* Pseudo-elemen sebelum kolom PRODUK */
@@ -87,26 +90,38 @@ main {
     #daa520,
     #daa520
   ); /* Gradien warna emas */
-  animation: rotBGimg 5s linear infinite; /* Animasi rotasi */
+  animation: none; /* Matikan animasi default */
   transition: all 0.2s linear; /* Transisi */
+  opacity: 0; /* Awalnya tidak terlihat */
+  box-shadow: none; /* Tidak ada bayangan awal */
+  box-shadow: 0 0 150px var(--warna4), 0 0 300px var(--warna4),
+    0 0 450px var(--warna4), 0 0 600px var(--warna4); /* Efek bayangan keluar */
 }
 
+/* Efek hover pada kolom PRODUK */
+.PRODUK-column:hover::before {
+  opacity: 1; /* Munculkan saat di-hover */
+  animation: rotBGimg 5s linear infinite; /* Animasi rotasi saat di-hover */
+}
 /* Pseudo-elemen setelah kolom PRODUK */
 .PRODUK-column::after {
   content: ""; /* Konten kosong */
   position: absolute; /* Posisi absolut */
   background: var(--warna1); /* Warna latar belakang putih */
-  inset: 5px; /* Jarak dari tepi */
+  inset: 10px; /* Jarak dari tepi */
   border-radius: 0.5rem; /* Membulatkan sudut */
 }
-
 /* Animasi rotasi background */
 @keyframes rotBGimg {
   from {
     transform: rotate(0deg); /* Mulai dari 0 derajat */
+    box-shadow: 0 0 150px var(--warna4), 0 0 300px var(--warna4),
+      0 0 450px var(--warna4), 0 0 600px var(--warna4); /* Efek bayangan keluar */
   }
   to {
     transform: rotate(360deg); /* Putar hingga 360 derajat */
+    box-shadow: 0 0 150px var(--warna4), 0 0 300px var(--warna4),
+      0 0 450px var(--warna4), 0 0 600px var(--warna4); /* Efek bayangan keluar */
   }
 }
 
@@ -129,7 +144,9 @@ main {
 /* Styling untuk judul PRODUK */
 .judul {
   border: 1px solid #ddd; /* Border tipis */
+  padding: 0.5rem; /* Padding di dalam judul */
   margin-bottom: 1rem; /* Margin bawah */
+  margin-top: 1rem; /* Margin atas */
   background-color: var(--warna2); /* Warna latar belakang pink */
   border-radius: 0.5rem; /* Membulatkan sudut */
   text-align: center; /* Menengahkan teks */
@@ -154,19 +171,18 @@ main {
 
 /* Styling untuk tombol */
 .tombol {
-  text-align: center; /* Menengahkan teks */
-  margin: 2rem 0 0.5rem 0; /* Margin atas dan bawah */
+  margin: 1rem 0 0.5rem 0; /* Margin atas dan bawah */
   z-index: 1; /* Mengatur z-index */
 }
 
 /* Styling untuk tombol dengan kelas klik */
 .klik {
-  padding: 10px 20px; /* Memberikan jarak di dalam tombol (atas-bawah: 10px, kiri-kanan: 20px) */
+  padding: 10px 20px; /* Padding di dalam tombol (atas-bawah: 10px, kiri-kanan: 20px) */
   color: black; /* Warna teks hitam */
   background-color: var(
     --warna4
   ); /* Menggunakan variabel CSS untuk warna latar belakang */
-  border-radius: 0.5rem; /* Membulatkan sudut tombol dengan radius 0.5rem */
+  border-radius: 0.5rem; /* Membulatkan sudut tombol */
   cursor: pointer; /* Mengubah kursor menjadi pointer saat diarahkan ke tombol */
   font-weight: bold; /* Membuat teks tebal */
   transition: 0.3s; /* Menambahkan transisi selama 0.3 detik untuk perubahan properti */
@@ -176,16 +192,14 @@ main {
 .klik:hover {
   background-color: var(
     --warna3
-  ); /* Menggunakan variabel CSS untuk warna latar belakang saat tombol dihover atau difokuskan */
-  letter-spacing: 20px; /* Menambahkan spasi antar huruf sebesar 20px saat dihover atau difokuskan */
-  color: #ffffff; /* Mengubah warna teks menjadi putih saat dihover atau difokuskan */
-  background: var(
-    --warna3
-  ); /* Menggunakan variabel CSS untuk warna latar belakang saat dihover atau difokuskan (duplikat, bisa dihapus salah satunya) */
-  border: 1px solid #ddd; /* Menambahkan border tipis dengan warna #ddd */
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff; /* Menambahkan bayangan pada teks dengan warna putih */
+  ); /* Warna latar belakang saat tombol dihover */
+  letter-spacing: 15px; /* Spasi antar huruf saat dihover */
+  color: #ffffff; /* Warna teks menjadi putih saat dihover */
+  background: var(--warna3); /* Warna latar belakang saat dihover */
+  border: 1px solid #ddd; /* Border tipis saat dihover */
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff; /* Bayangan pada teks saat dihover */
   box-shadow: 0 0 5px var(--warna3), 0 0 20px var(--warna3),
-    0 0 50px var(--warna3), 0 0 100px var(--warna3); /* Menambahkan bayangan pada tombol dengan warna yang diambil dari variabel CSS */
+    0 0 50px var(--warna3), 0 0 100px var(--warna3); /* Bayangan pada tombol saat dihover */
 }
 
 /* Responsivitas */
@@ -193,7 +207,7 @@ main {
 /* Styling untuk layar laptop */
 @media (max-width: 1366px) {
   body {
-    font-size: 75%; /* Ukuran font 75% */
+    font-size: 90%; /* Ukuran font 90% */
   }
 }
 

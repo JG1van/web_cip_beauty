@@ -1,3 +1,12 @@
+/* Definisi warna yang digunakan */
+:root {
+  /* Variabel warna */
+  --warna1: #ffffff; /* Putih */
+  --warna2: #fed7dd; /* Pink */
+  --warna3: #e17f93; /* Pink tua */
+  --warna4: #daa520; /* Emas */
+}
+
 /* slider section */
 .slider {
   height: 100vh; /* Tinggi slider 100% dari tinggi viewport */
@@ -37,7 +46,7 @@
   line-height: 1.3em; /* Tinggi garis */
 }
 .slider .list .item .type {
-  color: #daa520; /* Warna teks emas */
+  color: var(--warna4); /* Warna teks emas */
 }
 .slider .list .item .button {
   display: grid; /* Menggunakan grid untuk tata letak tombol */
@@ -48,16 +57,18 @@
 }
 .slider .list .item .button button {
   border: none; /* Menghilangkan border tombol */
-  background-color: #eee; /* Warna latar belakang tombol */
-  font-family: Poppins; /* Font tombol */
+  background-color: var(--warna4); /* Warna latar belakang tombol */
+  font-family: "Times New Roman"; /* Font tombol */
   font-weight: 500; /* Ketebalan font tombol */
   cursor: pointer; /* Kursor berubah menjadi pointer saat dihover */
   transition: 0.4s; /* Transisi untuk efek hover */
   letter-spacing: 2px; /* Jarak antar huruf */
+  border-radius: 5rem; /* Membuat sudut  */
 }
 
 .slider .list .item .button button:hover {
   letter-spacing: 3px; /* Jarak antar huruf bertambah saat dihover */
+  background-color: var(--warna2); /* Warna latar belakang tombol */
 }
 .slider .list .item .button button:nth-child(2) {
   background-color: transparent; /* Warna latar belakang transparan */
@@ -110,7 +121,7 @@
   background-color: #14ff72cb; /* Warna latar belakang tombol */
   border: none; /* Menghilangkan border */
   color: #fff; /* Warna teks putih */
-  font-family: monospace; /* Font monospace */
+  font-family: "Times New Roman"; /* Font monospace */
   font-weight: bold; /* Ketebalan font */
   transition: 0.5s; /* Transisi untuk efek hover */
   cursor: pointer; /* Kursor berubah menjadi pointer saat dihover */
