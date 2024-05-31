@@ -28,6 +28,7 @@ mysqli_stmt_close($queryprofil);
     <link rel="stylesheet" href="../../fontawesome-free-6.5.2-web/css/all.min.css" />
     <link rel="stylesheet" href="../CSS/2-styles-profile.css">
     <link rel="stylesheet" href="../CSS/0-styles-navbar.css" />
+    <link rel="stylesheet" href="../CSS/3-styles-footer.css" />
 </head>
 
 <body>
@@ -93,7 +94,8 @@ mysqli_stmt_close($queryprofil);
                                             <th>ID Produk</th>
                                             <th>Nama Produk</th>
                                             <th>Harga Produk</th>
-                                            <th>Action</th>
+                                            <th>Pembayaran</th>
+                                            <th>Hapus</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -110,6 +112,12 @@ mysqli_stmt_close($queryprofil);
                                                         class="klik"><i class="fa-solid fa-circle-dollar-to-slot"></i></a>
 
                                                 </td>
+                                                <td>
+                                                    <a href="7-hapus.php?id_transaksi=<?= htmlspecialchars($row['ID_TRANSAKSI']) ?>"
+                                                        class="klik"><i class="fa-solid fa-trash-can"></i>
+                                                    </a>
+                                                </td>
+
                                             </tr>
                                             <?php
                                         }
@@ -228,7 +236,12 @@ mysqli_stmt_close($queryprofil);
             </div>
 
             <div class="tombol">
-                <a href="../../login-jonathan/isi/6-logout.php" class="klik">LOGOUT</a>
+                <a href="../../login-jonathan/isi/6-logout.php" class="klik">LOGOUT <i
+                        class="fa-solid fa-arrow-right-from-bracket"></i></a>
             </div>
         </main>
     </div>
+    <?php require "8-footer.php"; ?>
+</body>
+
+</html>

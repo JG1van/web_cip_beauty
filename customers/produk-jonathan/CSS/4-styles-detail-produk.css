@@ -21,7 +21,7 @@
 /* Styling untuk seluruh halaman */
 body {
   color: black; /* Mengatur warna teks */
-  background-color: var(--warna2); /* Warna latar belakang pink */
+  background-color: var(--warna1); /* Warna latar belakang */
 }
 
 .container {
@@ -29,6 +29,7 @@ body {
   display: flex; /* Menjadikan kontainer sebagai flex container */
   flex-direction: column; /* Mengatur arah tata letak menjadi kolom */
   align-items: center; /* Menengahkan item secara horizontal */
+  background-color: var(--warna2); /* Warna latar belakang pink */
 }
 
 /* Styling untuk bagian utama konten */

@@ -187,7 +187,7 @@ if (isset($_POST['simpan'])) {
                             <input type="file" name="gambar" required />
                         </div>
                         <div class="tombol">
-                            <button type="submit" class="klik" name="simpan">Bayar</button>
+                            <button type="submit" class="klik" name="simpan">SELESAI</button>
                         </div>
                     </form>
 
