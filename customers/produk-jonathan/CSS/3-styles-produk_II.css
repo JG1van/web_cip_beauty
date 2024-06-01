@@ -24,11 +24,11 @@ body {
 }
 
 /* Styling untuk kontainer utama */
-.container {
+.Kotak-luar {
   display: flex; /* Menggunakan Flexbox */
   flex-direction: column; /* Mengatur arah Flexbox menjadi kolom */
   align-items: center; /* Menengahkan item secara horizontal */
-  padding: 1rem; /* Padding kontainer */
+  padding: 2rem 10rem 5rem 10rem; /* Padding kontainer */
   background-color: var(--warna2); /* Warna latar belakang pink */
 }
 
@@ -36,24 +36,24 @@ body {
 main {
   padding: 0.5%; /* Padding di sekitar konten */
   background-color: var(--warna1); /* Warna latar belakang putih */
-  border-radius: 0.5rem; /* Membulatkan sudut */
+  border-radius: 5rem; /* Membulatkan sudut */
   display: flex; /* Menggunakan Flexbox */
   flex-wrap: wrap; /* Membungkus item ke baris baru jika tidak muat */
   justify-content: center; /* Menengahkan item secara horizontal */
   max-width: 1500px; /* Lebar maksimum konten */
   width: 100%; /* Lebar penuh */
   margin: 0.5%; /* Margin di sekitar konten */
-  border: 10px double var(--warna4); /* Border tebal warna emas */
+  border: 20px double var(--warna4); /* Border tebal warna emas */
 }
 
 /* Styling untuk judul utama */
 .judul-utama {
-  margin-top: 50px; /* Margin atas */
-  border: 10px double var(--warna4); /* Border tebal warna emas */
+  margin-top: 20px; /* Margin atas */
+  border: 20px double var(--warna4); /* Border tebal warna emas */
   margin-bottom: 10px; /* Margin bawah */
   padding: 10px; /* Padding di dalam judul */
   background-color: var(--warna1); /* Warna latar belakang putih */
-  border-radius: 0.5rem; /* Membulatkan sudut */
+  border-radius: 5rem; /* Membulatkan sudut */
   text-align: center; /* Menengahkan teks */
   max-width: 1500px; /* Lebar maksimum */
   width: 100%; /* Lebar penuh */
@@ -66,7 +66,7 @@ main {
 /* Styling untuk kolom PRODUK */
 .PRODUK-column {
   padding: 1.5%; /* Padding di dalam kolom */
-  border-radius: 0.5rem; /* Membulatkan sudut */
+  border-radius: 2rem; /* Membulatkan sudut */
   width: calc(30%); /* Lebar kolom */
   margin: 1.5%; /* Margin di sekitar kolom */
   border: 1px solid var(--warna4); /* Border tipis warna emas */
@@ -110,7 +110,7 @@ main {
   position: absolute; /* Posisi absolut */
   background: var(--warna1); /* Warna latar belakang putih */
   inset: 10px; /* Jarak dari tepi */
-  border-radius: 0.5rem; /* Membulatkan sudut */
+  border-radius: 2rem; /* Membulatkan sudut */
 }
 /* Animasi rotasi background */
 @keyframes rotBGimg {

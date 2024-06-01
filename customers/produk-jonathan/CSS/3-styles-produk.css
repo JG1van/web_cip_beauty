@@ -25,9 +25,9 @@ body {
 }
 
 /* Styling untuk kontainer */
-.container {
+.Kotak-luar {
   background-color: var(--warna2); /* Menggunakan warna pink */
-  display: flex; /* Menjadikan kontainer sebagai flex container */
+  display: flex; /* Menjadikan kontainer sebagai flex Kotak-luar */
   flex-direction: column; /* Mengatur arah tata letak menjadi kolom */
   align-items: center; /* Menengahkan item secara horizontal */
 }
@@ -37,7 +37,7 @@ main {
   padding: 0.5%; /* Padding di sekitar konten */
   background-color: var(--warna1); /* Warna latar belakang putih */
   border-radius: 0.5rem; /* Membuat sudut melengkung */
-  display: flex; /* Menjadikan main sebagai flex container */
+  display: flex; /* Menjadikan main sebagai flex Kotak-luar */
   flex-wrap: wrap; /* Membungkus item jika terlalu lebar */
   justify-content: center; /* Menengahkan item secara horizontal */
   max-width: 1500px; /* Lebar maksimum 1500px */

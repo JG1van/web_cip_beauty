@@ -52,19 +52,28 @@ if ($query_max_id_transaksi) {
 
         // Mengeksekusi statement
         if (mysqli_stmt_execute($stmt)) {
-            // Mengalihkan pengguna kembali ke halaman utama setelah checkout berhasil
-            echo "<script> alert('Pesanan Berhasil Masuk Keranjang Anda:');</script>";
-            echo "<script> location ='../isi/';</script>";
-            exit;
+            header('Location: ../isi/?keyword=Berhasil');
+
         } else {
+            header('Location: ../isi/?keyword=Gagal');
             // Jika terjadi kesalahan saat mengeksekusi pernyataan prepared, tampilkan pesan kesalahan
 
-            echo "<script> alert('Maaf, terjadi kesalahan saat melakukan checkout. Silakan coba lagi nanti.');</script>";
 
         }
     } else {
         // Jika gagal menyiapkan pernyataan, tampilkan pesan kesalahan
-        echo "<script> alert('Maaf, terjadi kesalahan saat memproses checkout. Silakan coba lagi nanti.');</script>";
+        ?>
+        <div id="popupBox" class="popup">
+            <div class="popup-content">
+                <meta http-equiv="refresh" content="5; ../isi/" />
+                <div class="close"><a href="../isi/">&times;</a></div>
+                <div class="icon-container">
+                    <i class="icon fas fa-circle-xmark "></i>
+                </div>
+                <p>Sorry, an error occurred while processing checkout. Please try again later.</p>
+            </div>
+        </div>
+        <?php
 
     }
 
@@ -78,3 +87,10 @@ if ($query_max_id_transaksi) {
 // Menutup koneksi database
 mysqli_close($con);
 ?>
+
+<!-- Sertakan file CSS -->
+<link rel="stylesheet" href="../CSS/7-styles-popup.css">
+<link rel="stylesheet" href="../../fontawesome-free-6.5.2-web/css/all.min.css" />
+<!-- Menyertakan FontAwesome CSS -->
+<!-- Sertakan file JavaScript -->
+<script src="../JS/popup.js"></script>

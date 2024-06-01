@@ -26,7 +26,7 @@ $produk = mysqli_fetch_array($queryproduk);
     <?php require "3-navbar.php"; ?>
 
     <!-- Konten utama -->
-    <div class="container">
+    <div class="Kotak-luar">
         <div class="judul-utama">
             <h1>PRODUK DETAIL</h1>
         </div>

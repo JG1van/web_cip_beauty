@@ -1,28 +1,39 @@
+/* Mengatur tata letak footer */
 footer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: flex; /* Menggunakan display flex untuk mengatur tata letak */
+  flex-wrap: wrap; /* Membungkus item jika tidak cukup lebar */
+  justify-content: space-between; /* Menyusun item dengan jarak yang sama di antara mereka */
 }
+
+/* Mengatur tata letak kolom di dalam footer */
 footer .col {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 30px;
+  display: flex; /* Menggunakan display flex untuk mengatur tata letak */
+  flex-direction: column; /* Mengatur arah kolom */
+  align-items: flex-start; /* Mengatur item agar berada di sisi kiri */
+  margin-bottom: 30px; /* Menambahkan ruang di bawah setiap kolom */
 }
+
+/* Mengatur gaya logo di dalam footer */
 footer .logo {
-  margin-bottom: 30px;
+  margin-bottom: 30px; /* Menambahkan ruang di bawah logo */
 }
+
+/* Mengatur gaya judul di dalam footer */
 footer h4 {
-  font-size: 14px;
-  padding-bottom: 20px;
+  font-size: 14px; /* Mengatur ukuran font */
+  padding-bottom: 20px; /* Menambahkan ruang di bawah judul */
 }
+
+/* Mengatur gaya paragraf di dalam footer */
 footer p {
-  font-size: 13px;
-  margin: 0 0 8px 0;
+  font-size: 13px; /* Mengatur ukuran font */
+  margin: 0 0 8px 0; /* Menambahkan margin bawah dan menghapus margin atas dan samping */
 }
+
+/* Mengatur gaya tautan di dalam footer */
 footer a {
-  font-size: 13px;
-  text-decoration: none;
-  color: #222;
-  margin-bottom: 10px;
+  font-size: 13px; /* Mengatur ukuran font */
+  text-decoration: none; /* Menghapus dekorasi tautan */
+  color: #222; /* Mengatur warna teks */
+  margin-bottom: 10px; /* Menambahkan ruang di bawah setiap tautan */
 }

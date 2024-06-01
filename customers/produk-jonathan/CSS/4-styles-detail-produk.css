@@ -24,35 +24,35 @@ body {
   background-color: var(--warna1); /* Warna latar belakang */
 }
 
-.container {
+.Kotak-luar {
   background-color: var(--warna2); /* Menggunakan warna yang didefinisikan */
-  display: flex; /* Menjadikan kontainer sebagai flex container */
+  display: flex; /* Menjadikan kontainer sebagai flex Kotak-luar */
   flex-direction: column; /* Mengatur arah tata letak menjadi kolom */
   align-items: center; /* Menengahkan item secara horizontal */
   background-color: var(--warna2); /* Warna latar belakang pink */
+  padding: 2rem 10rem 10rem 10rem; /* Padding kontainer */
 }
 
 /* Styling untuk bagian utama konten */
 main {
   padding: 0.5%; /* Padding */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
-  border-radius: 0.5rem; /* Membuat sudut melengkung */
-  display: flex; /* Menjadikan main sebagai flex container */
+  border-radius: 5rem; /* Membuat sudut melengkung */
+  display: flex; /* Menjadikan main sebagai flex Kotak-luar */
   flex-wrap: wrap; /* Membungkus item jika terlalu lebar */
   justify-content: center; /* Menengahkan item secara horizontal */
   max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */
   margin: 0.5%; /* Tengahkan konten */
-  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
+  border: 20px double var(--warna4); /* Border tebal dengan warna emas */
 }
 
 /* Styling untuk judul utama */
 .judul-utama {
-  margin-top: 5rem; /* Margin atas */
-  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
+  border: 20px double var(--warna4); /* Border tebal dengan warna emas */
   margin-bottom: 1rem; /* Margin bawah */
   padding: 1rem; /* Padding */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
-  border-radius: 1rem; /* Membuat sudut melengkung */
+  border-radius: 5rem; /* Membuat sudut melengkung */
   text-align: center; /* Teks yang berada di dalam judul ditengahkan */
   max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */
   width: 100%; /* Lebar judul utama */
@@ -65,7 +65,7 @@ main {
 /* Styling untuk kolom GAMBAR */
 .GAMABAR-column {
   padding: 0.5rem; /* Padding */
-  border-radius: 1.5rem; /* Membuat sudut melengkung */
+  border-radius: 1rem; /* Membuat sudut melengkung */
   width: 35%; /* Ubah lebar untuk menampung 3 kolom */
   margin: 1%; /* Margin antar kolom */
 }
@@ -76,21 +76,21 @@ main {
   height: auto; /* Biarkan tinggi gambar menyesuaikan */
   display: block; /* Menjadikan gambar sebagai block element */
   margin: 0 auto; /* Mengatur margin kiri dan kanan menjadi auto */
-  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  border-radius: 1rem; /* Membuat sudut melengkung */
   aspect-ratio: 1/1; /* Rasio aspek gambar (lebar/tinggi) */
 }
 
 /* Styling untuk kolom DESKRIPSI */
 .DESKRIPSI-column {
   padding: 0.5rem; /* Padding */
-  border-radius: 1.5rem; /* Membuat sudut melengkung */
+  border-radius: 1rem; /* Membuat sudut melengkung */
   width: 60%; /* Ubah lebar untuk menampung 3 kolom */
   margin: 1%; /* Margin antar kolom */
 }
 
 /* Styling untuk isi DESKRIPSI */
 .DESKRIPSI-isi {
-  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  border-radius: 1rem; /* Membuat sudut melengkung */
   background-color: var(--warna2); /* Menggunakan warna yang didefinisikan */
   padding: 10px; /* Padding */
   margin-bottom: 1rem; /* Margin bawah */

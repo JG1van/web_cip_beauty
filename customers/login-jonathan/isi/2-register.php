@@ -54,9 +54,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Memeriksa apakah metode permintaa
             'X-Mailer: PHP/' . phpversion() . "\r\n" .
             'MIME-Version: 1.0' . "\r\n" .
             'Content-Type: text/html; charset=UTF-8' . "\r\n";
-        echo "<script>alert('Pendaftaran Berhasil')</script>";
-        echo "<script>location='../isi/';</script>";
-        // header("Location:../isi/"); // Redirect ke halaman lain setelah proses registrasi selesai.
+
+        ?>
+        <!-- Pop-up untuk menampilkan pesan keberhasilan register -->
+        <div id="popupBox" class="popup">
+            <div class="popup-content">
+                <meta http-equiv="refresh" content="5; ../isi/" />
+                <div class="close"><a href="../isi/">&times;</a></div>
+                <div class="icon-container">
+                    <i class="icon fa-solid fa-check"></i>
+                </div>
+                <p>Pendaftaran Berhasil</p>
+            </div>
+        </div>
+        <?php
 
         // Kirim email.
         if (mail($email, $subject, $message, $headers)) {
@@ -72,3 +83,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Memeriksa apakah metode permintaa
 
 $koneksi->close(); // Tutup koneksi database setelah proses selesai.
 ?>
+
+<!-- Sertakan file CSS -->
+<link rel="stylesheet" href="../CSS/4-popup.css">
+<link rel="stylesheet" href="../../fontawesome-free-6.5.2-web/css/all.min.css" />
+<!-- Menyertakan FontAwesome CSS -->
+<!-- Sertakan file JavaScript -->
+<script src="../JS/popup.js"></script>

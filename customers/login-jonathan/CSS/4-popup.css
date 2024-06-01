@@ -1,0 +1,93 @@
+/* Variabel warna */
+:root {
+  --warna1: #ffffff; /* Putih */
+  --warna2: #fed7dd; /* Pink */
+  --warna3: #e17f93; /* Pink tua */
+  --warna4: #daa520; /* Emas */
+  --warna-teks: #000000; /* Warna teks utama */
+}
+
+/* Style untuk popup box */
+.popup {
+  display: none; /* Mengatur agar popup tidak ditampilkan secara default */
+  position: fixed; /* Menempatkan popup di posisi yang tetap relatif terhadap browser */
+  z-index: 1; /* Mengatur tumpukan z-index untuk menentukan urutan tampilan */
+  left: 0; /* Menempatkan popup di sisi kiri layar */
+  top: 0; /* Menempatkan popup di bagian atas layar */
+  width: 100%; /* Lebar popup 100% dari layar */
+  height: 100%; /* Tinggi popup 100% dari layar */
+  overflow: auto; /* Menambahkan scrolling jika konten popup melebihi ukuran */
+  background-color: var(
+    --warna2
+  ); /* Menggunakan warna variabel untuk latar belakang popup */
+  display: flex; /* Menjadikan container popup sebagai flex container */
+  justify-content: center; /* Mengatur konten popup ke tengah secara horizontal */
+  align-items: center; /* Mengatur konten popup ke tengah secara vertikal */
+}
+
+/* Style untuk konten dari popup */
+.popup-content {
+  background-color: var(
+    --warna4
+  ); /* Menggunakan warna variabel untuk latar belakang konten popup */
+  color: var(--warna-teks); /* Menggunakan warna variabel untuk teks utama */
+  padding: 20px; /* Memberikan padding sebesar 20px pada konten popup */
+  border: 1px solid #888; /* Memberikan border dengan warna abu-abu */
+  max-width: 500px; /* Lebar maksimum konten popup */
+  width: 100%; /* Lebar konten popup 100% */
+  height: 150px; /* Tinggi konten popup */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Menambahkan efek bayangan pada konten popup */
+  border-radius: 10px; /* Memberikan border radius sebesar 10px pada konten popup */
+  text-align: center; /* Mengatur teks ke tengah */
+  position: relative; /* Mengatur posisi relatif terhadap popup */
+}
+
+/* Style untuk kontainer ikon */
+.icon-container {
+  position: absolute; /* Mengatur posisi absolut */
+  width: 200px; /* Lebar kontainer ikon */
+  height: 200px; /* Tinggi kontainer ikon */
+  background-color: var(
+    --warna1
+  ); /* Menggunakan warna variabel untuk latar belakang kontainer ikon */
+  border-radius: 50%; /* Memberikan border radius sebesar 50% untuk membuatnya bundar */
+  top: -4%; /* Menyesuaikan posisi ke atas */
+  left: 50%; /* Menyesuaikan posisi ke tengah secara horizontal */
+  transform: translate(-50%, -50%); /* Menggeser kontainer ikon ke tengah */
+  overflow: hidden; /* Menyembunyikan konten yang melebihi batas */
+  display: flex; /* Menjadikan kontainer ikon sebagai flex container */
+  justify-content: center; /* Mengatur konten ikon ke tengah secara horizontal */
+  align-items: center; /* Mengatur konten ikon ke tengah secara vertikal */
+}
+
+/* Style untuk ikon */
+.icon {
+  font-size: 100px; /* Ukuran ikon */
+  color: var(--warna4); /* Menggunakan warna variabel untuk ikon */
+}
+
+/* Style untuk tombol close */
+.close {
+  color: var(
+    --warna-teks
+  ); /* Menggunakan warna variabel untuk teks tombol close */
+  float: right; /* Mengatur posisi tombol close ke kanan */
+  font-size: 28px; /* Ukuran font tombol close */
+  font-weight: bold; /* Mengatur tebal teks tombol close */
+  position: absolute; /* Mengatur posisi absolut */
+  right: 20px; /* Jarak dari sisi kanan */
+  text-decoration: none; /* Menghapus dekorasi teks */
+}
+
+.close:hover,
+.close:focus {
+  color: #fff; /* Mengubah warna teks tombol close saat di-hover atau di-focus */
+  text-decoration: none; /* Menghapus dekorasi teks */
+  cursor: pointer; /* Mengubah kursor menjadi pointer saat di-hover */
+}
+
+/* Style untuk teks */
+.popup-content p {
+  font-size: 20px; /* Ukuran font */
+  margin-top: 100px; /* Jarak antara teks dengan kontainer ikon */
+}

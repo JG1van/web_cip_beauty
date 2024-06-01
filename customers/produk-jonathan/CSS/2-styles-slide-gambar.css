@@ -108,7 +108,7 @@
   top: 80%; /* 80% dari atas slider */
   right: 52%; /* 52% dari kanan slider */
   z-index: 100; /* Z-index untuk mengatur lapisan */
-  width: 300px; /* Lebar container tombol */
+  width: 300px; /* Lebar Kotak-luar tombol */
   max-width: 30%; /* Lebar maksimum 30% dari slider */
   display: flex; /* Flexbox untuk tata letak tombol */
   gap: 10px; /* Jarak antar tombol */

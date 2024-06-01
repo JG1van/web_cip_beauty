@@ -4,15 +4,49 @@ require "1-koneksi.php";
 
 // Mengecek apakah ada parameter pencarian
 if (isset($_GET['keyword'])) {
-  // Mengambil nilai keyword
+  // Mengambil nilai keyword dari URL
   $keyword = $_GET['keyword'];
 
-  // Mengecek apakah keyword kosong
-  if (empty($keyword)) {
+  // Mengecek apakah keyword sesuai dengan "Berhasil" atau "Gagal"
+  if ($keyword == "Berhasil") {
+    // Jika keyword adalah "Berhasil", tampilkan popup pesanan berhasil
+    ?>
+    <div id="popupBox" class="popup">
+      <div class="popup-content">
+        <div class="close">&times;</a></div> <!-- Tombol close -->
+        <div class="icon-container">
+          <i class="ikon fa-solid fa-cart-plus"></i> <!-- Icon keranjang -->
+        </div>
+        <p>Pesanan Berhasil Masuk Keranjang Anda:</p> <!-- Pesan pesanan berhasil -->
+        <div class="tombol">
+          <a href="../../login-jonathan/isi/5-profil.php" class="klik"> CEK PROFIL <i
+              class="fa-sharp fa-solid fa-user"></i></a>
+        </div>
+      </div>
+    </div>
+    <?php
+  } elseif ($keyword == "Gagal") {
+    // Jika keyword adalah "Gagal", tampilkan popup pesanan gagal
+    ?>
+    <div id="popupBox" class="popup">
+      <div class="popup-content">
+        <div class="close">&times;</a></div> <!-- Tombol close -->
+        <div class="icon-container">
+          <i class="ikon fas fa-circle-xmark"></i> <!-- Icon kesalahan -->
+        </div>
+        <p>Maaf, terjadi kesalahan saat melakukan checkout. Silakan coba lagi nanti.</p> <!-- Pesan pesanan gagal -->
+      </div>
+    </div>
+    <?php
+  }
 
-  } else {
-    // Melakukan query untuk mengambil data produk berdasarkan nama produk yang sesuai dengan keyword
+  // Mengecek apakah keyword tidak kosong dan bukan "Berhasil" atau "Gagal"
+  if (!empty($keyword) && $keyword != "Berhasil" && $keyword != "Gagal") {
+    // Jika keyword tidak kosong dan bukan "Berhasil" atau "Gagal", lakukan pencarian produk berdasarkan nama produk yang sesuai dengan keyword
     $queryProduk = mysqli_query($con, "SELECT * FROM produk WHERE NAMA_PRODUK LIKE '%$keyword%'");
+  } else {
+    // Jika keyword kosong atau "Berhasil" atau "Gagal", ambil semua data produk
+    $queryProduk = mysqli_query($con, "SELECT * FROM produk");
   }
 } else {
   // Jika tidak ada parameter pencarian, ambil semua data produk
@@ -28,8 +62,7 @@ $querygambar = mysqli_query($con, "SELECT * FROM produk");
 
 <head>
   <!-- Set informasi meta -->
-  <meta charset="UTF-8" />
-  <!-- Menentukan set karakter dokumen sebagai UTF-8 -->
+  <meta charset="UTF-8" /> <!-- Menentukan set karakter dokumen sebagai UTF-8 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Menentukan pengaturan tampilan pada perangkat berbasis web -->
   <!-- Judul halaman -->
@@ -41,6 +74,8 @@ $querygambar = mysqli_query($con, "SELECT * FROM produk");
   <link rel="stylesheet" href="../CSS/2-styles-slide-gambar.css" />
   <link rel="stylesheet" href="../CSS/3-styles-produk_II.css" />
   <link rel="stylesheet" href="../CSS/6-styles-footer.css" />
+  <link rel="stylesheet" href="../CSS/7-styles-popup.css">
+
   <!-- Menghubungkan dokumen dengan berkas CSS eksternal -->
 </head>
 
@@ -48,7 +83,7 @@ $querygambar = mysqli_query($con, "SELECT * FROM produk");
   <?php require "3-navbar.php"; ?>
   <?php require "4-slide-gambar-produk.php"; ?>
   <!-- Kontainer utama -->
-  <div class="container">
+  <div class="Kotak-luar">
     <?php require "2-pencarian.php"; ?>
 
     <!-- Judul halaman -->
@@ -110,7 +145,9 @@ $querygambar = mysqli_query($con, "SELECT * FROM produk");
     </main>
   </div>
   <?php require "7-footer.php"; ?>
+  <!-- Menghubungkan dengan berkas JavaScript -->
   <script src="../JS/app.js"></script>
+  <script src="../JS/popup.js"></script>
 </body>
 
 </html>

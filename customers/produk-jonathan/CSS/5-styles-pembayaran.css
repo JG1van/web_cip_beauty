@@ -23,8 +23,8 @@ body {
 }
 
 /* Styling untuk kontainer */
-.container {
-  display: flex; /* Menjadikan kontainer sebagai flex container */
+.Kotak-luar {
+  display: flex; /* Menjadikan kontainer sebagai flex Kotak-luar */
   flex-direction: column; /* Mengatur arah tata letak menjadi kolom */
   align-items: center; /* Menengahkan item secara horizontal */
 }
@@ -34,7 +34,7 @@ main {
   padding: 0.5%; /* Padding */
   background-color: var(--warna2); /* Menggunakan warna yang didefinisikan */
   border-radius: 0.5rem; /* Membuat sudut melengkung */
-  display: flex; /* Menjadikan main sebagai flex container */
+  display: flex; /* Menjadikan main sebagai flex Kotak-luar */
   flex-wrap: wrap; /* Membungkus item jika terlalu lebar */
   justify-content: center; /* Menengahkan item secara horizontal */
   max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */

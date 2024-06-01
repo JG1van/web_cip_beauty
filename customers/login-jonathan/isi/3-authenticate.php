@@ -1,6 +1,5 @@
 <?php
 session_start(); // Memulai sesi PHP
-
 require "1-koneksi.php"; // Memuat file koneksi database
 
 // Periksa apakah data dari formulir login telah dikirim
@@ -24,24 +23,49 @@ if ($stmt = $koneksi->prepare('SELECT id, password FROM accounts WHERE username 
             $_SESSION['loggedin'] = TRUE;
             $_SESSION['name'] = $_POST['username'];
             $_SESSION['id'] = $id;
-            // echo 'Welcome back, ' . htmlspecialchars($_SESSION['name'], ENT_QUOTES) . '!';
-            echo "<script> alert('Anda sukses login');</script>";
-            echo "<script> location ='../../home-nasa/isi/';</script>";
-
-            // header("Location:../../home-nasa/isi/"); // Redirect ke halaman beranda jika login berhasil
-            // // header("Location:../../produk-jonathan/isi/"); // Redirect ke halaman beranda jika login berhasil
-            exit();
+            ?>
+            <!-- Pop-up untuk menampilkan pesan keberhasilan login -->
+            <div id="popupBox" class="popup">
+                <div class="popup-content">
+                    <meta http-equiv="refresh" content="2;../../home-nasa/isi/" />
+                    <div class="close"><a href="../../home-nasa/isi/">&times;</a></div>
+                    <div class="icon-container">
+                        <i class="icon fas fa-check-circle"></i> <!-- Mengubah ikon menjadi check-circle -->
+                    </div>
+                    <p>Anda berhasil login sebagai <?php echo $_POST['username']; ?></p>
+                    <!-- Menampilkan nama pengguna yang berhasil login -->
+                </div>
+            </div>
+            <?php
         } else {
-            // Password salah
-            echo "<script> alert('Nama pengguna dan/atau kata sandi salah!');</script>";
-            echo "<script> location ='../isi/';</script>";
-
+            ?>
+            <!-- Pop-up untuk menampilkan pesan kesalahan jika nama pengguna atau kata sandi salah -->
+            <div id="popupBox" class="popup">
+                <div class="popup-content">
+                    <meta http-equiv="refresh" content="5; ../isi/" />
+                    <div class="close"><a href="../isi/">&times;</a></div>
+                    <div class="icon-container">
+                        <i class="icon fas fa-circle-xmark"></i>
+                    </div>
+                    <p>Nama pengguna dan/atau kata sandi salah!</p>
+                </div>
+            </div>
+            <?php
         }
     } else {
-        // Username tidak ditemukan
-        echo "<script> alert('Incorrect username and/or password!');</script>";
-        echo "<script> location ='../isi/';</script>";
-
+        ?>
+        <!-- Pop-up untuk menampilkan pesan kesalahan jika nama pengguna tidak ditemukan -->
+        <div id="popupBox" class="popup">
+            <div class="popup-content">
+                <meta http-equiv="refresh" content="5; ../isi/" />
+                <div class="close"><a href="../isi/">&times;</a></div>
+                <div class="icon-container">
+                    <i class="icon fas fa-circle-xmark"></i>
+                </div>
+                <p>Incorrect username and/or password!!!</p>
+            </div>
+        </div>
+        <?php
     }
 
     $stmt->close();
@@ -49,3 +73,10 @@ if ($stmt = $koneksi->prepare('SELECT id, password FROM accounts WHERE username 
 
 $koneksi->close(); // Tutup koneksi database
 ?>
+
+<!-- Sertakan file CSS -->
+<link rel="stylesheet" href="../CSS/4-popup.css">
+<link rel="stylesheet" href="../../fontawesome-free-6.5.2-web/css/all.min.css" />
+<!-- Menyertakan FontAwesome CSS -->
+<!-- Sertakan file JavaScript -->
+<script src="../JS/popup.js"></script>

@@ -1,3 +1,11 @@
+/* Definisi warna yang digunakan */
+:root {
+  /* Variabel warna */
+  --warna1: #ffffff; /* Putih */
+  --warna2: #fed7dd; /* Pink */
+  --warna3: #e17f93; /* Pink tua */
+  --warna4: #daa520; /* Emas */
+}
 /* Style untuk form pencarian */
 .form-pencarian {
   margin-top: 30px; /* Margin atas */
@@ -5,12 +13,13 @@
   text-align: center; /* Teks yang berada di dalam form ditengahkan */
   max-width: 1500px; /* Atur lebar maksimum agar form tidak terlalu lebar */
   width: 100%; /* Lebar form pencarian */
-  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
+  border: 15px double var(--warna4); /* Border tebal dengan warna emas */
+  background-color: var(--warna1); /* Warna latar belakang putih */
   border-radius: 5rem; /* Membuat sudut melengkung */
 }
 
 .input-pencarian {
-  width: 89.5%; /* Lebar input 89.5% dari container */
+  width: 89.5%; /* Lebar input 89.5% dari Kotak-luar */
   text-align: start; /* Teks dalam input mulai dari kiri */
   padding: 15px; /* Padding dalam input untuk kenyamanan teks */
   box-sizing: border-box; /* Pastikan padding dan border dihitung dalam lebar dan tinggi elemen */
@@ -24,7 +33,7 @@
   padding: 15px; /* Padding dalam tombol */
   cursor: pointer; /* Mengubah kursor menjadi pointer saat dihover */
   transition: background-color 0.3s ease; /* Transisi warna latar belakang saat dihover */
-  width: 10%; /* Lebar tombol 10% dari container */
+  width: 10%; /* Lebar tombol 10% dari Kotak-luar */
   font-size: 30px; /* Ukuran font */
   border-radius: 0 5rem 5rem 0; /* Membuat sudut melengkung hanya di sisi kanan */
 }

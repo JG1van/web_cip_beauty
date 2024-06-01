@@ -26,15 +26,15 @@ mysqli_stmt_close($queryprofil);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PROFILE</title>
     <link rel="stylesheet" href="../../fontawesome-free-6.5.2-web/css/all.min.css" />
-    <link rel="stylesheet" href="../CSS/2-styles-profile.css">
     <link rel="stylesheet" href="../CSS/0-styles-navbar.css" />
+    <link rel="stylesheet" href="../CSS/2-styles-profile.css">
     <link rel="stylesheet" href="../CSS/3-styles-footer.css" />
 </head>
 
 <body>
     <?php require "4-navbar.php"; ?>
 
-    <div class="container">
+    <div class="Kotak-luar">
         <div class="judul">
             <!-- Menampilkan judul "PROFILE" dengan tebal -->
             <h2>PROFILE</h2>
@@ -42,10 +42,16 @@ mysqli_stmt_close($queryprofil);
         <main>
             <div class="isi-column">
                 <div class="isi-1">
-                    <p class="card-text">ID: <?= htmlspecialchars($id, ENT_QUOTES) ?></p>
-                    <p class="card-text">Username: <?= htmlspecialchars($username, ENT_QUOTES) ?></p>
-                    <p class="card-text">Password: <?= htmlspecialchars($password, ENT_QUOTES) ?></p>
-                    <p class="card-text">Email: <?= htmlspecialchars($email, ENT_QUOTES) ?></p>
+                    <p>ID: <?= htmlspecialchars($id, ENT_QUOTES) ?></p>
+                </div>
+                <div class="isi-1">
+                    <p>Username: <?= htmlspecialchars($username, ENT_QUOTES) ?></p>
+                </div>
+                <div class="isi-1">
+                    <p>Password: <?= htmlspecialchars($password, ENT_QUOTES) ?></p>
+                </div>
+                <div class="isi-1">
+                    <p>Email: <?= htmlspecialchars($email, ENT_QUOTES) ?></p>
                 </div>
             </div>
 
@@ -94,8 +100,8 @@ mysqli_stmt_close($queryprofil);
                                             <th>ID Produk</th>
                                             <th>Nama Produk</th>
                                             <th>Harga Produk</th>
-                                            <th>Pembayaran</th>
-                                            <th>Hapus</th>
+                                            <th>PEMBAYARAN</th>
+                                            <th>HAPUS</th>
                                         </tr>
                                     </thead>
                                     <tbody>

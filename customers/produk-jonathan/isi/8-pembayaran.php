@@ -136,7 +136,7 @@ if (isset($_POST['simpan'])) {
 </head>
 
 <body>
-    <div class="container">
+    <div class="Kotak-luar">
         <div class="judul">
             <h2>DETAIL PEMBAYARAN</h2>
         </div>

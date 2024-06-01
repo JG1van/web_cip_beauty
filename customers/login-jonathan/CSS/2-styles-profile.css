@@ -18,7 +18,7 @@ body {
 }
 
 /* Styling untuk kontainer */
-.container {
+.Kotak-luar {
   display: flex; /* Mengatur tampilan menjadi flexbox */
   flex-direction: column; /* Mengatur arah konten menjadi vertikal */
   align-items: center; /* Mengatur konten agar ditengahkan secara horizontal */
@@ -30,7 +30,7 @@ body {
 main {
   padding: 1%; /* Padding */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
-  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  border-radius: 5rem; /* Membuat sudut melengkung */
   display: flex; /* Menggunakan display flex untuk mengatur layout konten */
   flex-wrap: wrap; /* Mengatur agar konten dapat melingkari saat ukuran layar berkurang */
   justify-content: center; /* Mengatur agar konten ditengahkan secara horizontal */
@@ -47,7 +47,7 @@ main {
   margin-bottom: 1rem; /* Margin bawah */
   padding: 1rem; /* Padding */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
-  border-radius: 1rem; /* Membuat sudut melengkung */
+  border-radius: 5rem; /* Membuat sudut melengkung */
   text-align: center; /* Teks yang berada di dalam judul ditengahkan */
   max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */
   width: 100%; /* Lebar judul utama */
@@ -72,7 +72,7 @@ main {
   border-radius: 0.5rem; /* Membuat sudut melengkung */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
   padding: 10px; /* Padding */
-  margin-bottom: 1rem; /* Margin bawah */
+  margin: 10px; //* Margin */
 }
 
 /* Styling untuk tabel */

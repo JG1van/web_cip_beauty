@@ -11,6 +11,10 @@
   <!-- Menyertakan FontAwesome CSS -->
   <link rel="stylesheet" href="../CSS/1-styles-login.css" />
   <!-- Menyertakan CSS untuk halaman login -->
+  <!-- Sertakan file CSS -->
+  <link rel="stylesheet" href="4-popup.css">
+  <!-- Sertakan file JavaScript -->
+  <script src="../JS/popup.js"></script>
 </head>
 
 <body>
@@ -114,6 +118,8 @@
       </div>
     </div>
   </div>
+
+
 </body>
 
 </html>
