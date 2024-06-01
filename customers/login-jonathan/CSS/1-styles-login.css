@@ -67,7 +67,7 @@ h3 span {
   border-radius: 50%; /* Bentuk melingkar */
   color: var(--warna4); /* Warna teks emas */
   background-color: #020305; /* Latar belakang hitam */
-  content: ">>"; /* Isi konten dengan simbol '>>' */
+  content: "→"; /* Isi konten dengan simbol '→' */
   z-index: 20; /* Z-index 20 */
   top: -10px; /* Posisi atas -10px */
   left: -10px; /* Posisi kiri -10px */
@@ -126,11 +126,12 @@ h3 span {
 }
 
 .login {
-  width: 600px; /* Lebar 600px */
-  height: 450px; /* Tinggi 450px */
+  max-width: 650px; /* Lebar 600px */
+  width: 100%; /* Lebar penuh */
+  height: 500px; /* Tinggi 450px */
   background-color: #ffffff; /* Latar belakang putih */
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3); /* Bayangan kotak */
-  margin: 100px auto; /* Margin atas dan bawah 100px, kiri dan kanan auto */
+  margin: 50px auto; /* Margin atas dan bawah 100px, kiri dan kanan auto */
   border-radius: 0.5rem; /* Sudut border melingkar 0.5rem */
 }
 
@@ -162,13 +163,13 @@ h3 span {
   width: 80%; /* Lebar 80% */
   height: 50px; /* Tinggi 50px */
   border: 1px solid #dee0e4; /* Border 1px warna abu-abu */
-  margin-bottom: 20px; /* Margin bawah 20px */
+  margin-bottom: 10px; /* Margin bawah 20px */
   padding: 0 15px; /* Padding kiri dan kanan 15px */
 }
 
 .login form input[type="submit"] {
   padding: 15px; /* Padding 15px */
-  margin: 20px 0 20px 0; /* Margin atas dan bawah 20px */
+  margin: 5px 0 10px 0; /* Margin atas dan bawah 20px */
   background-color: var(--warna4); /* Latar belakang emas */
   border-radius: 0.5rem; /* Sudut border melingkar 0.5rem */
   cursor: pointer; /* Kursor berubah menjadi pointer */
@@ -199,44 +200,34 @@ h3 span {
 }
 
 /* Media queries */
-/* Desktop */
-@media (min-width: 1367px) {
-  /* Tambahkan aturan CSS sesuai kebutuhan untuk layar desktop */
-  /* Contoh: */
-  body {
-    font-size: 100%; /* Ukuran font kembali normal */
-  }
-}
 
 /* Laptop */
-@media (max-width: 1366px) {
-  /* Tambahkan aturan CSS sesuai kebutuhan untuk layar laptop */
-  /* Contoh: */
+@media (min-width: 1023px) and (max-width: 1439px) {
   body {
     font-size: 75%; /* Mengurangi ukuran font menjadi 75% */
   }
 }
 
 /* Tablet */
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   /* Tambahkan aturan CSS sesuai kebutuhan untuk layar tablet */
   /* Contoh: */
   body {
     font-size: 75%; /* Mengurangi ukuran font menjadi 50% */
   }
   .login {
-    width: 30%; /* Lebar login di tablet 30% */
+    width: 80%; /* Lebar login di tablet 30% */
   }
 }
 
 /* Mobile phone */
-@media (max-width: 450px) {
+@media (max-width: 768px) {
   /* Tambahkan aturan CSS sesuai kebutuhan untuk layar ponsel */
   /* Contoh: */
   body {
     font-size: 50%; /* Mengurangi ukuran font menjadi 25% */
   }
   .login {
-    width: 20%; /* Lebar login di ponsel 20% */
+    width: 50%; /* Lebar login di ponsel 20% */
   }
 }

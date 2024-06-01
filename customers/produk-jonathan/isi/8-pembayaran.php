@@ -3,7 +3,8 @@
 session_start();
 
 // Jika pengguna tidak masuk, redirect ke halaman login...
-if (!isset($_SESSION['loggedin'])) {
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: ../../login-jonathan/isi/');
     exit;
 }
@@ -143,13 +144,14 @@ if (isset($_POST['simpan'])) {
         <main>
             <div class="isi-column">
                 <div class="isi-1">
+                    <a class="close" href="../../login-jonathan/isi/5-profil.php">←</a><!-- Tombol close -->
                     <h1>ID Transaksi: <?= htmlspecialchars($id_transaksi) ?></h1>
                     <h3>ID Pengguna: <?= htmlspecialchars($id) ?></h3>
                     <h3>Nama Pengguna: <?= htmlspecialchars($nama_pengguna) ?></h3>
                     <h3>Email: <?= htmlspecialchars($email) ?></h3>
                     <h3>Nama Produk: <?= htmlspecialchars($nama_produk) ?></h3>
 
-                    <div class="GAMABAR-gambar">
+                    <div class="gambar">
                         <img src="../gambar/image-produk/<?= htmlspecialchars($gambar) ?>" alt="">
                     </div>
                     <h3>Harga Produk: RP. <?= htmlspecialchars($harga_produk) ?></h3>
@@ -176,7 +178,7 @@ if (isset($_POST['simpan'])) {
                             </label>
                             <input type="tel" name="telepon" required />
                         </div>
-                        <div class="GAMABAR-gambar">
+                        <div class="gambar">
                             <h2>Barcode Qris</h2>
                             <img src="../gambar/qris.jpeg" alt="">
                         </div>

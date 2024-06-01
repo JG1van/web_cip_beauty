@@ -3,8 +3,9 @@
 session_start();
 
 // Memeriksa apakah pengguna telah masuk. Jika tidak, arahkan kembali ke halaman login atau halaman lainnya
-if (!isset($_SESSION['loggedin'])) {
-    header('Location:../../login-jonathan/isi/');
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: ../../login-jonathan/isi/');
     exit;
 }
 

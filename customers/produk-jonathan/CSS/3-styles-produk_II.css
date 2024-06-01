@@ -28,13 +28,15 @@ body {
   display: flex; /* Menggunakan Flexbox */
   flex-direction: column; /* Mengatur arah Flexbox menjadi kolom */
   align-items: center; /* Menengahkan item secara horizontal */
-  padding: 2rem 10rem 5rem 10rem; /* Padding kontainer */
+  padding: 2rem 6rem 5rem 6rem; /* Padding kontainer */
   background-color: var(--warna2); /* Warna latar belakang pink */
+  overflow: hidden; /* Menyembunyikan konten yang meluap */
 }
 
 /* Styling untuk bagian utama konten */
 main {
   padding: 0.5%; /* Padding di sekitar konten */
+  margin: 0.5%; /* Margin di sekitar konten */
   background-color: var(--warna1); /* Warna latar belakang putih */
   border-radius: 5rem; /* Membulatkan sudut */
   display: flex; /* Menggunakan Flexbox */
@@ -42,14 +44,13 @@ main {
   justify-content: center; /* Menengahkan item secara horizontal */
   max-width: 1500px; /* Lebar maksimum konten */
   width: 100%; /* Lebar penuh */
-  margin: 0.5%; /* Margin di sekitar konten */
-  border: 20px double var(--warna4); /* Border tebal warna emas */
+  border: 10px double var(--warna4); /* Border tebal warna emas */
 }
 
 /* Styling untuk judul utama */
 .judul-utama {
   margin-top: 20px; /* Margin atas */
-  border: 20px double var(--warna4); /* Border tebal warna emas */
+  border: 10px double var(--warna4); /* Border tebal warna emas */
   margin-bottom: 10px; /* Margin bawah */
   padding: 10px; /* Padding di dalam judul */
   background-color: var(--warna1); /* Warna latar belakang putih */
@@ -60,7 +61,7 @@ main {
 }
 
 .judul-utama h1 {
-  font-size: 50px; /* Ukuran font untuk h1 */
+  font-size: 40px; /* Ukuran font untuk h1 */
 }
 
 /* Styling untuk kolom PRODUK */
@@ -206,28 +207,81 @@ main {
 /* Responsivitas */
 
 /* Styling untuk layar laptop */
-@media (max-width: 1366px) {
+@media (min-width: 1023px) and (max-width: 1439px) {
   body {
-    font-size: 90%; /* Ukuran font 90% */
+    overflow: auto; /* Menyembunyikan konten yang meluap */
+    font-size: 90%; /* Mengurangi ukuran font menjadi 90% */
+  }
+
+  .input-pencarian {
+    width: 89.5%; /* Lebar input */
+    font-size: 25px; /* Ukuran font untuk input */
+  }
+
+  .tombol-pencarian {
+    width: 10%; /* Lebar tombol */
+    font-size: 25px; /* Ukuran font  */
+  }
+  .Kotak-luar {
+    padding: 5rem; /* Padding kontainer */
+  }
+  .PRODUK-column {
+    width: calc(30%); /* Lebar kolom */
   }
 }
 
 /* Styling untuk layar tablet */
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   body {
-    font-size: 75%; /* Ukuran font 75% */
+    overflow: auto; /* Menyembunyikan konten yang meluap */
+    font-size: 80%; /* Ukuran font 80% */
+  }
+
+  .input-pencarian {
+    width: 89.5%; /* Lebar input */
+    font-size: 20px; /* Ukuran font untuk input */
+  }
+
+  .tombol-pencarian {
+    width: 10%; /* Lebar tombol */
+    font-size: 20px; /* Ukuran font  */
+  }
+  .Kotak-luar {
+    padding: 2rem; /* Padding kontainer */
   }
   .PRODUK-column {
-    width: 45%; /* Lebar kolom 45% */
+    width: calc(45%); /* Lebar kolom */
   }
 }
-
 /* Styling untuk layar ponsel */
-@media (max-width: 450px) {
+@media (max-width: 768px) {
+  #header {
+    overflow: auto; /* Menyembunyikan konten yang meluap */
+    font-size: 25px; /* Ukuran font  */
+  }
+
+  #header img {
+    width: 30px; /* Lebar gambar */
+    height: 30px; /* Tinggi gambar */
+  }
   body {
-    font-size: 50%; /* Ukuran font 50% */
+    overflow: auto; /* Menyembunyikan konten yang meluap */
+    font-size: 65%; /* Ukuran font 65% */
+  }
+
+  .input-pencarian {
+    width: 85%; /* Lebar input */
+    font-size: 15px; /* Ukuran font untuk input */
+  }
+
+  .tombol-pencarian {
+    width: 14%; /* Lebar tombol */
+    font-size: 15px; /* Ukuran font  */
+  }
+  .Kotak-luar {
+    padding: 1rem; /* Padding kontainer */
   }
   .PRODUK-column {
-    width: 50%; /* Lebar kolom 50% */
+    width: calc(90%); /* Lebar kolom */
   }
 }

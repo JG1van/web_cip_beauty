@@ -3,7 +3,7 @@
 session_start();
 
 // Jika pengguna tidak masuk, redirect ke halaman login...
-if (!isset($_SESSION['loggedin'])) {
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: ../isi');
     exit;
 }

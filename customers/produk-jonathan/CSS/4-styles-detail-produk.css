@@ -30,25 +30,25 @@ body {
   flex-direction: column; /* Mengatur arah tata letak menjadi kolom */
   align-items: center; /* Menengahkan item secara horizontal */
   background-color: var(--warna2); /* Warna latar belakang pink */
-  padding: 2rem 10rem 10rem 10rem; /* Padding kontainer */
+  padding: 2rem 6rem 5rem 6rem; /* Padding kontainer */
 }
 
 /* Styling untuk bagian utama konten */
 main {
   padding: 0.5%; /* Padding */
+  margin: 0.5%; /* Tengahkan konten */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
   border-radius: 5rem; /* Membuat sudut melengkung */
   display: flex; /* Menjadikan main sebagai flex Kotak-luar */
   flex-wrap: wrap; /* Membungkus item jika terlalu lebar */
   justify-content: center; /* Menengahkan item secara horizontal */
   max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */
-  margin: 0.5%; /* Tengahkan konten */
-  border: 20px double var(--warna4); /* Border tebal dengan warna emas */
+  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
 }
 
 /* Styling untuk judul utama */
 .judul-utama {
-  border: 20px double var(--warna4); /* Border tebal dengan warna emas */
+  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
   margin-bottom: 1rem; /* Margin bawah */
   padding: 1rem; /* Padding */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
@@ -59,32 +59,32 @@ main {
 }
 
 .judul-utama h1 {
-  font-size: 50px; /* Ukuran font */
+  font-size: 40px; /* Ukuran font */
 }
 
 /* Styling untuk kolom GAMBAR */
-.GAMABAR-column {
+.GAMBAR-column {
   padding: 0.5rem; /* Padding */
   border-radius: 1rem; /* Membuat sudut melengkung */
-  width: 35%; /* Ubah lebar untuk menampung 3 kolom */
+  width: 35%; /* Ubah lebar  */
   margin: 1%; /* Margin antar kolom */
 }
 
 /* Styling untuk gambar */
-.GAMABAR-gambar img {
+.gambar img {
   max-width: 100%; /* Lebar maksimum gambar */
   height: auto; /* Biarkan tinggi gambar menyesuaikan */
   display: block; /* Menjadikan gambar sebagai block element */
-  margin: 0 auto; /* Mengatur margin kiri dan kanan menjadi auto */
   border-radius: 1rem; /* Membuat sudut melengkung */
   aspect-ratio: 1/1; /* Rasio aspek gambar (lebar/tinggi) */
+  margin-top: 2.2rem; /* Margin atas */
 }
 
 /* Styling untuk kolom DESKRIPSI */
 .DESKRIPSI-column {
   padding: 0.5rem; /* Padding */
   border-radius: 1rem; /* Membuat sudut melengkung */
-  width: 60%; /* Ubah lebar untuk menampung 3 kolom */
+  width: 60%; /* Ubah lebar  */
   margin: 1%; /* Margin antar kolom */
 }
 
@@ -135,34 +135,64 @@ main {
   box-shadow: 0 0 5px var(--warna3), 0 0 20px var(--warna3),
     0 0 50px var(--warna3), 0 0 100px var(--warna3); /* Menambahkan bayangan pada tombol dengan warna yang diambil dari variabel CSS */
 }
-/* Responsivitas untuk layar laptop */
-@media (max-width: 1366px) {
+/* Responsivitas */
+
+/* Styling untuk layar laptop */
+@media (min-width: 1023px) and (max-width: 1366px) {
   body {
-    font-size: 75%; /* Mengurangi ukuran font menjadi 75% */
+    font-size: 90%; /* Mengurangi ukuran font menjadi 75% */
   }
-  .GAMABAR-column,
+  .Kotak-luar {
+    padding: 5rem; /* Padding kontainer */
+  }
+  .GAMBAR-column {
+    width: 35%; /* Ubah lebar  */
+  }
   .DESKRIPSI-column {
-    width: 48%; /* Mengurangi lebar kolom untuk layar lebih kecil */
+    width: 60%; /* Ubah lebar  */
   }
 }
 
-/* Responsivitas untuk layar tablet */
+/* Styling untuk layar tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    overflow: auto; /* Menyembunyikan konten yang meluap */
+    font-size: 80%; /* Ukuran font 80% */
+  }
+
+  .Kotak-luar {
+    padding: 2rem; /* Padding kontainer */
+  }
+
+  .GAMBAR-column {
+    width: 35%; /* Ubah lebar  */
+  }
+  .DESKRIPSI-column {
+    width: 60%; /* Ubah lebar  */
+  }
+}
+
+/* Styling untuk layar ponsel */
 @media (max-width: 768px) {
+  #header {
+    overflow: auto; /* Menyembunyikan konten yang meluap */
+    font-size: 25px; /* Ukuran font  */
+  }
+
+  #header img {
+    width: 30px; /* Lebar gambar */
+    height: 30px; /* Tinggi gambar */
+  }
+
   body {
     font-size: 75%; /* Mengurangi ukuran font menjadi 75% */
   }
-  .GAMABAR-column,
-  .DESKRIPSI-column {
-    width: 75%; /* Mengurangi lebar kolom untuk layar tablet */
-  }
-}
 
-/* Responsivitas untuk layar ponsel */
-@media (max-width: 450px) {
-  body {
-    font-size: 50%; /* Mengurangi ukuran font menjadi 50% */
+  .Kotak-luar {
+    padding: 1rem; /* Padding kontainer */
   }
-  .GAMABAR-column,
+
+  .GAMBAR-column,
   .DESKRIPSI-column {
     width: 90%; /* Mengurangi lebar kolom untuk layar ponsel */
   }

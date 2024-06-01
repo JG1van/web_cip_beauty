@@ -1,4 +1,12 @@
 <?php
+// Memulai sesi PHP
+session_start();
+// Memeriksa apakah pengguna telah masuk sebagai admin. Jika tidak, arahkan kembali ke halaman login atau halaman lainnya
+if (!isset($_SESSION['loggedin_admin']) || $_SESSION['loggedin_admin'] !== true) {
+  header('Location: ../../customers/login-jonathan/isi/');
+  exit;
+}
+
 require "1-koneksi.php";
 $queryproduk = mysqli_query($con, "SELECT * FROM produk");
 
@@ -13,6 +21,9 @@ function generateRandomString($length = 10)
   return $randomString;
 }
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">

@@ -8,7 +8,13 @@
 
 /* Reset CSS */
 * {
-  font-family: "Times New Roman"; /* Font  */
+  margin: 0; /* Menghilangkan margin */
+  padding: 0; /* Menghilangkan padding */
+  box-sizing: border-box; /* Mengatur box model: border-box */
+  outline: none; /* Menghilangkan outline */
+  border: none; /* Menghilangkan border */
+  text-decoration: none; /* Menghilangkan dekorasi teks */
+  font-family: "Times New Roman"; /* Mengatur font halaman */
 }
 
 /* Styling untuk seluruh halaman */
@@ -24,20 +30,21 @@ body {
   align-items: center; /* Mengatur konten agar ditengahkan secara horizontal */
   font-size: 16px; /* Ukuran font 16px */
   background-color: var(--warna2); /* Latar belakang berwarna pink */
+  padding: 2rem 6rem 5rem 6rem; /* Padding kontainer */
 }
 
 /* Styling untuk area utama */
 main {
-  padding: 1%; /* Padding */
+  padding: 0.5%; /* Padding */
+  margin: 0.5%; /* Tengahkan konten */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
   border-radius: 5rem; /* Membuat sudut melengkung */
-  display: flex; /* Menggunakan display flex untuk mengatur layout konten */
-  flex-wrap: wrap; /* Mengatur agar konten dapat melingkari saat ukuran layar berkurang */
-  justify-content: center; /* Mengatur agar konten ditengahkan secara horizontal */
+  display: flex; /* Menjadikan main sebagai flex Kotak-luar */
+  flex-wrap: wrap; /* Membungkus item jika terlalu lebar */
+  justify-content: center; /* Menengahkan item secara horizontal */
   max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */
-  margin: 1%; /* Memberikan margin sebesar 1% di sekitar konten */
-  border: 10px double var(--warna4); /* Border ganda dengan warna emas */
-  width: 100%; /* Menetapkan lebar konten menjadi 100% dari lebar parentnya */
+  width: 100%; /* Lebar penuh */
+  border: 10px double var(--warna4); /* Border tebal dengan warna emas */
 }
 
 /* Styling untuk judul */
@@ -59,11 +66,11 @@ main {
   border-radius: 1.5rem; /* Membuat sudut melengkung */
   box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5); /* Efek bayangan */
   width: 100%; /* Menetapkan lebar menjadi 100% */
-  margin: 1.5%; /* Margin antar kolom */
+  margin: 2rem; /* Margin antar kolom */
   background-color: var(--warna2); /* Menggunakan warna yang didefinisikan */
 }
 .isi-column h1 {
-  font-size: 32px;
+  font-size: 32px; /* Ukuran font 32px */
 }
 
 /* Styling untuk konten di dalam kolom */
@@ -74,12 +81,19 @@ main {
   padding: 10px; /* Padding */
   margin: 10px; //* Margin */
 }
-
 /* Styling untuk tabel */
+.isi-2 table,
 .isi-2 td,
 .isi-2 th {
+  font-size: 10px; /* Ukuran font 16px */
+  border-collapse: collapse; /* Menghilangkan garis antar baris tabel */
+  width: 100%; /* Lebar tabel 100% */
+  border: 1px solid var(--warna4); /* Garis tepi tabel */
+  border-radius: 1rem; /* Membuat sudut melengkung */
+  table-layout: fixed; /* Mengatur tata letak tabel menjadi fixed */
   text-align: center;
   padding: 20px; /* Padding */
+  overflow: auto; /* Mengatur overflow menjadi auto agar tabel dapat di-scroll */
 }
 
 /* Styling untuk tombol */
@@ -115,4 +129,56 @@ main {
   text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff; /* Menambahkan bayangan pada teks dengan warna putih */
   box-shadow: 0 0 5px var(--warna3), 0 0 20px var(--warna3),
     0 0 50px var(--warna3), 0 0 100px var(--warna3); /* Menambahkan bayangan pada tombol dengan warna yang diambil dari variabel CSS */
+}
+
+/* Styling untuk layar laptop */
+@media (min-width: 1023px) and (max-width: 1439px) {
+  body {
+    font-size: 90%; /* Mengurangi ukuran font menjadi 90% */
+  }
+
+  .Kotak-luar {
+    padding: 5rem; /* Padding kontainer */
+  }
+  .isi-column {
+    padding: 1; /* padding */
+  }
+}
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    overflow: auto; /* Menyembunyikan konten yang meluap */
+    font-size: 80%; /* Ukuran font 80% */
+  }
+  .Kotak-luar {
+    padding: 3rem; /* Padding kontainer */
+  }
+
+  .isi-column {
+    padding: 0.5rem; /* padding */
+    margin: 1.5rem; /* Margin antar kolom */
+  }
+}
+
+/* Mobile phone */
+@media (max-width: 768px) {
+  #header {
+    overflow: auto; /* Menyembunyikan konten yang meluap */
+    font-size: 25px; /* Ukuran font  */
+  }
+
+  #header img {
+    width: 30px; /* Lebar gambar */
+    height: 30px; /* Tinggi gambar */
+  }
+  body {
+    font-size: 75%; /* Mengurangi ukuran font menjadi 75% */
+  }
+  .Kotak-luar {
+    padding: 2rem; /* Padding kontainer */
+  }
+  .isi-column {
+    padding: 1rem; /* padding */
+    margin: 1rem; /* Margin antar kolom */
+  }
 }

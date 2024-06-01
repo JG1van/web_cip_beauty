@@ -31,8 +31,8 @@ $produk = mysqli_fetch_array($queryproduk);
             <h1>PRODUK DETAIL</h1>
         </div>
         <main>
-            <div class="GAMABAR-column">
-                <div class="GAMABAR-gambar">
+            <div class="GAMBAR-column">
+                <div class="gambar">
                     <!-- Tampilkan gambar produk dari database -->
                     <img src="../gambar/image-produk/<?php echo htmlspecialchars($produk['GAMBAR']); ?>" alt="...">
                 </div>

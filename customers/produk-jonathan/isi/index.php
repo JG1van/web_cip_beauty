@@ -81,9 +81,10 @@ $querygambar = mysqli_query($con, "SELECT * FROM produk");
 
 <body>
   <?php require "3-navbar.php"; ?>
-  <?php require "4-slide-gambar-produk.php"; ?>
+
   <!-- Kontainer utama -->
   <div class="Kotak-luar">
+    <?php require "4-slide-gambar-produk.php"; ?>
     <?php require "2-pencarian.php"; ?>
 
     <!-- Judul halaman -->
