@@ -242,8 +242,8 @@ function generateRandomString($length = 10)
       } else {
         if ($image_size > 6000000) {
           echo '<div class="alert alert-danger" role="alert">File tidak boleh lebih dari 6mb.</div>';
-        } elseif (!in_array($imageFileType, ['jpg', 'png', 'gif'])) {
-          echo '<div class="alert alert-danger" role="alert">File wajib bertipe jpg, png, atau gif.</div>';
+        } elseif (!in_array($imageFileType, ['jpg', 'png', 'jpeg'])) {
+          echo '<div class="alert alert-danger" role="alert">File wajib bertipe jpg, png, atau jpeg</div>';
         } else {
           if (move_uploaded_file($_FILES["gambar"]["tmp_name"], $target_dir . $new_name)) {
             $upload_success = true;

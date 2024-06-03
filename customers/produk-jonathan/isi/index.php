@@ -110,12 +110,12 @@ $querygambar = mysqli_query($con, "SELECT * FROM produk");
           while ($data = mysqli_fetch_array($queryProduk)) { ?>
             <!-- Kolom PRODUK 1 -->
             <div class="PRODUK-column">
+              <div class="gambar">
+                <img src="../gambar/image-produk/<?php echo htmlspecialchars($data['GAMBAR']); ?>" alt="..." />
+              </div>
               <!-- Judul PRODUK -->
               <div class="judul">
                 <h2><?php echo $data['NAMA_PRODUK']; ?></h2>
-              </div>
-              <div class="GAMABAR-gambar">
-                <img src="../gambar/image-produk/<?php echo htmlspecialchars($data['GAMBAR']); ?>" alt="..." />
               </div>
               <!-- Isi PRODUK -->
               <div class="isi">

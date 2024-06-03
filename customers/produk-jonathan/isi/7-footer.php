@@ -11,12 +11,13 @@
   </div>
   <div class="follow">
     <h4>Follow Us</h4>
-    <div class="icon">
-      <i class="fab fa-facebook"></i>
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-tiktok"></i>
+    <div class="col">
+      <a href="" class="fab fa-facebook icon"></a>
+      <a href="" class="fab fa-instagram icon"></a>
+      <a href="" class="fab fa-tiktok icon"></a>
     </div>
   </div>
+
   <div class="col">
     <h4>About</h4>
     <a href="#">About Us</a>
@@ -32,6 +33,21 @@
     <a href="#">My Wishlist</a>
     <a href="#">Track My Order</a>
     <a href="#">Help</a>
+  </div>
+  <div class="col">
+    <h4>Quick Link</h4>
+    <a href="../../home-nasa/isi/"><i class="fa-solid fa-circle-chevron-left"></i> Home</a>
+    <!-- Tautan ke halaman Shop dengan kelas "active" -->
+    <a href="../../produk-jonathan/isi/"><i class="fa-solid fa-circle-chevron-left"></i> Shop</a>
+    <!-- Tautan ke halaman Treatments -->
+    <a href="../../treatments-mersi/isi/"><i class="fa-solid fa-circle-chevron-left"></i> Treatments</a>
+    <!-- Tautan ke halaman About Us -->
+    <a href="../../about-us-handa/isi/"><i class="fa-solid fa-circle-chevron-left"></i> About Us</a>
+    <!-- Tautan ke halaman Contact Us -->
+    <a href="../../Promotion-fikrah/isi/"><i class="fa-solid fa-circle-chevron-left"></i> Contact Us</a>
+    <!-- Tautan ke halaman profil -->
+    <a href="../../login-jonathan/isi/5-profil.php"><i class="fa-solid fa-circle-chevron-left"></i> Profil</a>
+
   </div>
   <div class="copyright">
     <p>© 2024, Kelompok 1 - Pemograman Web</p>

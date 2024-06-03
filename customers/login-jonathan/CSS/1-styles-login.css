@@ -14,7 +14,12 @@
 }
 
 body {
-  background-color: var(--warna2); /* Latar belakang berwarna pink */
+  background-color: var(--warna2); /*waran latarbelakang*/
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23fcc8d0' points='800 100 0 200 0 800 1600 800 1600 200'/%3E%3Cpolygon fill='%23fabac5' points='800 200 0 400 0 800 1600 800 1600 400'/%3E%3Cpolygon fill='%23f6adb9' points='800 300 0 600 0 800 1600 800 1600 600'/%3E%3Cpolygon fill='%23f2a0af' points='1600 800 800 400 0 800'/%3E%3Cpolygon fill='%23ed94a5' points='1280 800 800 500 320 800'/%3E%3Cpolygon fill='%23e8899c' points='533.3 800 1066.7 800 800 600'/%3E%3Cpolygon fill='%23E17F93' points='684.1 800 914.3 800 800 700'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed; /* Mengatur gambar agar tetap di posisi */
+  background-size: cover; /* Mengatur ukuran gambar */
+  overflow: hidden; /* Menghilangkan konten yang meluap */
+  background-position: center; /* Mengatur gambar latar belakang selalu di tengah */
 }
 
 .slide {
@@ -84,9 +89,9 @@ h3 span {
 .card-3d-wrap {
   width: 1000px; /* Lebar 1000px */
   max-width: 100%; /* Lebar maksimal 100% */
-  height: 500px; /* Tinggi 500px */
+  height: 450px; /* Tinggi 450px */
   transform-style: preserve-3d; /* Mempertahankan gaya 3D */
-  margin-top: 60px; /* Margin atas 60px */
+  margin-top: 90px; /* Margin atas 90px */
 }
 
 .card-3d-wrapper {
@@ -118,8 +123,9 @@ h3 span {
 .center-wrap {
   position: absolute; /* Posisi absolut */
   width: 100%; /* Lebar 100% */
-  top: 40%; /* Posisi atas 40% */
+  top: 35%; /* Posisi atas 40% */
   left: 0; /* Posisi kiri 0 */
+  right: 0; /* Posisi kanan 0 */
   transform: translate3d(0, -50%, 35px) perspective(100px); /* Transformasi 3D */
   justify-content: center; /* Rata tengah secara horizontal */
   display: block; /* Tampil sebagai blok */
@@ -128,10 +134,10 @@ h3 span {
 .login {
   max-width: 650px; /* Lebar 600px */
   width: 100%; /* Lebar penuh */
-  height: 500px; /* Tinggi 450px */
+  height: 400px; /* Tinggi 450px */
   background-color: #ffffff; /* Latar belakang putih */
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3); /* Bayangan kotak */
-  margin: 50px auto; /* Margin atas dan bawah 100px, kiri dan kanan auto */
+  margin: 70px auto; /* Margin atas dan bawah 100px, kiri dan kanan auto */
   border-radius: 0.5rem; /* Sudut border melingkar 0.5rem */
 }
 

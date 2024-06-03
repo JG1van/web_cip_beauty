@@ -115,9 +115,11 @@ mysqli_stmt_close($queryprofil);
                                                 <td><?= htmlspecialchars($row['HARGA_PRODUK']) ?></td>
                                                 <td>
                                                     <a href="../../produk-jonathan/isi/8-pembayaran.php?id_transaksi=<?php echo $row['ID_TRANSAKSI']; ?>"
-                                                        class="klik"><i class="fa-solid fa-circle-dollar-to-slot"></i></a>
-
+                                                        class="klik" target="_blank">
+                                                        <i class="fa-solid fa-circle-dollar-to-slot"></i>
+                                                    </a>
                                                 </td>
+
                                                 <td>
                                                     <a href="7-hapus.php?id_transaksi=<?= htmlspecialchars($row['ID_TRANSAKSI']) ?>"
                                                         class="klik"><i class="fa-solid fa-trash-can"></i>
@@ -151,14 +153,13 @@ mysqli_stmt_close($queryprofil);
             <div class=" isi-column">
                 <?php
                 // Persiapkan query untuk mendapatkan data pembayaran
-                $query_pembayaran = "
-                SELECT 
+                $query_pembayaran = "SELECT 
                 pb.ID_PEMBAYARAN,
-                pb.TANGGGAL,
+                pb.TANGGAL,
                 pb.ALAMAT,
                 pb.JUMLAH,
+                pb.TOTAL,
                 pb.TELEPON,
-                pb.BUKTI_PEMBAYARAN,
                 p.NAMA_PRODUK,
                 p.HARGA_PRODUK
             FROM 
@@ -168,6 +169,7 @@ mysqli_stmt_close($queryprofil);
             WHERE 
                 pb.ID_USERS = ?
             ";
+
 
                 $stmt_pembayaran = mysqli_prepare($koneksi, $query_pembayaran);
 
@@ -193,6 +195,7 @@ mysqli_stmt_close($queryprofil);
                                             <th>Tanggal</th>
                                             <th>Alamat</th>
                                             <th>Jumlah</th>
+                                            <th>Total</th>
                                             <th>Telepon</th>
                                             <th>Nama Produk</th>
                                             <th>Harga Produk</th>
@@ -200,16 +203,14 @@ mysqli_stmt_close($queryprofil);
                                     </thead>
                                     <tbody>
                                         <?php
-                                        while (
-                                            $row_pembayaran = mysqli_fetch_assoc
-                                            ($result_pembayaran)
-                                        ) {
+                                        while ($row_pembayaran = mysqli_fetch_assoc($result_pembayaran)) {
                                             ?>
                                             <tr>
                                                 <td><?= htmlspecialchars($row_pembayaran['ID_PEMBAYARAN']) ?></td>
-                                                <td><?= htmlspecialchars($row_pembayaran['TANGGGAL']) ?></td>
+                                                <td><?= htmlspecialchars($row_pembayaran['TANGGAL']) ?></td>
                                                 <td><?= htmlspecialchars($row_pembayaran['ALAMAT']) ?></td>
                                                 <td><?= htmlspecialchars($row_pembayaran['JUMLAH']) ?></td>
+                                                <td><?= htmlspecialchars($row_pembayaran['TOTAL']) ?></td>
                                                 <td><?= htmlspecialchars($row_pembayaran['TELEPON']) ?></td>
                                                 <td><?= htmlspecialchars($row_pembayaran['NAMA_PRODUK']) ?></td>
                                                 <td><?= htmlspecialchars($row_pembayaran['HARGA_PRODUK']) ?></td>
@@ -235,10 +236,8 @@ mysqli_stmt_close($queryprofil);
                     // Jika gagal menyiapkan pernyataan, tampilkan pesan kesalahan yang spesifik
                     echo "Maaf, terjadi kesalahan saat memproses data pembayaran.";
                 }
-
-                // Tutup koneksi
-                mysqli_close($koneksi);
                 ?>
+
             </div>
 
             <div class="tombol">

@@ -1,126 +1,108 @@
 <?php
-// Mulai sesi PHP
 session_start();
-
-// Jika pengguna tidak masuk, redirect ke halaman login...
-
+require_once '1-koneksi.php';
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: ../../login-jonathan/isi/');
     exit;
 }
-// Fungsi untuk menghasilkan string acak
-function generateRandomString($length = 10)
-{
-    $characters = '0123455789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $charactersLength = strlen($characters);
-    $randomString = '';
-    for ($i = 0; $i < $length; $i++) {
-        $randomString .= $characters[rand(0, $charactersLength - 1)];
-    }
-    return $randomString;
+// Bersihkan dan validasi input dari URL
+$id_transaksi = isset($_GET['id_transaksi']) ? htmlspecialchars($_GET['id_transaksi']) : null;
+
+// Periksa koneksi
+if (!$con) {
+    die("Connection failed: " . mysqli_connect_error());
 }
-// Menggunakan file koneksi.php untuk menghubungkan ke database
-require "1-koneksi.php";
 
-// Mengambil ID transaksi dari parameter URL
-$id_transaksi = htmlspecialchars($_GET['id_transaksi']);
-
-// Menyiapkan query untuk mengambil data transaksi dari database
 $querypembayaran = mysqli_prepare($con, "
 SELECT 
-        transaksi.ID_TRANSAKSI,
-        accounts.username AS Nama_Pengguna,
-        accounts.email AS Email,
-        accounts.id AS ID,
-        produk.NAMA_PRODUK,
-        produk.HARGA_PRODUK,
-        produk.GAMBAR,
-        produk.ID AS ID_PRODUK
-    FROM 
-        transaksi
-    LEFT JOIN 
-        accounts ON transaksi.ID_USERS = accounts.id
-    LEFT JOIN 
-        produk ON transaksi.ID_PRODUK = produk.ID
-    WHERE 
-        transaksi.ID_TRANSAKSI = ?
+    transaksi.ID_TRANSAKSI,
+    accounts.username AS Nama_Pengguna,
+    accounts.email AS Email,
+    accounts.id AS ID,
+    produk.NAMA_PRODUK,
+    produk.HARGA_PRODUK,
+    produk.GAMBAR,
+    produk.ID AS ID_PRODUK
+FROM 
+    transaksi
+LEFT JOIN 
+    accounts ON transaksi.ID_USERS = accounts.id
+LEFT JOIN 
+    produk ON transaksi.ID_PRODUK = produk.ID
+WHERE 
+    transaksi.ID_TRANSAKSI = ?
 ");
+
+if (!$querypembayaran) {
+    die("Query preparation failed: " . mysqli_error($con));
+}
+
 mysqli_stmt_bind_param($querypembayaran, 's', $id_transaksi);
 mysqli_stmt_execute($querypembayaran);
 mysqli_stmt_bind_result($querypembayaran, $id_transaksi, $nama_pengguna, $email, $id, $nama_produk, $harga_produk, $gambar, $id_produk);
 mysqli_stmt_fetch($querypembayaran);
 mysqli_stmt_close($querypembayaran);
 
-// Membuat ID pembayaran baru
-$query_max_id_pembayaran = mysqli_query($con, "SELECT MAX(ID_PEMBAYARAN) AS max_id FROM pembayaran");
-if ($query_max_id_pembayaran) {
-    $row = mysqli_fetch_assoc($query_max_id_pembayaran);
-    $max_id = $row['max_id'];
-
-    // Memeriksa apakah max_id null atau tidak (jika tidak ada pembayaran sebelumnya)
-    if ($max_id) {
-        // Memisahkan bagian numerik dari ID_PEMBAYARAN
-        $num_part = (int) substr($max_id, 1);
-        // Membuat ID pembayaran baru dengan format P00001
-        $id_pembayaran = "P" . str_pad($num_part + 1, 5, "0", STR_PAD_LEFT);
-    } else {
-        // Jika tidak ada pembayaran sebelumnya, mulai dengan P00001
-        $id_pembayaran = "P00001";
-    }
-}
-
-// Simpan data pembayaran jika formulir dikirim
+$snapToken = '';
 if (isset($_POST['simpan'])) {
-    $alamat = htmlspecialchars($_POST['alamat']);
-    $jumlah = intval($_POST['jumlah']); // Konversi menjadi integer
-    $telepon = htmlspecialchars($_POST['telepon']); // Nomor telepon
+    require_once '../midtrans-php-master/Midtrans.php';
 
-    // Validasi data
-    if (empty($alamat) || empty($jumlah) || empty($_FILES["gambar"]["name"]) || empty($telepon)) {
-        echo "Semua kolom harus diisi.";
-    } else {
-        // Upload file gambar jika diperlukan
-        $target_dir = "../gambar/pembayaran/";
-        $nama_file = basename($_FILES["gambar"]["name"]);
-        $imageFileType = strtolower(pathinfo($nama_file, PATHINFO_EXTENSION));
-        $image_size = $_FILES['gambar']['size'];
-        $random_name = generateRandomString(20);
-        $new_name = $random_name . "." . $imageFileType;
+    Midtrans\Config::$serverKey = 'SB-Mid-server-v2p6YYQYMRx_7y2ClWDQX66o';
+    Midtrans\Config::$isProduction = false;
+    Midtrans\Config::$isSanitized = true;
+    Midtrans\Config::$is3ds = true;
 
-        if ($image_size > 5000000) {
-            echo '<div class="alert alert-danger" role="alert">File tidak boleh lebih dari 5mb.</div>';
-        } elseif (!in_array($imageFileType, array('jpg', 'png', 'gif'))) {
-            echo '<div class="alert alert-danger" role="alert">File wajib bertipe jpg, png, atau gif</div>';
-        } elseif (!move_uploaded_file($_FILES["gambar"]["tmp_name"], $target_dir . $new_name)) {
-            echo '<div class="alert alert-danger" role="alert">Gagal mengunggah file.</div>';
-        } else {
-            // Simpan data ke database
-            date_default_timezone_set('Asia/Jakarta');
-            $tanggal = date("Y-m-d H:i:s"); // Tanggal dan waktu saat ini
+    $order_id = 'ORDER-' . time() . '-' . rand();
+    $params = array(
+        'transaction_details' => array(
+            'order_id' => $order_id,
+            'gross_amount' => $harga_produk * $_POST['jumlah'],
+        ),
+        'customer_details' => array(
+            'first_name' => $nama_pengguna,
+            'email' => $email,
+            'phone' => $_POST['telepon'],
+        ),
+    );
 
-            $query = mysqli_prepare($con, "INSERT INTO pembayaran (ID_PEMBAYARAN, ID_USERS, ID_PRODUK, TANGGGAL, ALAMAT, JUMLAH, BUKTI_PEMBAYARAN, TELEPON) 
-                      VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-            mysqli_stmt_bind_param($query, 'ssssssss', $id_pembayaran, $id, $id_produk, $tanggal, $alamat, $jumlah, $new_name, $telepon);
-            $result = mysqli_stmt_execute($query);
+    try {
+        $snapToken = Midtrans\Snap::getSnapToken($params);
+    } catch (Exception $e) {
+        error_log($e->getMessage());
+        $snapToken = 'Error creating transaction. Please try again.';
+    }
 
-            if ($result) {
-                // Hapus data transaksi
-                $query_delete_transaksi = mysqli_query($con, "DELETE FROM transaksi WHERE ID_TRANSAKSI = '$id_transaksi'");
-                if ($query_delete_transaksi) {
-                    echo "Data transaksi berhasil dihapus.";
-                } else {
-                    echo "Gagal menghapus data transaksi: " . mysqli_error($con);
-                }
+    // Jika token berhasil dibuat, simpan data pembayaran ke database
+    if (!strpos($snapToken, 'Error')) {
+        $tanggal = date("Y-m-d H:i:s"); // Tanggal dan waktu saat ini
+        $id_pembayaran = 'PAY-' . time();
+        $alamat = $_POST['alamat'];
+        $jumlah = $_POST['jumlah'];
+        $telepon = $_POST['telepon'];
+        $total = $harga_produk * $jumlah;
 
-                // Redirect setelah menyimpan data pembayaran dan menghapus data transaksi
-                header("Location:../../produk-jonathan/isi/");
-                exit(); // Exit untuk menghentikan eksekusi skrip setelah redirect
-            } else {
-                echo "Gagal menyimpan data pembayaran: " . mysqli_error($con);
-            }
+        $query = mysqli_prepare($con, "INSERT INTO pembayaran (ID_PEMBAYARAN, ID_USERS, ID_PRODUK, TANGGAL, ALAMAT, JUMLAH, TOTAL, TELEPON) 
+                                  VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        mysqli_stmt_bind_param($query, 'ssssssss', $id_pembayaran, $id, $id_produk, $tanggal, $alamat, $jumlah, $total, $telepon);
 
-            mysqli_stmt_close($query);
+        if (!mysqli_stmt_execute($query)) {
+            error_log('Error: ' . mysqli_stmt_error($query));
+            // Handle error, misalnya:
+            die("Error: " . mysqli_stmt_error($query));
         }
+
+        mysqli_stmt_close($query);
+
+        // Hapus data transaksi dari tabel transaksi setelah pembayaran berhasil
+        $queryHapusTransaksi = mysqli_prepare($con, "DELETE FROM transaksi WHERE ID_TRANSAKSI = ?");
+        mysqli_stmt_bind_param($queryHapusTransaksi, 's', $id_transaksi);
+
+        if (!mysqli_stmt_execute($queryHapusTransaksi)) {
+            error_log('Error saat menghapus data transaksi: ' . mysqli_stmt_error($queryHapusTransaksi));
+            // Handle error jika penghapusan gagal
+        }
+
+        mysqli_stmt_close($queryHapusTransaksi);
     }
 }
 ?>
@@ -134,6 +116,8 @@ if (isset($_POST['simpan'])) {
     <title>Detail Pembayaran</title>
     <link rel="stylesheet" href="../../fontawesome-free-6.5.2-web/css/all.min.css" />
     <link rel="stylesheet" href="../CSS/5-styles-pembayaran.css">
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
+        data-client-key="SB-Mid-client-L_OIEjkVBtbH0rSC"></script>
 </head>
 
 <body>
@@ -150,7 +134,6 @@ if (isset($_POST['simpan'])) {
                     <h3>Nama Pengguna: <?= htmlspecialchars($nama_pengguna) ?></h3>
                     <h3>Email: <?= htmlspecialchars($email) ?></h3>
                     <h3>Nama Produk: <?= htmlspecialchars($nama_produk) ?></h3>
-
                     <div class="gambar">
                         <img src="../gambar/image-produk/<?= htmlspecialchars($gambar) ?>" alt="">
                     </div>
@@ -159,12 +142,12 @@ if (isset($_POST['simpan'])) {
             </div>
             <div class="isi-column">
                 <div class="isi-2">
-                    <form action="" method="post" enctype="multipart/form-data">
+                    <form id="payment-form" action="" method="post" enctype="multipart/form-data">
                         <div>
                             <label>
                                 <h2>Alamat</h2>
                             </label>
-                            <textarea name="alamat" autocomplete="off" required></textarea>
+                            <textarea name="alamat" autocomplete="off"></textarea>
                         </div>
                         <div>
                             <label>
@@ -178,28 +161,21 @@ if (isset($_POST['simpan'])) {
                             </label>
                             <input type="tel" name="telepon" required />
                         </div>
-                        <div class="gambar">
-                            <h2>Barcode Qris</h2>
-                            <img src="../gambar/qris.jpeg" alt="">
-                        </div>
-                        <div>
-                            <label>
-                                <h2>Bukti Transfer</h2>
-                            </label>
-                            <input type="file" name="gambar" required />
-                        </div>
                         <div class="tombol">
-                            <button type="submit" class="klik" name="simpan">SELESAI</button>
+                            <button id="pay-button" type="submit" class="klik" name="simpan">SELESAI</button>
                         </div>
                     </form>
-
                 </div>
-
             </div>
-
         </main>
-
     </div>
+    <?php if (!empty($snapToken) && strpos($snapToken, 'Error') === false): ?>
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function () {
+                window.snap.pay('<?= $snapToken ?>');
+            });
+        </script>
+    <?php endif; ?>
 </body>
 
 </html>

@@ -29,8 +29,10 @@ body {
   flex-direction: column; /* Mengatur arah Flexbox menjadi kolom */
   align-items: center; /* Menengahkan item secara horizontal */
   padding: 2rem 6rem 5rem 6rem; /* Padding kontainer */
-  background-color: var(--warna2); /* Warna latar belakang pink */
   overflow: hidden; /* Menyembunyikan konten yang meluap */
+  /* background-color: var(--warna2); Warna latar belakang pink */
+  background-color: #fed7dd;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='.1'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* Styling untuk bagian utama konten */
@@ -41,7 +43,7 @@ main {
   border-radius: 5rem; /* Membulatkan sudut */
   display: flex; /* Menggunakan Flexbox */
   flex-wrap: wrap; /* Membungkus item ke baris baru jika tidak muat */
-  justify-content: center; /* Menengahkan item secara horizontal */
+  justify-content: space-around; /* Menengahkan konten */
   max-width: 1500px; /* Lebar maksimum konten */
   width: 100%; /* Lebar penuh */
   border: 10px double var(--warna4); /* Border tebal warna emas */
@@ -66,7 +68,7 @@ main {
 
 /* Styling untuk kolom PRODUK */
 .PRODUK-column {
-  padding: 1.5%; /* Padding di dalam kolom */
+  padding: 2%; /* Padding di dalam kolom */
   border-radius: 2rem; /* Membulatkan sudut */
   width: calc(30%); /* Lebar kolom */
   margin: 1.5%; /* Margin di sekitar kolom */
@@ -79,13 +81,14 @@ main {
   place-content: center; /* Menengahkan konten */
   place-items: center; /* Menengahkan item */
   cursor: pointer; /* Mengubah kursor menjadi pointer saat diarahkan ke tombol */
+  transition: all 0.4s ease-in; /* Transisi */
 }
 
 /* Pseudo-elemen sebelum kolom PRODUK */
 .PRODUK-column::before {
   content: ""; /* Konten kosong */
   position: absolute; /* Posisi absolut */
-  width: 100px; /* Lebar */
+  width: 50px; /* Lebar */
   height: 160%; /* Tinggi */
   background-image: linear-gradient(
     360deg,
@@ -93,7 +96,6 @@ main {
     #daa520
   ); /* Gradien warna emas */
   animation: none; /* Matikan animasi default */
-  transition: all 0.2s linear; /* Transisi */
   opacity: 0; /* Awalnya tidak terlihat */
   box-shadow: none; /* Tidak ada bayangan awal */
   box-shadow: 0 0 150px var(--warna4), 0 0 300px var(--warna4),
@@ -103,7 +105,11 @@ main {
 /* Efek hover pada kolom PRODUK */
 .PRODUK-column:hover::before {
   opacity: 1; /* Munculkan saat di-hover */
-  animation: rotBGimg 5s linear infinite; /* Animasi rotasi saat di-hover */
+  animation: rotBGimg 1s linear infinite; /* Animasi rotasi saat di-hover */
+}
+.PRODUK-column:hover {
+  transform: translateY(-0.5rem);
+  border-radius: 2.5rem 0 2.5rem 0;
 }
 /* Pseudo-elemen setelah kolom PRODUK */
 .PRODUK-column::after {
@@ -127,19 +133,21 @@ main {
   }
 }
 
-/* Styling untuk elemen dengan kelas GAMABAR-gambar */
-.GAMABAR-gambar {
+/* Styling untuk elemen dengan kelas gambar */
+.gambar {
   z-index: 1; /* Mengatur z-index */
+  justify-content: center; /* Menengahkan konten */
+  display: flex; /* Menggunakan Flexbox */
 }
 
 /* Styling untuk gambar */
-.GAMABAR-gambar img {
+.gambar img {
   max-width: 100%; /* Lebar maksimum 100% */
   height: auto; /* Tinggi otomatis */
   display: block; /* Menampilkan sebagai block element */
   margin: 0 auto; /* Margin otomatis */
   border-radius: 0.5rem; /* Membulatkan sudut */
-  margin-bottom: 5%; /* Margin bawah */
+  margin: 0 0 1rem 0; /* Margin atas dan bawah */
   aspect-ratio: 1/1; /* Rasio aspek 1:1 */
 }
 
@@ -147,12 +155,11 @@ main {
 .judul {
   border: 1px solid #ddd; /* Border tipis */
   padding: 0.5rem; /* Padding di dalam judul */
-  margin-bottom: 1rem; /* Margin bawah */
-  margin-top: 1rem; /* Margin atas */
+  margin: 0rem 0 1rem 0; /* Margin atas dan bawah */
   background-color: var(--warna2); /* Warna latar belakang pink */
   border-radius: 0.5rem; /* Membulatkan sudut */
   text-align: center; /* Menengahkan teks */
-  height: 5rem; /* Tinggi judul */
+  height: auto; /* Tinggi judul */
   width: 100%; /* Lebar penuh */
   display: flex; /* Menggunakan Flexbox */
   align-items: center; /* Menengahkan item secara vertikal */
@@ -165,15 +172,16 @@ main {
   border-radius: 0.5rem; /* Membulatkan sudut */
   background-color: var(--warna2); /* Warna latar belakang pink */
   padding: 10px; /* Padding di dalam isi */
-  margin-bottom: 1rem; /* Margin bawah */
+  margin: 0rem 0 1rem 0; /* Margin atas dan bawah */
   text-align: center; /* Menengahkan teks */
   z-index: 1; /* Mengatur z-index */
   width: 100%; /* Lebar penuh */
+  height: auto; /* Tinggi otomatis */
 }
 
 /* Styling untuk tombol */
 .tombol {
-  margin: 1rem 0 0.5rem 0; /* Margin atas dan bawah */
+  margin: 0.5rem 0 1rem 0; /* Margin atas dan bawah */
   z-index: 1; /* Mengatur z-index */
 }
 
@@ -210,7 +218,7 @@ main {
 @media (min-width: 1023px) and (max-width: 1439px) {
   body {
     overflow: auto; /* Menyembunyikan konten yang meluap */
-    font-size: 90%; /* Mengurangi ukuran font menjadi 90% */
+    font-size: 80%; /* Mengurangi ukuran font menjadi 90% */
   }
 
   .input-pencarian {
@@ -223,10 +231,20 @@ main {
     font-size: 25px; /* Ukuran font  */
   }
   .Kotak-luar {
-    padding: 5rem; /* Padding kontainer */
+    padding: 2rem 10rem; /* Padding kontainer */
+  }
+  main {
+    justify-content: space-around; /* Menengahkan konten */
   }
   .PRODUK-column {
     width: calc(30%); /* Lebar kolom */
+  }
+
+  .judul,
+  .isi,
+  .gambar img {
+    max-width: 85%; /* Lebar maksimum 100% */
+    margin: 0.5rem 0 0.5rem 0; /* Margin atas dan bawah */
   }
 }
 
@@ -247,10 +265,22 @@ main {
     font-size: 20px; /* Ukuran font  */
   }
   .Kotak-luar {
-    padding: 2rem; /* Padding kontainer */
+    padding: 3rem; /* Padding kontainer */
+  }
+  main {
+    padding: 1rem; /* Padding kontainer */
+    justify-content: space-around; /* Menengahkan konten */
   }
   .PRODUK-column {
     width: calc(45%); /* Lebar kolom */
+    padding: 1% 0.1%; /* Padding di dalam kolom */
+  }
+
+  .judul,
+  .isi,
+  .gambar img {
+    max-width: 75%; /* Lebar maksimum 100% */
+    margin: 0.5rem 0 0.5rem 0; /* Margin atas dan bawah */
   }
 }
 /* Styling untuk layar ponsel */
@@ -281,7 +311,19 @@ main {
   .Kotak-luar {
     padding: 1rem; /* Padding kontainer */
   }
+  main {
+    background: transparent;
+    border: none; /* Menghilangkan border */
+    padding: 0;
+  }
   .PRODUK-column {
-    width: calc(90%); /* Lebar kolom */
+    width: calc(50%); /* Lebar kolom */
+  }
+
+  .judul,
+  .isi,
+  .gambar img {
+    max-width: 80%; /* Lebar maksimum 100% */
+    margin: 0.5rem 0 0.5rem 0; /* Margin atas dan bawah */
   }
 }

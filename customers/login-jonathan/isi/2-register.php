@@ -19,8 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Memeriksa apakah metode permintaa
     }
 
     // Validasi panjang password.
-    if (strlen($password) > 20 || strlen($password) < 5) {
-        exit('Password harus terdiri dari 5 hingga 20 karakter!'); // Keluar dan tampilkan pesan kesalahan jika panjang password tidak valid.
+    if (strlen($password) > 30 || strlen($password) < 6) {
+        exit('Password harus terdiri dari 6 hingga 30 karakter!'); // Keluar dan tampilkan pesan kesalahan jika panjang password tidak valid.
     }
 
     // Periksa apakah username sudah ada dalam database untuk memastikan keunikan.
@@ -44,16 +44,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Memeriksa apakah metode permintaa
         $stmt->bind_param('ssss', $username, $password, $email, $activation_code); // Mengikat parameter ke pernyataan yang telah disiapkan.
         $stmt->execute(); // Eksekusi pernyataan yang telah disiapkan untuk memasukkan data ke dalam database.
 
-        // Kirim email aktivasi ke pengguna.
-        $from = 'noreply@yourdomain.com'; // Set alamat email pengirim.
-        $subject = 'Account Activation Required'; // Set subjek email.
-        $activate_link = 'http://yourdomain.com/phplogin/activate.php?email=' . $email . '&code=' . $activation_code; // Konstruksi tautan aktivasi.
-        $message = '<p>Silakan klik tautan berikut untuk mengaktifkan akun Anda: <a href="' . $activate_link . '">' . $activate_link . '</a></p>'; // Konstruksi pesan email.
-        $headers = 'From: ' . $from . "\r\n" . // Konstruksi header email.
-            'Reply-To: ' . $from . "\r\n" .
-            'X-Mailer: PHP/' . phpversion() . "\r\n" .
-            'MIME-Version: 1.0' . "\r\n" .
-            'Content-Type: text/html; charset=UTF-8' . "\r\n";
+        // // Kirim email aktivasi ke pengguna.
+        // $from = 'noreply@yourdomain.com'; // Set alamat email pengirim.
+        // $subject = 'Account Activation Required'; // Set subjek email.
+        // $activate_link = 'http://yourdomain.com/phplogin/activate.php?email=' . $email . '&code=' . $activation_code; // Konstruksi tautan aktivasi.
+        // $message = '<p>Silakan klik tautan berikut untuk mengaktifkan akun Anda: <a href="' . $activate_link . '">' . $activate_link . '</a></p>'; // Konstruksi pesan email.
+        // $headers = 'From: ' . $from . "\r\n" . // Konstruksi header email.
+        //     'Reply-To: ' . $from . "\r\n" .
+        //     'X-Mailer: PHP/' . phpversion() . "\r\n" .
+        //     'MIME-Version: 1.0' . "\r\n" .
+        //     'Content-Type: text/html; charset=UTF-8' . "\r\n";
 
         ?>
         <!-- Pop-up untuk menampilkan pesan keberhasilan register -->
@@ -69,13 +69,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Memeriksa apakah metode permintaa
         </div>
         <?php
 
-        // Kirim email.
-        if (mail($email, $subject, $message, $headers)) {
+        // // Kirim email.
+        // if (mail($email, $subject, $message, $headers)) {
 
-            echo 'Pendaftaran berhasil! Silakan periksa email Anda untuk mengaktifkan akun Anda!'; // Tampilkan pesan sukses jika email berhasil dikirim.
-        } else {
-            echo 'Gagal mengirim email aktivasi. Harap hubungi dukungan!'; // Tampilkan pesan kesalahan jika pengiriman email gagal.
-        }
+        //     echo 'Pendaftaran berhasil! Silakan periksa email Anda untuk mengaktifkan akun Anda!'; // Tampilkan pesan sukses jika email berhasil dikirim.
+        // } else {
+        //     echo 'Gagal mengirim email aktivasi. Harap hubungi dukungan!'; // Tampilkan pesan kesalahan jika pengiriman email gagal.
+        // }
     } else {
         exit('Tidak dapat menyiapkan pernyataan!'); // Keluar dan tampilkan pesan kesalahan jika pernyataan yang telah disiapkan tidak dapat disiapkan.
     }
