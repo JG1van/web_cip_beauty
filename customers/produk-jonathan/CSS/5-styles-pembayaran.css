@@ -37,7 +37,7 @@ main {
   padding: 0.5%; /* Padding */
   margin: 0.5%; /* Tengahkan konten */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
-  border-radius: 5rem; /* Membuat sudut melengkung */
+  border-radius: 1.5rem; /* Membuat sudut melengkung */
   display: flex; /* Menjadikan main sebagai flex Kotak-luar */
   flex-wrap: wrap; /* Membungkus item jika terlalu lebar */
   justify-content: center; /* Menengahkan item secara horizontal */
@@ -45,14 +45,21 @@ main {
   border: 10px double var(--warna4); /* Border tebal dengan warna emas */
 }
 
-/* Styling untuk gambar */
+.gambar {
+  display: flex; /* Menjadikan gambar sebagai flex Kotak-luar */
+  justify-content: center; /* Menengahkan gambar secara horizontal */
+  align-items: center; /* Menengahkan gambar secara vertikal */
+  position: relative; /* Menjadikan gambar sebagai posisi relatif */
+}
+
 .gambar img {
+  height: 20rem; /* Contoh: membuat kontainer setinggi 40rem */
   max-width: 70%; /* Lebar maksimum gambar */
   height: auto; /* Biarkan tinggi gambar menyesuaikan */
   display: block; /* Menjadikan gambar sebagai block element */
   border-radius: 2.5rem; /* Membuat sudut melengkung */
   aspect-ratio: 1/1; /* Rasio aspek gambar (lebar/tinggi) */
-  padding: 20px;
+  margin-bottom: 1rem; /* Margin bawah */
 }
 
 /* Styling untuk judul */
@@ -62,7 +69,7 @@ main {
   margin-bottom: 1rem; /* Margin bawah */
   padding: 1rem; /* Padding */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
-  border-radius: 5rem; /* Membuat sudut melengkung */
+  border-radius: 1rem; /* Membuat sudut melengkung */
   text-align: center; /* Teks yang berada di dalam judul ditengahkan */
   max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */
   width: 100%; /* Lebar judul utama */
@@ -72,7 +79,7 @@ main {
 .isi-column {
   max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */
   width: 100%; /* lebar*/
-  border-radius: 5rem; /* Membuat sudut melengkung */
+  border-radius: 1.5rem; /* Membuat sudut melengkung */
   padding: 1rem; /* padding */
 }
 
@@ -82,7 +89,7 @@ main {
   background-color: var(--warna2); /* Menggunakan warna yang didefinisikan */
   padding: 3rem; /* Padding */
   text-align: start; /* Teks rata kiri */
-  border-radius: 5rem; /* Membuat sudut melengkung */
+  border-radius: 1.5rem; /* Membuat sudut melengkung */
 }
 
 .isi-1 h1 {
@@ -97,6 +104,7 @@ main {
   border: 1px solid #060606; /* Border 1px warna hitam */
   margin-bottom: 20px; /* Margin bawah 20px */
   font-size: 20px; /*Ukuran*/
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
 }
 
 .isi-1 h3,
@@ -105,11 +113,12 @@ main {
 .isi-2 [type="tel"] {
   padding-left: 5px; /* Padding kiri 5px */
   width: 100%; /* Lebar 100% */
-  height: 30px; /* Tinggi 40px */
   border: 1px solid #060606; /* Border 1px warna hitam */
   margin-bottom: 20px; /* Margin bawah 20px */
   font-size: 20px; /*Ukuran*/
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
+  border-radius: 0.5rem; /* Membuat sudut melengkung */
+  padding: 5px 2px;
 }
 
 /* Styling untuk tombol */
@@ -138,6 +147,7 @@ main {
 }
 
 .klik:hover {
+  border-radius: 5rem; /* Membulatkan sudut tombol dengan radius 0.5rem */
   background-color: var(
     --warna3
   ); /* Menggunakan variabel CSS untuk warna latar belakang saat tombol dihover atau difokuskan */
@@ -161,7 +171,7 @@ main {
   background-color: var(
     --warna1
   ); /* Menggunakan warna variabel untuk latar belakang tombol close */
-  border-radius: 5rem; /* Membuat sudut melengkung */
+  border-radius: 2.5rem; /* Membuat sudut melengkung */
   padding: 0.5rem; /* Padding tombol close */
   border: 1px solid #060606; /* Border 1px warna hitam */
 }

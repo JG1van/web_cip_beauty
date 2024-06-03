@@ -15,16 +15,16 @@
   width: 100%; /* Lebar form pencarian */
   border: 15px double var(--warna4); /* Border tebal dengan warna emas */
   background-color: var(--warna1); /* Warna latar belakang putih */
-  border-radius: 5rem; /* Membuat sudut melengkung */
+  border-radius: 1.5rem; /* Membuat sudut melengkung */
 }
 
 .input-pencarian {
-  width: 89.5%; /* Lebar input 89.5% dari Kotak-luar */
+  width: 89.7%; /* Lebar input 89.5% dari Kotak-luar */
   text-align: start; /* Teks dalam input mulai dari kiri */
   padding: 15px; /* Padding dalam input untuk kenyamanan teks */
   box-sizing: border-box; /* Pastikan padding dan border dihitung dalam lebar dan tinggi elemen */
   font-size: 30px; /* Ukuran font */
-  border-radius: 5rem 0 0 5rem; /* Membuat sudut melengkung hanya di sisi kiri */
+  border-radius: 0.5rem 0 0 0.5rem; /* Membuat sudut melengkung hanya di sisi kiri */
 }
 
 .tombol-pencarian {
@@ -35,10 +35,11 @@
   transition: background-color 0.3s ease; /* Transisi warna latar belakang saat dihover */
   width: 10%; /* Lebar tombol 10% dari Kotak-luar */
   font-size: 30px; /* Ukuran font */
-  border-radius: 0 5rem 5rem 0; /* Membuat sudut melengkung hanya di sisi kanan */
+  border-radius: 0 0.5rem 0.5rem 0; /* Membuat sudut melengkung hanya di sisi kanan */
 }
 
-.tombol-pencarian:hover {
+.tombol-pencarian:hover,
+.input-pencarian:hover {
   background-color: var(
     --warna3
   ); /* Warna latar belakang saat tombol dihover */

@@ -4,7 +4,6 @@
   --warna2: #fed7dd; /* Pink */
   --warna3: #e17f93; /* Pink tua */
   --warna4: #daa520; /* Emas */
-  --warna-teks: #000000; /* Warna teks utama */
 }
 
 /* Style untuk popup box */
@@ -31,9 +30,9 @@
 /* Style untuk konten dari popup */
 .popup-content {
   background-color: var(
-    --warna3
+    --warna2
   ); /* Menggunakan warna variabel untuk latar belakang konten popup */
-  color: var(--warna-teks); /* Menggunakan warna variabel untuk teks utama */
+  color: #000000; /*  warna  untuk teks utama */
   padding: 20px; /* Memberikan padding sebesar 20px pada konten popup */
   border: 1px solid #888; /* Memberikan border dengan warna abu-abu */
   max-width: 500px; /* Lebar maksimum konten popup */
@@ -43,6 +42,7 @@
   border-radius: 10px; /* Memberikan border radius sebesar 10px pada konten popup */
   text-align: center; /* Mengatur teks ke tengah */
   position: relative; /* Mengatur posisi relatif terhadap popup */
+  border: 10px solid var(--warna4); /* Border tebal warna emas */
 }
 
 /* Style untuk kontainer ikon */
@@ -51,7 +51,7 @@
   width: 200px; /* Lebar kontainer ikon */
   height: 200px; /* Tinggi kontainer ikon */
   background-color: var(
-    --warna1
+    --warna4
   ); /* Menggunakan warna variabel untuk latar belakang kontainer ikon */
   border-radius: 50%; /* Memberikan border radius sebesar 50% untuk membuatnya bundar */
   top: -50px; /* Menyesuaikan posisi ke atas */
@@ -66,14 +66,12 @@
 /* Style untuk ikon */
 .iKon {
   font-size: 100px; /* Ukuran ikon */
-  color: var(--warna4); /* Menggunakan warna variabel untuk ikon */
+  color: var(--warna1); /* Menggunakan warna variabel untuk ikon */
 }
 
 /* Style untuk tombol close */
 .close {
-  color: var(
-    --warna-teks
-  ); /* Menggunakan warna variabel untuk teks tombol close */
+  color: #000000; /* Menggunakan warna  teks tombol close */
   float: right; /* Mengatur posisi tombol close ke kanan */
   font-size: 28px; /* Ukuran font tombol close */
   font-weight: bold; /* Mengatur tebal teks tombol close */

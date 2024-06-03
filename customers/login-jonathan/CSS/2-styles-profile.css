@@ -40,7 +40,7 @@ main {
   padding: 0.5%; /* Padding */
   margin: 0.5%; /* Tengahkan konten */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
-  border-radius: 5rem; /* Membuat sudut melengkung */
+  border-radius: 1.5rem; /* Membuat sudut melengkung */
   display: flex; /* Menjadikan main sebagai flex Kotak-luar */
   flex-wrap: wrap; /* Membungkus item jika terlalu lebar */
   justify-content: center; /* Menengahkan item secara horizontal */
@@ -55,7 +55,7 @@ main {
   margin-bottom: 2rem; /* Margin bawah */
   padding: 1rem; /* Padding */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
-  border-radius: 5rem; /* Membuat sudut melengkung */
+  border-radius: 1.5rem; /* Membuat sudut melengkung */
   text-align: center; /* Teks yang berada di dalam judul ditengahkan */
   max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */
   width: 100%; /* Lebar judul utama */
@@ -75,9 +75,14 @@ main {
 }
 
 /* Styling untuk konten di dalam kolom */
-.isi-1,
+.isi-1 {
+  border-radius: 1.5rem; /* Membuat sudut melengkung */
+  background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
+  padding: 10px 15px; /* Padding */
+  margin: 10px; //* Margin */
+}
+
 .isi-2 {
-  border-radius: 0.5rem; /* Membuat sudut melengkung */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
   padding: 10px; /* Padding */
   margin: 10px; //* Margin */
@@ -90,7 +95,6 @@ main {
   border-collapse: collapse; /* Menghilangkan garis antar baris tabel */
   width: 100%; /* Lebar tabel 100% */
   border: 1px solid var(--warna4); /* Garis tepi tabel */
-  border-radius: 1rem; /* Membuat sudut melengkung */
   table-layout: fixed; /* Mengatur tata letak tabel menjadi fixed */
   text-align: center;
   padding: 20px; /* Padding */
@@ -119,6 +123,7 @@ main {
 }
 
 .klik:hover {
+  border-radius: 5rem; /* Membulatkan sudut tombol dengan radius 0.5rem */
   background-color: var(
     --warna3
   ); /* Menggunakan variabel CSS untuk warna latar belakang saat tombol dihover atau difokuskan */

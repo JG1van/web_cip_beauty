@@ -63,12 +63,13 @@
   cursor: pointer; /* Kursor berubah menjadi pointer saat dihover */
   transition: 0.4s; /* Transisi untuk efek hover */
   letter-spacing: 2px; /* Jarak antar huruf */
-  border-radius: 5rem; /* Membuat sudut  */
+  border-radius: 0.5rem; /* Membuat sudut  */
 }
 
 .slider .list .item .button button:hover {
   letter-spacing: 3px; /* Jarak antar huruf bertambah saat dihover */
-  background-color: var(--warna2); /* Warna latar belakang tombol */
+  background-color: var(--warna3); /* Warna latar belakang tombol */
+  border-radius: 5rem; /* Membuat sudut  */
 }
 .slider .list .item .button button:nth-child(2) {
   background-color: transparent; /* Warna latar belakang transparan */

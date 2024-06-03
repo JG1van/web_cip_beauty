@@ -40,7 +40,7 @@ main {
   padding: 0.5%; /* Padding */
   margin: 0.5%; /* Tengahkan konten */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
-  border-radius: 5rem; /* Membuat sudut melengkung */
+  border-radius: 1.5rem; /* Membuat sudut melengkung */
   display: flex; /* Menjadikan main sebagai flex Kotak-luar */
   flex-wrap: wrap; /* Membungkus item jika terlalu lebar */
   justify-content: center; /* Menengahkan item secara horizontal */
@@ -54,7 +54,7 @@ main {
   margin-bottom: 1rem; /* Margin bawah */
   padding: 1rem; /* Padding */
   background-color: var(--warna1); /* Menggunakan warna yang didefinisikan */
-  border-radius: 5rem; /* Membuat sudut melengkung */
+  border-radius: 1.5rem; /* Membuat sudut melengkung */
   text-align: center; /* Teks yang berada di dalam judul ditengahkan */
   max-width: 1500px; /* Atur lebar maksimum agar konten tidak terlalu lebar */
   width: 100%; /* Lebar judul utama */
@@ -124,6 +124,7 @@ main {
 }
 
 .klik:hover {
+  border-radius: 5rem; /* Membulatkan sudut tombol dengan radius 5rem */
   background-color: var(
     --warna3
   ); /* Menggunakan variabel CSS untuk warna latar belakang saat tombol dihover atau difokuskan */
