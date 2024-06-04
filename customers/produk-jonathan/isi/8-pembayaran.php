@@ -1,10 +1,12 @@
 <?php
 session_start();
 require_once '1-koneksi.php';
+
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: ../../login-jonathan/isi/');
     exit;
 }
+
 // Bersihkan dan validasi input dari URL
 $id_transaksi = isset($_GET['id_transaksi']) ? htmlspecialchars($_GET['id_transaksi']) : null;
 
@@ -43,6 +45,11 @@ mysqli_stmt_bind_result($querypembayaran, $id_transaksi, $nama_pengguna, $email,
 mysqli_stmt_fetch($querypembayaran);
 mysqli_stmt_close($querypembayaran);
 
+// Setel zona waktu ke Asia/Jakarta
+date_default_timezone_set('Asia/Jakarta');
+
+// Buat order ID
+
 $snapToken = '';
 if (isset($_POST['simpan'])) {
     require_once '../midtrans-php-master/Midtrans.php';
@@ -51,8 +58,7 @@ if (isset($_POST['simpan'])) {
     Midtrans\Config::$isProduction = false;
     Midtrans\Config::$isSanitized = true;
     Midtrans\Config::$is3ds = true;
-
-    $order_id = 'ORDER-' . time() . '-' . rand();
+    $order_id = 'ID-ORDER-' . $id . '-' . $id_produk . '-' . $harga_produk * $_POST['jumlah'] . '||' . date("Ymd") . '-' . rand();
     $params = array(
         'transaction_details' => array(
             'order_id' => $order_id,
@@ -62,7 +68,19 @@ if (isset($_POST['simpan'])) {
             'first_name' => $nama_pengguna,
             'email' => $email,
             'phone' => $_POST['telepon'],
+            'billing_address' => array(
+                'address' => $_POST['alamat']
+            ),
+
         ),
+        'item_details' => array(
+            array(
+                'id' => $id_produk,
+                'name' => $nama_produk,
+                'price' => $harga_produk,
+                'quantity' => $_POST['jumlah']
+            )
+        )
     );
 
     try {
@@ -75,7 +93,7 @@ if (isset($_POST['simpan'])) {
     // Jika token berhasil dibuat, simpan data pembayaran ke database
     if (!strpos($snapToken, 'Error')) {
         $tanggal = date("Y-m-d H:i:s"); // Tanggal dan waktu saat ini
-        $id_pembayaran = 'PAY-' . time();
+        $id_pembayaran = 'PAY-' . $order_id;
         $alamat = $_POST['alamat'];
         $jumlah = $_POST['jumlah'];
         $telepon = $_POST['telepon'];
@@ -87,7 +105,6 @@ if (isset($_POST['simpan'])) {
 
         if (!mysqli_stmt_execute($query)) {
             error_log('Error: ' . mysqli_stmt_error($query));
-            // Handle error, misalnya:
             die("Error: " . mysqli_stmt_error($query));
         }
 
@@ -99,7 +116,6 @@ if (isset($_POST['simpan'])) {
 
         if (!mysqli_stmt_execute($queryHapusTransaksi)) {
             error_log('Error saat menghapus data transaksi: ' . mysqli_stmt_error($queryHapusTransaksi));
-            // Handle error jika penghapusan gagal
         }
 
         mysqli_stmt_close($queryHapusTransaksi);
@@ -142,7 +158,7 @@ if (isset($_POST['simpan'])) {
             </div>
             <div class="isi-column">
                 <div class="isi-2">
-                    <form id="payment-form" action="" method="post" enctype="multipart/form-data">
+                    <form action="" method="post" enctype="multipart/form-data">
                         <div>
                             <label>
                                 <h2>Alamat</h2>
