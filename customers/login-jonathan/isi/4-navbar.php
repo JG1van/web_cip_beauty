@@ -15,8 +15,6 @@
       <li><a href="../../treatments-mersi/isi/">Treatments</a></li>
       <!-- Tautan ke halaman About Us -->
       <li><a href="../../about-us-nasa/isi/">About Us</a></li>
-      <!-- Tautan ke halaman Promotion -->
-      <li><a href="../../Promotion-nasa/isi/">Promotion</a></li>
       <!-- Tautan ke halaman profil dengan ikon ID card -->
       <li><a class="active" href="../../login-jonathan/isi/5-profil.php"><i class="fa-solid fa-id-card"></i></a></li>
     </ul>

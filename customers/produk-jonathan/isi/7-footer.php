@@ -43,8 +43,6 @@
     <a href="../../treatments-mersi/isi/"><i class="fa-solid fa-circle-chevron-left"></i> Treatments</a>
     <!-- Tautan ke halaman About Us -->
     <a href="../../about-us-nasa/isi/"><i class="fa-solid fa-circle-chevron-left"></i> About Us</a>
-    <!-- Tautan ke halaman Promotion -->
-    <a href="../../Promotion-nasa/isi/"><i class="fa-solid fa-circle-chevron-left"></i>Promotion</a>
     <!-- Tautan ke halaman profil -->
     <a href="../../login-jonathan/isi/5-profil.php"><i class="fa-solid fa-circle-chevron-left"></i> Profil</a>
 

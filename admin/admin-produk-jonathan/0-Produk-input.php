@@ -179,7 +179,6 @@ function generateRandomString($length = 10)
         <!-- Tautan ke halaman About Us -->
         <li><a href="../admin-about-us-nasa/">About Us</a></li>
         <!-- Tautan ke halaman Promotion -->
-        <li><a href="../admin-Promotion-nasa/">Promotion</a></li>
       </ul>
     </div>
   </section>
