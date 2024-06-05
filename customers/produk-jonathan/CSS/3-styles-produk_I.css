@@ -28,7 +28,7 @@ body {
   display: flex; /* Menggunakan Flexbox */
   flex-direction: column; /* Mengatur arah Flexbox menjadi kolom */
   align-items: center; /* Menengahkan item secara horizontal */
-  padding: 2rem 6rem 5rem 6rem; /* Padding kontainer */
+  padding: 2rem 6rem 10rem 6rem; /* Padding kontainer */
   overflow: hidden; /* Menyembunyikan konten yang meluap */
   /* background-color: var(--warna2); Warna latar belakang pink */
   background-color: #fed7dd;
@@ -224,7 +224,7 @@ main {
   }
 
   .input-pencarian {
-    width: 89.6%; /* Lebar input */
+    width: 89.65%; /* Lebar input */
     font-size: 25px; /* Ukuran font untuk input */
   }
 
@@ -233,7 +233,7 @@ main {
     font-size: 25px; /* Ukuran font  */
   }
   .Kotak-luar {
-    padding: 2rem 10rem; /* Padding kontainer */
+    padding: 2rem 7.5rem 10rem 7.5rem; /* Padding kontainer */
   }
   main {
     justify-content: space-around; /* Menengahkan konten */
@@ -319,13 +319,15 @@ main {
     padding: 0;
   }
   .PRODUK-column {
-    width: calc(50%); /* Lebar kolom */
+    width: calc(60%); /* Lebar kolom */
+    border: none; /* Menghilangkan border */
   }
 
   .judul,
   .isi,
   .gambar img {
-    max-width: 80%; /* Lebar maksimum 100% */
+    max-width: 80%; /* Lebar maksimum 80% */
+    padding-top: 10px;
     margin: 0.5rem 0 0.5rem 0; /* Margin atas dan bawah */
   }
 }

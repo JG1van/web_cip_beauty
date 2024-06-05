@@ -72,9 +72,9 @@ $querygambar = mysqli_query($con, "SELECT * FROM produk");
   <link rel="stylesheet" href="../CSS/0-styles-navbar.css" />
   <link rel="stylesheet" href="../CSS/1-styles-pencarian.css" />
   <link rel="stylesheet" href="../CSS/2-styles-slide-gambar.css" />
-  <link rel="stylesheet" href="../CSS/3-styles-produk_II.css" />
-  <link rel="stylesheet" href="../CSS/6-styles-footer.css" />
-  <link rel="stylesheet" href="../CSS/7-styles-popup.css">
+  <link rel="stylesheet" href="../CSS/3-styles-produk_I.css" />
+  <link rel="stylesheet" href="../CSS/7-styles-footer.css" />
+  <link rel="stylesheet" href="../CSS/8-styles-popup.css">
 
   <!-- Menghubungkan dokumen dengan berkas CSS eksternal -->
 </head>
@@ -147,7 +147,7 @@ $querygambar = mysqli_query($con, "SELECT * FROM produk");
   </div>
   <?php require "7-footer.php"; ?>
   <!-- Menghubungkan dengan berkas JavaScript -->
-  <script src="../JS/app.js"></script>
+  <script src="../JS/slide-gambar.js"></script>
   <script src="../JS/popup.js"></script>
 </body>
 

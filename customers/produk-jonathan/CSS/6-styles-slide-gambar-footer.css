@@ -1,0 +1,169 @@
+/* Definisi warna yang digunakan */
+:root {
+  --warna1: #ffffff; /* Putih */
+  --warna2: #fed7dd; /* Pink */
+  --warna3: #e17f93; /* Pink tua */
+  --warna4: #daa520; /* Emas */
+}
+
+.luar {
+  padding: 5px; /* Jarak dalam container */
+  overflow: auto; /* Membuat konten yang meluap dapat discroll */
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  flex-direction: column; /* Mengatur arah Flexbox menjadi kolom */
+  align-items: center; /* Menengahkan item secara horizontal */
+  backdrop-filter: blur(5px); /* Efek blur pada latar belakang */
+  border-radius: 1.5rem; /* Membulatkan sudut container */
+  margin: 0 0 5rem 0; /* Jarak luar container */
+}
+
+/* Scrollbar khusus untuk elemen dengan class .scroll-1 */
+.scroll-1::-webkit-scrollbar {
+  width: 8px; /* Lebar scrollbar */
+  height: 10px; /* Tinggi scrollbar */
+}
+
+.scroll-1::-webkit-scrollbar-thumb {
+  border-radius: 20px; /* Membulatkan ujung scrollbar */
+  background: #888; /* Warna scrollbar */
+}
+
+/* Container dan Kartu */
+.container {
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  overflow-x: scroll; /* Membuat konten yang meluap secara horizontal dapat discroll */
+  padding: 2.5rem 0; /* Jarak dalam container */
+  width: 90%; /* Lebar container */
+  scroll-snap-type: x mandatory; /* Scroll snap untuk horizontal */
+  scroll-padding-top: 24px; /* Jarak padding saat scroll snap */
+  border-radius: 8px; /* Membulatkan sudut container */
+  gap: 20px; /* Jarak antar kartu */
+  margin: auto; /* Memposisikan container di tengah secara horizontal */
+}
+
+.card {
+  flex: 0 0 31.75%; /* Lebar kartu 30% dari container, tidak menyusut atau meluas */
+  overflow: hidden; /* Menyembunyikan konten yang meluap */
+  border-radius: 8px; /* Membulatkan sudut kartu */
+  background-color: #fed7dd; /* Warna latar belakang kartu */
+  scroll-snap-align: start; /* Scroll snap ke awal kartu */
+  transition: transform 0.3s ease; /* Transisi untuk transformasi */
+  position: relative; /* Letakkan posisi kartu relatif */
+  border: 5px solid var(--warna4); /* Border tipis warna emas */
+  cursor: pointer; /* Ubah kursor menjadi pointer saat hover */
+}
+
+/* Efek Hover pada Kartu */
+.card:hover {
+  transform: translateY(-35px); /* Naik saat dihover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Efek bayangan saat dihover */
+}
+
+/* Gambar Produk */
+.card__image {
+  flex: 1; /* Isi ruang yang tersedia */
+  height: 200px; /* Tinggi gambar */
+  background-repeat: no-repeat; /* Tidak mengulang latar belakang */
+  background-size: cover; /* Menutupi seluruh area dengan gambar */
+  background-position: center; /* Memposisikan gambar di tengah */
+  position: relative; /* Letakkan gambar dalam posisi relatif */
+}
+
+/* Gelombang pada gambar */
+.card__wave {
+  left: 0; /* Posisi kiri */
+  bottom: 30px; /* Posisi bawah */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='0.25' fill='%23fed7dd'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='0.5' fill='%23fed7dd'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23fed7dd'/%3E%3C/svg%3E");
+  /* Gambar gelombang */
+  background-repeat: no-repeat; /* Tidak mengulang latar belakang */
+  background-size: contain; /* Mengatur ukuran sesuai konten */
+  z-index: 2; /* Letakkan gelombang di bawah konten kartu */
+  transform: scaleY(-1); /* Memutar gelombang menghadap ke atas */
+  position: absolute; /* Posisi absolut */
+  display: block; /* Tampilkan sebagai block */
+  width: calc(300% + 100px); /* Lebar gelombang */
+  height: 150px; /* Tinggi gelombang */
+}
+
+/* Isi Kartu */
+.card__content {
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  flex-direction: column; /* Mengatur arah Flexbox menjadi kolom */
+  position: relative; /* Posisi relatif */
+  z-index: 3; /* Letakkan konten kartu di atas gelombang */
+  color: black; /* Warna teks hitam */
+  bottom: 25px; /* Posisi bawah */
+  height: 70px; /* Tinggi konten */
+}
+
+/* Judul Produk */
+.card__title {
+  font-size: 20px; /* Ukuran font */
+  color: black; /* Warna teks hitam */
+  z-index: 3; /* Letakkan konten kartu di atas gelombang */
+  padding: 0 20px 10px 20px; /* Jarak antara judul dengan deskripsi */
+}
+
+/* Deskripsi Produk */
+.card__describe {
+  color: black; /* Warna teks hitam */
+  font-size: 15px; /* Ukuran font */
+  z-index: 3; /* Letakkan konten kartu di atas gelombang */
+  padding: 0 20px 10px 20px; /* Jarak antara judul dengan deskripsi */
+  transition: opacity 0.3s ease-in; /* Transisi opacity */
+  opacity: 0; /* Awalnya tidak terlihat */
+}
+
+/* Tombol "Show More" */
+.show-more {
+  width: 60px; /* Lebar tombol */
+  height: 60px; /* Tinggi tombol */
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  align-items: center; /* Menengahkan item secara vertikal */
+  justify-content: center; /* Menengahkan item secara horizontal */
+  background: var(--warna4); /* Warna latar belakang tombol */
+  border-radius: 50%; /* Membulatkan tombol */
+  box-shadow: 0px 0.125rem 0.875rem var(--warna3); /* Bayangan tombol */
+  opacity: 0; /* Awalnya tidak terlihat */
+  transition: opacity 0.3s ease-in; /* Transisi opacity */
+  margin-left: auto; /* Jarak kiri otomatis */
+  margin-top: -50%; /* Jarak atas negatif */
+  z-index: 3; /* Letakkan konten kartu di atas gelombang */
+  aspect-ratio: 1/1; /* Rasio aspek 1:1 */
+}
+
+.show-more a {
+  color: white; /* Warna teks putih */
+  font-size: 16px; /* Ukuran font */
+  text-decoration: none; /* Hilangkan garis bawah teks */
+  display: flex; /* Menggunakan Flexbox untuk tata letak */
+  align-items: center; /* Menengahkan item secara vertikal */
+  justify-content: center; /* Menengahkan item secara horizontal */
+}
+
+/* Efek Hover pada Kartu */
+.card:hover .card__content,
+.card:hover .show-more,
+.card:hover .card__describe {
+  bottom: 35px; /* Posisi bawah saat dihover */
+  opacity: 1; /* Tampilkan konten */
+}
+
+/* Efek Hover untuk Container */
+.container .card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Bayangan kartu saat dihover */
+}
+
+/* Media Query untuk layar medium */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .luar {
+    display: none; /* Sembunyikan container pada layar medium */
+  }
+}
+
+/* Media Query untuk layar kecil */
+@media (max-width: 768px) {
+  .luar {
+    display: none; /* Sembunyikan container pada layar kecil */
+  }
+}

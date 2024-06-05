@@ -9,14 +9,14 @@
     <ul id="navbar">
       <!-- Tautan ke halaman Home -->
       <li><a href="../../home-nasa/isi/">Home</a></li>
-      <!-- Tautan ke halaman Shop  -->
+      <!-- Tautan ke halaman Shop dengan kelas "active" -->
       <li><a href="../../produk-jonathan/isi/">Shop</a></li>
       <!-- Tautan ke halaman Treatments -->
       <li><a href="../../treatments-mersi/isi/">Treatments</a></li>
       <!-- Tautan ke halaman About Us -->
-      <li><a href="../../about-us-handa/isi/">About Us</a></li>
-      <!-- Tautan ke halaman Contact Us -->
-      <li><a href="../../Promotion-fikrah/isi/">Contact Us</a></li>
+      <li><a href="../../about-us-nasa/isi/">About Us</a></li>
+      <!-- Tautan ke halaman Promotion -->
+      <li><a href="../../Promotion-nasa/isi/">Promotion</a></li>
       <!-- Tautan ke halaman profil dengan ikon ID card -->
       <li><a class="active" href="../../login-jonathan/isi/5-profil.php"><i class="fa-solid fa-id-card"></i></a></li>
     </ul>
