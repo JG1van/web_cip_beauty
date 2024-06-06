@@ -144,8 +144,7 @@ if (!isset($_SESSION['loggedin_admin']) || $_SESSION['loggedin_admin'] !== true)
         <li><a href="admin-treatments-mersi/">Treatments</a></li>
         <!-- Tautan ke halaman About Us -->
         <li><a href="admin-about-us-nasa/">About Us</a></li>
-        <!-- Tautan ke halaman Promotion -->
-        <li><a href="admin-Promotion-nasa/">Promotion</a></li>
+
       </ul>
     </div>
   </section>

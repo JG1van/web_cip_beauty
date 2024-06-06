@@ -328,6 +328,6 @@ main {
   .gambar img {
     max-width: 80%; /* Lebar maksimum 80% */
     padding-top: 10px;
-    margin: 0.5rem 0 0.5rem 0; /* Margin atas dan bawah */
+    margin: 0.8rem 0 0.5rem 0; /* Margin atas dan bawah */
   }
 }

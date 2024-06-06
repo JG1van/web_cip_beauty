@@ -9,13 +9,12 @@
     <p><strong>Phone</strong>: +62 838-9082-2666</p>
     <p><strong>Open</strong>: 08.00 - 17.00, Mon-Sun</p>
   </div>
+
   <div class="follow">
     <h4>Follow Us</h4>
-    <div class="col">
-      <a href="" class="fab fa-facebook icon"></a>
-      <a href="" class="fab fa-instagram icon"></a>
-      <a href="" class="fab fa-tiktok icon"></a>
-    </div>
+    <a href="https://m.facebook.com/cicikindahpahlawati/" class="fab fa-facebook icon"></a>
+    <a href="https://www.instagram.com/cipbeauty.bydrc/" class="fab fa-instagram icon"> </a>
+    <a href="https://www.tiktok.com/@cipbeautyjogja/" class="fab fa-tiktok icon"></a>
   </div>
 
   <div class="col">
@@ -42,7 +41,7 @@
     <!-- Tautan ke halaman Treatments -->
     <a href="../../treatments-mersi/isi/"><i class="fa-solid fa-circle-chevron-left"></i> Treatments</a>
     <!-- Tautan ke halaman About Us -->
-    <a href="../../about-us-nasa/isi/"><i class="fa-solid fa-circle-chevron-left"></i> About Us</a>
+    <a href="../../aboutus-nasa/isi/aboutus-nassa.html"><i class="fa-solid fa-circle-chevron-left"></i> About Us</a>
     <!-- Tautan ke halaman profil -->
     <a href="../../login-jonathan/isi/5-profil.php"><i class="fa-solid fa-circle-chevron-left"></i> Profil</a>
 

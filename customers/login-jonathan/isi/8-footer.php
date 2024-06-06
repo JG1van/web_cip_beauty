@@ -11,11 +11,9 @@
   </div>
   <div class="follow">
     <h4>Follow Us</h4>
-    <div class="col">
-      <a href="" class="fab fa-facebook icon"></a>
-      <a href="" class="fab fa-instagram icon"></a>
-      <a href="" class="fab fa-tiktok icon"></a>
-    </div>
+    <a href="" class="fab fa-facebook icon"></a>
+    <a href="" class="fab fa-instagram icon"></a>
+    <a href="" class="fab fa-tiktok icon"></a>
   </div>
 
   <div class="col">

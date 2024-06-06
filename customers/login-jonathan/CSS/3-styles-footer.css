@@ -5,7 +5,7 @@ footer {
   justify-content: space-between; /* Menyebar item secara merata dengan ruang di antara mereka */
   position: relative; /* Mengatur posisi relatif untuk elemen footer */
   overflow: hidden; /* Menyembunyikan konten yang meluap di luar batas footer */
-  height: 30px; /* Mengatur tinggi default footer */
+  height: 150px; /* Mengatur tinggi default footer */
   transition: height 1s ease; /* Transisi yang halus untuk perubahan tinggi */
 }
 
@@ -34,8 +34,7 @@ footer:hover::before {
 
 footer h4,
 footer p,
-footer a,
-footer .col img {
+footer a {
   transition: transform 10s ease, opacity 1s ease; /* Transisi halus untuk transformasi dan opasitas */
   z-index: 2; /* Menempatkan elemen di atas elemen lain */
   transform: translateY(0); /* Posisi awal elemen */
@@ -45,8 +44,7 @@ footer .col img {
 
 footer:hover h4,
 footer:hover p,
-footer:hover a,
-footer:hover .col img {
+footer:hover a {
   opacity: 1; /* Menampilkan elemen saat di-hover */
   transform: translateY(-10px); /* Menggeser elemen ke atas saat di-hover */
   animation: tracking-in-expand 2s ease; /* Menjalankan animasi tracking-in-expand */
@@ -121,11 +119,13 @@ footer a {
 .col img {
   border-radius: 50%; /* Membuat gambar berbentuk lingkaran */
   position: relative; /* Posisi relatif untuk gambar */
+  z-index: 2; /* Menempatkan elemen di atas elemen lain */
+  opacity: 10;
 }
 
 /* Gaya ikon di dalam kolom */
 .col .icon {
-  font-size: 30px; /* Ukuran font untuk ikon */
+  font-size: 15px; /* Ukuran font untuk ikon */
 }
 
 /* Media query untuk menghapus efek dan menggunakan ukuran asli footer pada perangkat dengan lebar maksimum 1023px */
@@ -145,8 +145,7 @@ footer a {
   }
   footer h4,
   footer p,
-  footer a,
-  footer .col img {
+  footer a {
     transition: none; /* Menghapus transisi untuk perangkat kecil */
     transform: none; /* Menghapus transformasi untuk perangkat kecil */
     opacity: 1; /* Menampilkan elemen */
@@ -154,8 +153,7 @@ footer a {
   }
   footer:hover h4,
   footer:hover p,
-  footer:hover a,
-  footer:hover .col img {
+  footer:hover a {
     transform: none; /* Menghapus transformasi saat di-hover */
     animation: none; /* Menghapus animasi saat di-hover */
     opacity: 1; /* Menampilkan elemen */

@@ -45,7 +45,7 @@
                 <div class="center-wrap">
                   <!-- Pembungkus konten tengah -->
                   <div class="login">
-                    <h1>Login</h1>
+                    <h1>SIGN-IN</h1>
                     <!-- Judul bagian login -->
                     <form action="3-authenticate.php" method="post">
                       <!-- Form untuk login -->
@@ -77,7 +77,7 @@
                 <div class="center-wrap">
                   <!-- Pembungkus konten tengah -->
                   <div class="login">
-                    <h1>Sign Up</h1>
+                    <h1>SING-UP</h1>
                     <!-- Judul bagian sign up -->
                     <form action="2-register.php" method="post">
                       <!-- Form untuk sign up -->

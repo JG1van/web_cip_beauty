@@ -82,9 +82,12 @@
   position: absolute; /* Posisi absolut */
   display: block; /* Tampilkan sebagai block */
   width: calc(300% + 100px); /* Lebar gelombang */
-  height: 150px; /* Tinggi gelombang */
+  height: 100px; /* Tinggi gelombang */
 }
-
+.card:hover .card__wave {
+  width: calc(250% + 500px); /* Lebar gelombang */
+  height: 200px; /* Tinggi gelombang */
+}
 /* Isi Kartu */
 .card__content {
   display: flex; /* Menggunakan Flexbox untuk tata letak */
@@ -98,7 +101,6 @@
 
 /* Judul Produk */
 .card__title {
-  font-size: 20px; /* Ukuran font */
   color: black; /* Warna teks hitam */
   z-index: 3; /* Letakkan konten kartu di atas gelombang */
   padding: 0 20px 10px 20px; /* Jarak antara judul dengan deskripsi */
@@ -107,7 +109,6 @@
 /* Deskripsi Produk */
 .card__describe {
   color: black; /* Warna teks hitam */
-  font-size: 15px; /* Ukuran font */
   z-index: 3; /* Letakkan konten kartu di atas gelombang */
   padding: 0 20px 10px 20px; /* Jarak antara judul dengan deskripsi */
   transition: opacity 0.3s ease-in; /* Transisi opacity */
@@ -155,11 +156,6 @@
 }
 
 /* Media Query untuk layar medium */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .luar {
-    display: none; /* Sembunyikan container pada layar medium */
-  }
-}
 
 /* Media Query untuk layar kecil */
 @media (max-width: 768px) {

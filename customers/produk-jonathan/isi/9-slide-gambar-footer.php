@@ -14,7 +14,7 @@
                     <div class="card__wave"></div>
                     <!-- Isi konten kartu -->
                     <span class="card__title">
-                        <h2><?php echo htmlspecialchars($data['NAMA_PRODUK']); ?></h2>
+                        <h1><?php echo htmlspecialchars($data['NAMA_PRODUK']); ?></h1>
                         <!-- Nama produk -->
                     </span>
                     <p class="card__describe">
