@@ -11,9 +11,9 @@
   </div>
   <div class="follow">
     <h4>Follow Us</h4>
-    <a href="" class="fab fa-facebook icon"></a>
-    <a href="" class="fab fa-instagram icon"></a>
-    <a href="" class="fab fa-tiktok icon"></a>
+    <a href="https://m.facebook.com/cicikindahpahlawati/" class="fab fa-facebook icon"></a>
+    <a href="https://www.instagram.com/cipbeauty.bydrc/" class="fab fa-instagram icon"> </a>
+    <a href="https://www.tiktok.com/@cipbeautyjogja/" class="fab fa-tiktok icon"></a>
   </div>
 
   <div class="col">
