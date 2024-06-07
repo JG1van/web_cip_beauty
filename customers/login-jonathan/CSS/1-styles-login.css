@@ -186,7 +186,7 @@ h3 span {
   color: #ffffff; /* Warna teks putih */
   transition: background-color 0.2s; /* Transisi warna latar belakang selama 0.2s */
   min-width: 50%; /* Lebar minimal 50% */
-  transition: 0.3s; /* Menambahkan transisi selama 0.3 detik untuk perubahan properti */
+  transition: all 0.8s ease; /* Transisi */
   text-shadow: none; /* Tidak ada bayangan pada teks */
 }
 

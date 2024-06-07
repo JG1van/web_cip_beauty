@@ -32,7 +32,7 @@
   color: #fff; /* Warna teks putih */
   padding: 15px; /* Padding dalam tombol */
   cursor: pointer; /* Mengubah kursor menjadi pointer saat dihover */
-  transition: background-color 0.3s ease; /* Transisi warna latar belakang saat dihover */
+  transition: all 0.8s ease; /* Transisi */
   width: 10%; /* Lebar tombol 10% dari Kotak-luar */
   font-size: 30px; /* Ukuran font */
   border-radius: 0 0.5rem 0.5rem 0; /* Membuat sudut melengkung hanya di sisi kanan */

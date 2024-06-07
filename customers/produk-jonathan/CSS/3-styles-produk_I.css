@@ -196,7 +196,7 @@ main {
   border-radius: 0.5rem; /* Membulatkan sudut tombol */
   cursor: pointer; /* Mengubah kursor menjadi pointer saat diarahkan ke tombol */
   font-weight: bold; /* Membuat teks tebal */
-  transition: 0.3s; /* Menambahkan transisi selama 0.3 detik untuk perubahan properti */
+  transition: all 0.8s ease; /* Transisi */
   text-shadow: none; /* Tidak ada bayangan pada teks */
 }
 

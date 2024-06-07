@@ -31,7 +31,7 @@ body {
   justify-content: space-between; /* Menyebar item dengan jarak di antara mereka */
   padding: 20px 80px; /* Padding atas-bawah 20px, kiri-kanan 80px */
   background: #fed7dd; /* Warna latar belakang pink */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); /* Bayangan dengan blur */
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6); Bayangan dengan blur */
   z-index: 999; /* Memastikan header berada di atas elemen lain */
   position: sticky; /* Header tetap di atas saat di-scroll */
   top: 0; /* Posisi atas 0 */

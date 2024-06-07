@@ -26,7 +26,7 @@ prevBtn.onclick = function () {
 // Slide otomatis setiap 2 detik
 let slideInterval = setInterval(function () {
   moveSlider("next");
-}, 2000);
+}, 5000);
 
 function moveSlider(direction) {
   // Mendapatkan daftar gambar di dalam slider

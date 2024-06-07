@@ -6,7 +6,10 @@
   --warna3: #e17f93; /* Pink tua */
   --warna4: #daa520; /* Emas */
 }
-
+a {
+  color: white; /* Mengatur warna teks */
+  text-decoration: none; /* Menghilangkan garis bawah pada teks */
+}
 /* slider section */
 .slider {
   height: 100vh; /* Tinggi slider 100% dari tinggi viewport */
@@ -61,15 +64,21 @@
   font-family: "Times New Roman"; /* Font tombol */
   font-weight: 500; /* Ketebalan font tombol */
   cursor: pointer; /* Kursor berubah menjadi pointer saat dihover */
-  transition: 0.4s; /* Transisi untuk efek hover */
+  transition: 0.5s; /* Transisi untuk efek hover */
   letter-spacing: 2px; /* Jarak antar huruf */
   border-radius: 0.5rem; /* Membuat sudut  */
+}
+.slider .list .item .button button a {
+  color: black; /* Warna teks hitam */
 }
 
 .slider .list .item .button button:hover {
   letter-spacing: 3px; /* Jarak antar huruf bertambah saat dihover */
   background-color: var(--warna3); /* Warna latar belakang tombol */
   border-radius: 5rem; /* Membuat sudut  */
+}
+.slider .list .item .button button a:hover {
+  color: var(--warna1); /* Warna teks putih saat dihover */
 }
 .slider .list .item .button button:nth-child(2) {
   background-color: transparent; /* Warna latar belakang transparan */

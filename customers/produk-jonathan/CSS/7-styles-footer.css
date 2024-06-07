@@ -18,12 +18,12 @@ footer::before {
   background-repeat: no-repeat; /* Mencegah pengulangan gambar latar belakang */
   background-position: bottom right; /* Mengatur posisi awal gambar latar belakang */
   background-size: cover; /* Menutup seluruh area dengan gambar */
-  transition: background-position 10s ease; /* Transisi halus untuk perubahan posisi gambar */
+  transition: all 10s ease; /* Transisi halus untuk perubahan posisi gambar */
   z-index: -1; /* Menempatkan elemen di atas konten lain */
   transform: scaleY(-1); /* Memutar gelombang menghadap ke atas */
 }
 footer:hover::before {
-  background-color: white; /* Warna latar belakang default */
+  background-color: #f0d27f; /* Warna latar belakang default */
   background-position: top left; /* Mengubah posisi gambar saat di-hover */
 }
 /* Tata letak kolom di dalam footer */
