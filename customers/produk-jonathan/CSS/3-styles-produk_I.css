@@ -1,35 +1,53 @@
 /* Definisi warna yang digunakan */
 :root {
-  --warna1: #ffffff; /* Putih */
-  --warna2: #fed7dd; /* Pink */
-  --warna3: #e17f93; /* Pink tua */
-  --warna4: #daa520; /* Emas */
+  --warna1: #ffffff;
+  /* Putih */
+  --warna2: #fed7dd;
+  /* Pink */
+  --warna3: #e17f93;
+  /* Pink tua */
+  --warna4: #daa520;
+  /* Emas */
 }
 
 /* Styling default untuk mengatur margin, padding, box-sizing, outline, border, dan text-decoration pada seluruh elemen */
 * {
-  margin: 0; /* Menghilangkan margin */
-  padding: 0; /* Menghilangkan padding */
-  box-sizing: border-box; /* Mengatur box model menjadi border-box */
-  outline: none; /* Menghilangkan outline */
-  border: none; /* Menghilangkan border */
-  text-decoration: none; /* Menghilangkan dekorasi teks */
-  font-family: "Times New Roman"; /* Mengatur font halaman */
+  margin: 0;
+  /* Menghilangkan margin */
+  padding: 0;
+  /* Menghilangkan padding */
+  box-sizing: border-box;
+  /* Mengatur box model menjadi border-box */
+  outline: none;
+  /* Menghilangkan outline */
+  border: none;
+  /* Menghilangkan border */
+  text-decoration: none;
+  /* Menghilangkan dekorasi teks */
+  font-family: "Times New Roman";
+  /* Mengatur font halaman */
 }
 
 /* Styling untuk seluruh halaman */
 body {
-  color: black; /* Warna teks */
-  background-color: var(--warna1); /* Warna latar belakang */
+  color: black;
+  /* Warna teks */
+  background-color: var(--warna1);
+  /* Warna latar belakang */
 }
 
 /* Styling untuk kontainer utama */
 .Kotak-luar {
-  display: flex; /* Menggunakan Flexbox */
-  flex-direction: column; /* Mengatur arah Flexbox menjadi kolom */
-  align-items: center; /* Menengahkan item secara horizontal */
-  padding: 2rem 6rem 10rem 6rem; /* Padding kontainer */
-  overflow: hidden; /* Menyembunyikan konten yang meluap */
+  display: flex;
+  /* Menggunakan Flexbox */
+  flex-direction: column;
+  /* Mengatur arah Flexbox menjadi kolom */
+  align-items: center;
+  /* Menengahkan item secara horizontal */
+  padding: 2rem 6rem 10rem 6rem;
+  /* Padding kontainer */
+  overflow: hidden;
+  /* Menyembunyikan konten yang meluap */
   /* background-color: var(--warna2); Warna latar belakang pink */
   background-color: #fed7dd;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='250' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='.1'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/svg%3E");
@@ -37,181 +55,281 @@ body {
 
 /* Styling untuk bagian utama konten */
 main {
-  padding: 0.5%; /* Padding di sekitar konten */
-  margin: 0.5%; /* Margin di sekitar konten */
-  background-color: var(--warna1); /* Warna latar belakang putih */
-  border-radius: 1.5rem; /* Membulatkan sudut */
-  display: flex; /* Menggunakan Flexbox */
-  flex-wrap: wrap; /* Membungkus item ke baris baru jika tidak muat */
-  justify-content: space-around; /* Menengahkan konten */
-  max-width: 1500px; /* Lebar maksimum konten */
-  width: 100%; /* Lebar penuh */
-  border: 10px double var(--warna4); /* Border tebal warna emas */
+  padding: 0.5%;
+  /* Padding di sekitar konten */
+  margin: 0.5%;
+  /* Margin di sekitar konten */
+  background-color: var(--warna1);
+  /* Warna latar belakang putih */
+  border-radius: 1.5rem;
+  /* Membulatkan sudut */
+  display: flex;
+  /* Menggunakan Flexbox */
+  flex-wrap: wrap;
+  /* Membungkus item ke baris baru jika tidak muat */
+  justify-content: space-around;
+  /* Menengahkan konten */
+  max-width: 1500px;
+  /* Lebar maksimum konten */
+  width: 100%;
+  /* Lebar penuh */
+  border: 10px double var(--warna4);
+  /* Border tebal warna emas */
 }
 
 /* Styling untuk judul utama */
 .judul-utama {
-  margin-top: 20px; /* Margin atas */
-  border: 10px double var(--warna4); /* Border tebal warna emas */
-  margin-bottom: 10px; /* Margin bawah */
-  padding: 10px; /* Padding di dalam judul */
-  background-color: var(--warna1); /* Warna latar belakang putih */
-  border-radius: 1.5rem; /* Membulatkan sudut */
-  text-align: center; /* Menengahkan teks */
-  max-width: 1500px; /* Lebar maksimum */
-  width: 100%; /* Lebar penuh */
+  margin-top: 20px;
+  /* Margin atas */
+  border: 10px double var(--warna4);
+  /* Border tebal warna emas */
+  margin-bottom: 10px;
+  /* Margin bawah */
+  padding: 10px;
+  /* Padding di dalam judul */
+  background-color: var(--warna1);
+  /* Warna latar belakang putih */
+  border-radius: 1.5rem;
+  /* Membulatkan sudut */
+  text-align: center;
+  /* Menengahkan teks */
+  max-width: 1500px;
+  /* Lebar maksimum */
+  width: 100%;
+  /* Lebar penuh */
 }
 
 .judul-utama h1 {
-  font-size: 40px; /* Ukuran font untuk h1 */
+  font-size: 40px;
+  /* Ukuran font untuk h1 */
 }
 
 /* Styling untuk kolom PRODUK */
 .PRODUK-column {
-  padding: 2%; /* Padding di dalam kolom */
-  border-radius: 2rem; /* Membulatkan sudut */
-  width: calc(30%); /* Lebar kolom */
-  margin: 1.5%; /* Margin di sekitar kolom */
-  border: 1px solid var(--warna4); /* Border tipis warna emas */
-  position: relative; /* Posisi relatif untuk pseudo-elemen */
-  display: flex; /* Menggunakan Flexbox */
-  flex-direction: column; /* Mengatur arah Flexbox menjadi kolom */
-  align-items: center; /* Menengahkan item secara horizontal */
-  overflow: hidden; /* Menyembunyikan konten yang meluap */
-  place-content: center; /* Menengahkan konten */
-  place-items: center; /* Menengahkan item */
-  cursor: pointer; /* Mengubah kursor menjadi pointer saat diarahkan ke tombol */
-  transition: all 0.4s ease-in; /* Transisi */
+  padding: 2%;
+  /* Padding di dalam kolom */
+  border-radius: 2rem;
+  /* Membulatkan sudut */
+  width: calc(30%);
+  /* Lebar kolom */
+  margin: 1.5%;
+  /* Margin di sekitar kolom */
+  border: 1px solid var(--warna4);
+  /* Border tipis warna emas */
+  position: relative;
+  /* Posisi relatif untuk pseudo-elemen */
+  display: flex;
+  /* Menggunakan Flexbox */
+  flex-direction: column;
+  /* Mengatur arah Flexbox menjadi kolom */
+  align-items: center;
+  /* Menengahkan item secara horizontal */
+  overflow: hidden;
+  /* Menyembunyikan konten yang meluap */
+  place-content: center;
+  /* Menengahkan konten */
+  place-items: center;
+  /* Menengahkan item */
+  cursor: pointer;
+  /* Mengubah kursor menjadi pointer saat diarahkan ke tombol */
+  transition: all 0.4s ease-in;
+  /* Transisi */
 }
 
 /* Pseudo-elemen sebelum kolom PRODUK */
 .PRODUK-column::before {
-  content: ""; /* Konten kosong */
-  position: absolute; /* Posisi absolut */
-  width: 50px; /* Lebar */
-  height: 160%; /* Tinggi */
-  background-image: linear-gradient(
-    360deg,
-    #daa520,
-    #daa520
-  ); /* Gradien warna emas */
-  animation: none; /* Matikan animasi default */
-  opacity: 0; /* Awalnya tidak terlihat */
-  box-shadow: none; /* Tidak ada bayangan awal */
+  content: "";
+  /* Konten kosong */
+  position: absolute;
+  /* Posisi absolut */
+  width: 50px;
+  /* Lebar */
+  height: 160%;
+  /* Tinggi */
+  background-image: linear-gradient(360deg,
+      #daa520,
+      #daa520);
+  /* Gradien warna emas */
+  animation: none;
+  /* Matikan animasi default */
+  opacity: 0;
+  /* Awalnya tidak terlihat */
+  box-shadow: none;
+  /* Tidak ada bayangan awal */
   box-shadow: 0 0 150px var(--warna4), 0 0 300px var(--warna4),
-    0 0 450px var(--warna4), 0 0 600px var(--warna4); /* Efek bayangan keluar */
+    0 0 450px var(--warna4), 0 0 600px var(--warna4);
+  /* Efek bayangan keluar */
 }
 
 /* Efek hover pada kolom PRODUK */
 .PRODUK-column:hover::before {
-  opacity: 1; /* Munculkan saat di-hover */
-  animation: rotBGimg 1s linear infinite; /* Animasi rotasi saat di-hover */
+  opacity: 1;
+  /* Munculkan saat di-hover */
+  animation: rotBGimg 1s linear infinite;
+  /* Animasi rotasi saat di-hover */
 }
+
 .PRODUK-column:hover {
   transform: translateY(-0.5rem);
   border-radius: 5rem 0 5rem 0;
   border: none;
 }
+
 /* Pseudo-elemen setelah kolom PRODUK */
 .PRODUK-column::after {
-  content: ""; /* Konten kosong */
-  position: absolute; /* Posisi absolut */
-  background: var(--warna1); /* Warna latar belakang putih */
-  inset: 20px; /* Jarak dari tepi */
-  border-radius: 2rem; /* Membulatkan sudut */
+  content: "";
+  /* Konten kosong */
+  position: absolute;
+  /* Posisi absolut */
+  background: var(--warna1);
+  /* Warna latar belakang putih */
+  inset: 20px;
+  /* Jarak dari tepi */
+  border-radius: 2rem;
+  /* Membulatkan sudut */
 }
+
 /* Animasi rotasi background */
 @keyframes rotBGimg {
   from {
-    transform: rotate(0deg); /* Mulai dari 0 derajat */
+    transform: rotate(0deg);
+    /* Mulai dari 0 derajat */
     box-shadow: 0 0 150px var(--warna4), 0 0 300px var(--warna4),
-      0 0 450px var(--warna4), 0 0 600px var(--warna4); /* Efek bayangan keluar */
+      0 0 450px var(--warna4), 0 0 600px var(--warna4);
+    /* Efek bayangan keluar */
   }
+
   to {
-    transform: rotate(360deg); /* Putar hingga 360 derajat */
+    transform: rotate(360deg);
+    /* Putar hingga 360 derajat */
     box-shadow: 0 0 150px var(--warna4), 0 0 300px var(--warna4),
-      0 0 450px var(--warna4), 0 0 600px var(--warna4); /* Efek bayangan keluar */
+      0 0 450px var(--warna4), 0 0 600px var(--warna4);
+    /* Efek bayangan keluar */
   }
 }
 
 /* Styling untuk elemen dengan kelas gambar */
 .gambar {
-  z-index: 1; /* Mengatur z-index */
-  justify-content: center; /* Menengahkan konten */
-  display: flex; /* Menggunakan Flexbox */
+  z-index: 1;
+  /* Mengatur z-index */
+  justify-content: center;
+  /* Menengahkan konten */
+  display: flex;
+  /* Menggunakan Flexbox */
 }
 
 /* Styling untuk gambar */
 .gambar img {
-  max-width: 100%; /* Lebar maksimum 100% */
-  height: auto; /* Tinggi otomatis */
-  display: block; /* Menampilkan sebagai block element */
-  margin: 0 auto; /* Margin otomatis */
-  border-radius: 1rem; /* Membulatkan sudut */
-  margin: 0 0 1rem 0; /* Margin atas dan bawah */
-  aspect-ratio: 1/1; /* Rasio aspek 1:1 */
+  max-width: 100%;
+  /* Lebar maksimum 100% */
+  height: auto;
+  /* Tinggi otomatis */
+  display: block;
+  /* Menampilkan sebagai block element */
+  margin: 0 auto;
+  /* Margin otomatis */
+  border-radius: 1rem;
+  /* Membulatkan sudut */
+  margin: 0 0 1rem 0;
+  /* Margin atas dan bawah */
+  aspect-ratio: 1/1;
+  /* Rasio aspek 1:1 */
 }
 
 /* Styling untuk judul PRODUK */
 .judul {
-  border: 1px solid #ddd; /* Border tipis */
-  padding: 0.5rem; /* Padding di dalam judul */
-  margin: 0rem 0 1rem 0; /* Margin atas dan bawah */
-  background-color: var(--warna2); /* Warna latar belakang pink */
-  border-radius: 1rem; /* Membulatkan sudut */
-  text-align: center; /* Menengahkan teks */
-  height: auto; /* Tinggi judul */
-  width: 100%; /* Lebar penuh */
-  display: flex; /* Menggunakan Flexbox */
-  align-items: center; /* Menengahkan item secara vertikal */
-  justify-content: center; /* Menengahkan item secara horizontal */
-  z-index: 1; /* Mengatur z-index */
+  border: 1px solid #ddd;
+  /* Border tipis */
+  padding: 0.5rem;
+  /* Padding di dalam judul */
+  margin: 0rem 0 1rem 0;
+  /* Margin atas dan bawah */
+  background-color: var(--warna2);
+  /* Warna latar belakang pink */
+  border-radius: 1rem;
+  /* Membulatkan sudut */
+  text-align: center;
+  /* Menengahkan teks */
+  height: auto;
+  /* Tinggi judul */
+  width: 100%;
+  /* Lebar penuh */
+  display: flex;
+  /* Menggunakan Flexbox */
+  align-items: center;
+  /* Menengahkan item secara vertikal */
+  justify-content: center;
+  /* Menengahkan item secara horizontal */
+  z-index: 1;
+  /* Mengatur z-index */
 }
 
 /* Styling untuk isi PRODUK */
 .isi {
-  border-radius: 1rem; /* Membulatkan sudut */
-  background-color: var(--warna2); /* Warna latar belakang pink */
-  padding: 15px; /* Padding di dalam isi */
-  margin: 0rem 0 1rem 0; /* Margin atas dan bawah */
-  text-align: center; /* Menengahkan teks */
-  z-index: 1; /* Mengatur z-index */
-  width: 100%; /* Lebar penuh */
-  height: auto; /* Tinggi otomatis */
+  border-radius: 1rem;
+  /* Membulatkan sudut */
+  background-color: var(--warna2);
+  /* Warna latar belakang pink */
+  padding: 15px;
+  /* Padding di dalam isi */
+  margin: 0rem 0 1rem 0;
+  /* Margin atas dan bawah */
+  text-align: center;
+  /* Menengahkan teks */
+  z-index: 1;
+  /* Mengatur z-index */
+  width: 100%;
+  /* Lebar penuh */
+  height: auto;
+  /* Tinggi otomatis */
 }
 
 /* Styling untuk tombol */
 .tombol {
-  margin: 0.5rem 0 1.5rem 0; /* Margin atas dan bawah */
-  z-index: 1; /* Mengatur z-index */
+  margin: 0.5rem 0 1.5rem 0;
+  /* Margin atas dan bawah */
+  z-index: 1;
+  /* Mengatur z-index */
 }
 
 /* Styling untuk tombol dengan kelas klik */
 .klik {
-  padding: 10px 20px; /* Padding di dalam tombol (atas-bawah: 10px, kiri-kanan: 20px) */
-  color: black; /* Warna teks hitam */
-  background-color: var(
-    --warna4
-  ); /* Menggunakan variabel CSS untuk warna latar belakang */
-  border-radius: 0.5rem; /* Membulatkan sudut tombol */
-  cursor: pointer; /* Mengubah kursor menjadi pointer saat diarahkan ke tombol */
-  font-weight: bold; /* Membuat teks tebal */
-  transition: all 0.8s ease; /* Transisi */
-  text-shadow: none; /* Tidak ada bayangan pada teks */
+  padding: 10px 20px;
+  /* Padding di dalam tombol (atas-bawah: 10px, kiri-kanan: 20px) */
+  color: black;
+  /* Warna teks hitam */
+  background-color: var(--warna4);
+  /* Menggunakan variabel CSS untuk warna latar belakang */
+  border-radius: 0.5rem;
+  /* Membulatkan sudut tombol */
+  cursor: pointer;
+  /* Mengubah kursor menjadi pointer saat diarahkan ke tombol */
+  font-weight: bold;
+  /* Membuat teks tebal */
+  transition: all 0.8s ease;
+  /* Transisi */
+  text-shadow: none;
+  /* Tidak ada bayangan pada teks */
 }
 
 .klik:hover {
-  background-color: var(
-    --warna3
-  ); /* Warna latar belakang saat tombol dihover */
-  letter-spacing: 5px; /* Spasi antar huruf saat dihover */
-  color: #ffffff; /* Warna teks menjadi putih saat dihover */
-  background: var(--warna3); /* Warna latar belakang saat dihover */
-  border: 1px solid #ddd; /* Border tipis saat dihover */
-  border-radius: 5rem; /* Membulatkan sudut tombol */
-  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff; /* Bayangan pada teks saat dihover */
+  background-color: var(--warna3);
+  /* Warna latar belakang saat tombol dihover */
+  letter-spacing: 5px;
+  /* Spasi antar huruf saat dihover */
+  color: #ffffff;
+  /* Warna teks menjadi putih saat dihover */
+  background: var(--warna3);
+  /* Warna latar belakang saat dihover */
+  border: 1px solid #ddd;
+  /* Border tipis saat dihover */
+  border-radius: 5rem;
+  /* Membulatkan sudut tombol */
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  /* Bayangan pada teks saat dihover */
   box-shadow: 0 0 5px var(--warna3), 0 0 20px var(--warna3),
-    0 0 50px var(--warna3), 0 0 70px var(--warna3); /* Bayangan pada tombol saat dihover */
+    0 0 50px var(--warna3), 0 0 70px var(--warna3);
+  /* Bayangan pada tombol saat dihover */
 }
 
 /* Responsivitas */
@@ -219,115 +337,166 @@ main {
 /* Styling untuk layar laptop */
 @media (min-width: 1023px) and (max-width: 1439px) {
   body {
-    overflow: auto; /* Menyembunyikan konten yang meluap */
-    font-size: 80%; /* Mengurangi ukuran font menjadi 90% */
+    overflow: auto;
+    /* Menyembunyikan konten yang meluap */
+    font-size: 80%;
+    /* Mengurangi ukuran font menjadi 90% */
   }
 
   .input-pencarian {
-    width: 89.65%; /* Lebar input */
-    font-size: 25px; /* Ukuran font untuk input */
+    width: 89.65%;
+    /* Lebar input */
+    font-size: 25px;
+    /* Ukuran font untuk input */
   }
 
   .tombol-pencarian {
-    width: 10%; /* Lebar tombol */
-    font-size: 25px; /* Ukuran font  */
+    width: 10%;
+    /* Lebar tombol */
+    font-size: 25px;
+    /* Ukuran font  */
   }
+
   .Kotak-luar {
-    padding: 2rem 7.5rem 10rem 7.5rem; /* Padding kontainer */
+    padding: 2rem 7.5rem 10rem 7.5rem;
+    /* Padding kontainer */
   }
+
   main {
-    justify-content: space-around; /* Menengahkan konten */
+    justify-content: space-around;
+    /* Menengahkan konten */
   }
+
   .PRODUK-column {
-    width: calc(30%); /* Lebar kolom */
+    width: calc(30%);
+    /* Lebar kolom */
   }
 
   .judul,
   .isi,
   .gambar img {
-    max-width: 85%; /* Lebar maksimum 100% */
-    margin: 0.5rem 0 0.5rem 0; /* Margin atas dan bawah */
+    max-width: 85%;
+    /* Lebar maksimum 100% */
+    margin: 0.5rem 0 0.5rem 0;
+    /* Margin atas dan bawah */
   }
 }
 
 /* Styling untuk layar tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
   body {
-    overflow: auto; /* Menyembunyikan konten yang meluap */
-    font-size: 80%; /* Ukuran font 80% */
+    overflow: auto;
+    /* Menyembunyikan konten yang meluap */
+    font-size: 80%;
+    /* Ukuran font 80% */
   }
 
   .input-pencarian {
-    width: 89.5%; /* Lebar input */
-    font-size: 20px; /* Ukuran font untuk input */
+    width: 89.5%;
+    /* Lebar input */
+    font-size: 20px;
+    /* Ukuran font untuk input */
   }
 
   .tombol-pencarian {
-    width: 10%; /* Lebar tombol */
-    font-size: 20px; /* Ukuran font  */
+    width: 10%;
+    /* Lebar tombol */
+    font-size: 20px;
+    /* Ukuran font  */
   }
+
   .Kotak-luar {
-    padding: 3rem; /* Padding kontainer */
+    padding: 3rem;
+    /* Padding kontainer */
   }
+
   main {
-    padding: 1rem; /* Padding kontainer */
-    justify-content: space-around; /* Menengahkan konten */
+    padding: 1rem;
+    /* Padding kontainer */
+    justify-content: space-around;
+    /* Menengahkan konten */
   }
+
   .PRODUK-column {
-    width: calc(45%); /* Lebar kolom */
-    padding: 1% 0.1%; /* Padding di dalam kolom */
+    width: calc(45%);
+    /* Lebar kolom */
+    padding: 1% 0.1%;
+    /* Padding di dalam kolom */
   }
 
   .judul,
   .isi,
   .gambar img {
-    max-width: 75%; /* Lebar maksimum 100% */
-    margin: 0.5rem 0 0.5rem 0; /* Margin atas dan bawah */
+    max-width: 75%;
+    /* Lebar maksimum 100% */
+    margin: 0.5rem 0 0.5rem 0;
+    /* Margin atas dan bawah */
   }
 }
+
 /* Styling untuk layar ponsel */
 @media (max-width: 768px) {
   #header {
-    overflow: auto; /* Menyembunyikan konten yang meluap */
-    font-size: 25px; /* Ukuran font  */
+    overflow: auto;
+    /* Menyembunyikan konten yang meluap */
+    font-size: 25px;
+    /* Ukuran font  */
   }
 
   #header img {
-    width: 30px; /* Lebar gambar */
-    height: 30px; /* Tinggi gambar */
+    width: 30px;
+    /* Lebar gambar */
+    height: 30px;
+    /* Tinggi gambar */
   }
+
   body {
-    overflow: auto; /* Menyembunyikan konten yang meluap */
-    font-size: 65%; /* Ukuran font 65% */
+    overflow: auto;
+    /* Menyembunyikan konten yang meluap */
+    font-size: 65%;
+    /* Ukuran font 65% */
   }
 
   .input-pencarian {
-    width: 85%; /* Lebar input */
-    font-size: 15px; /* Ukuran font untuk input */
+    width: 85%;
+    /* Lebar input */
+    font-size: 15px;
+    /* Ukuran font untuk input */
   }
 
   .tombol-pencarian {
-    width: 14%; /* Lebar tombol */
-    font-size: 15px; /* Ukuran font  */
+    width: 14%;
+    /* Lebar tombol */
+    font-size: 15px;
+    /* Ukuran font  */
   }
+
   .Kotak-luar {
-    padding: 1rem; /* Padding kontainer */
+    padding: 1rem;
+    /* Padding kontainer */
   }
+
   main {
     background: transparent;
-    border: none; /* Menghilangkan border */
+    border: none;
+    /* Menghilangkan border */
     padding: 0;
   }
+
   .PRODUK-column {
-    width: calc(60%); /* Lebar kolom */
-    border: none; /* Menghilangkan border */
+    width: calc(60%);
+    /* Lebar kolom */
+    border: none;
+    /* Menghilangkan border */
   }
 
   .judul,
   .isi,
   .gambar img {
-    max-width: 80%; /* Lebar maksimum 80% */
+    max-width: 80%;
+    /* Lebar maksimum 80% */
     padding-top: 10px;
-    margin: 0.8rem 0 0.5rem 0; /* Margin atas dan bawah */
+    margin: 0.8rem 0 0.5rem 0;
+    /* Margin atas dan bawah */
   }
 }
